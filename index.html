@@ -114,6 +114,18 @@ input[type=search]{flex:1 1 200px;min-width:0}
 .tier.assoc{background:var(--accent-soft);color:var(--accent)}
 .empty{padding:28px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:8px}
 footer{color:var(--muted);font-size:12px}
+/* 실무 정보 */
+.notices{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.nbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;min-width:0}
+.nbox h3{margin:0;font-size:13.5px;padding:9px 14px;background:var(--soft);border-radius:8px 8px 0 0;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.nbox h3 a{font-weight:500;font-size:12px;color:var(--accent);text-decoration:none}
+.nbox ul{list-style:none;margin:0;padding:4px 0}
+.nbox li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;padding:6px 14px;font-size:13px;line-height:1.45}
+.nbox li span{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);padding-top:1px}
+.nbox li a{text-decoration:none}
+.nbox li a:hover{color:var(--accent);text-decoration:underline}
+.nbox li.new a{font-weight:600}
+.nbox .more{margin:auto 14px 10px;align-self:flex-start;background:none;border:0;color:var(--accent);font-size:12.5px;padding:0;cursor:pointer}
 /* Watch banner */
 .watch{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
 .watch.hit{border-left-color:var(--bad);background:var(--bad-soft)}
@@ -160,6 +172,11 @@ footer{color:var(--muted);font-size:12px}
   <section aria-labelledby="h-watch">
     <h2 id="h-watch">고시 감시 <small>새로 수집할 때마다 아래 고시가 나왔는지 확인합니다</small></h2>
     <div id="watch"></div>
+  </section>
+
+  <section aria-labelledby="h-notice">
+    <h2 id="h-notice">실무 정보 <small>보건복지부 · 건강보험심사평가원 · 국민건강보험공단 공지사항 (채용 공고 제외)</small> <button type="button" class="chip" id="noticeAll">피드에서 전체 보기</button></h2>
+    <div class="notices" id="notices"></div>
   </section>
 
   <section aria-labelledby="h-kpi">
@@ -232,6 +249,7 @@ const CATS = [
   {k:"tech",  name:"의료기사",     q:["임상병리사 OR 방사선사 OR 물리치료사 협회","치과위생사 OR 작업치료사 협회"]},
   {k:"auto",  name:"자동차보험",   q:["자동차보험 진료수가","자동차보험 진료비 심사"]},
   {k:"hira",  name:"심평원·청구",  q:["심평원 청구 심사","요양급여 청구 변경 2027"]},
+  {k:"notice", name:"실무 정보",   q:[]},  // 복지부·심평원·건보공단 공지사항 (검색어 없이 게시판에서 직접 수집)
   {k:"watch", name:"고시 감시",    q:["임상결과 분석관리료 고시","검체검사 위수탁 고시 개정","검체검사 구분지급 고시","상대가치점수 고시 개정 검체검사","비대면진료 관리료 가산 폐지 건정심","비대면진료 수가 고시","비대면진료 청구 심평원"]},
 ];
 
@@ -268,8 +286,15 @@ const WATCHES = [{
   todo:"건정심·고시가 나오면 확인할 것: 관리료 폐지 의결 여부와 시행일 · 청구코드/특정내역 기재 방법 · 본인부담 변화 · 약국 조제료 가산 · 신설 수가(협진·자문 등) 여부 · 시행규칙 확정본(처방일수·건수 한도)"
 }];
 function watchHits(w){
+  // 감지: 감시 시작일 이후, 주제어 + 고시·행정예고 등 결정 표현이 제목에 있는 보도/공지
   return items.filter(it=>it.d>=w.since && w.match.some(m=>it.title.includes(m))
-    && (w.trigger.test(it.title) || it.tier==="gov") && !/예정|앞두고|추진/.test(it.title));
+    && w.trigger.test(it.title) && !/예정|앞두고|추진/.test(it.title));
+}
+function watchRelated(w){
+  // 참고: 최근 30일 기관 공지(실무 정보) 중 주제어가 들어간 것 — 고시 자체가 아니어도 실무에 필요한 안내
+  const from = new Date(Date.now()-30*864e5).toISOString().slice(0,10);
+  const hit = new Set(watchHits(w));
+  return items.filter(it=>it.cat==="notice" && it.d>=from && !hit.has(it) && w.match.some(m=>it.title.includes(m)));
 }
 function renderWatch(){
   $("watch").innerHTML = WATCHES.map(w=>{
@@ -279,6 +304,7 @@ function renderWatch(){
       <div class="wtop">${state}<span class="cat">${w.since}부터 감시</span></div>
       <h3>${esc(w.title)}</h3>
       ${hits.length?`<div class="hits">${hits.slice(0,6).map(it=>`<div><span>${esc(it.d)} · ${esc(it.s)}</span><br><a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)} ↗</a></div>`).join("")}</div>`:""}
+      ${(()=>{ const rel=watchRelated(w); return rel.length?`<div class="hits"><span>관련 기관 공지 (실무 정보)</span>${rel.slice(0,4).map(it=>`<div><span>${esc(it.d)} · ${esc(it.s)}</span> <a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)} ↗</a></div>`).join("")}</div>`:""; })()}
       <ul class="known">${w.known.map(k=>`<li>${esc(k)}</li>`).join("")}</ul>
       <div class="todo">${esc(w.todo).replace("고시가 나오면 확인할 것:","<b>고시가 나오면 확인할 것:</b>")}</div>
     </article>`;
@@ -465,7 +491,27 @@ function setLastRun(t){
   el.innerHTML=`마지막 수집 <b>${esc(fmtTime(t).replace(" ",day+" "))}</b>${(typeof STATIC!=="undefined"&&STATIC)?"<br>매일 09:00 자동 수집":""}`;
   el.title = "브라우저 시간대 기준";
 }
-function renderAll(){ renderWatch(); renderBrief(); renderFeed(); }
+const NOTICE_ORGS = [
+  {s:"보건복지부", board:"https://www.mohw.go.kr/board.es?mid=a10501010000&bid=0003"},
+  {s:"건강보험심사평가원", board:"https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100"},
+  {s:"국민건강보험공단", board:"https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do"},
+];
+function renderNotices(){
+  const box = $("notices"); if (!box) return;
+  const all = items.filter(it=>it.cat==="notice" && !/당첨자|이벤트|경품|공모전|당선작|대학수학능력|수능|채용|합격자/.test(it.title));
+  const recent = new Date(Date.now()-3*864e5).toISOString().slice(0,10);
+  box.innerHTML = NOTICE_ORGS.map(o=>{
+    const list = all.filter(it=>it.s===o.s).sort((a,b)=>b.d.localeCompare(a.d)).slice(0,7);
+    return `<div class="nbox"><h3>${esc(o.s)}<a href="${esc(o.board)}" target="_blank" rel="noopener">게시판 ↗</a></h3>
+      ${list.length ? `<ul>${list.map(it=>`<li class="${it.d>=recent?"new":""}"><span>${esc(it.d)}</span><a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)}</a></li>`).join("")}</ul>`
+        : `<ul><li><span></span><span>아직 수집된 공지가 없습니다. 다음 수집 때 채워집니다.</span></li></ul>`}
+    </div>`;
+  }).join("");
+}
+document.addEventListener("click", e=>{
+  if (e.target.closest && e.target.closest("#noticeAll")){ catSel="notice"; termSel=""; renderFeed(); $("h-feed").scrollIntoView({behavior:"smooth"}); }
+});
+function renderAll(){ renderWatch(); renderNotices(); renderBrief(); renderFeed(); }
 
 // ---------- events ----------
 $("cats").addEventListener("click",e=>{ const b=e.target.closest("[data-c]"); if(!b) return; catSel=b.dataset.c; termSel=""; renderFeed(); });
@@ -517,7 +563,7 @@ async function loadStatic(quiet){
     setCap("db","ok",`${items.length}건`);
     setCap("sample", brief&&brief.by==="refresh"?"ok":"wait", brief? `요약 ${fmtTime(brief.updatedAt)}` : "요약 없음");
     status(`기사 <b>${items.length}</b>건 · ${f.source==="manual"?"수동":"자동"} 수집${f.failed?` (검색 ${f.failed}개 실패)`:""}`);
-    renderWatch(); renderFeed(); renderBrief();
+    renderAll();
     return changed;
   }catch(e){
     if (!quiet){ setCap("db","bad","불러오기 실패"); status("데이터를 불러오지 못했습니다"); notice("data/feed.json을 읽지 못했습니다. 저장소에 data 폴더가 올라가 있는지 확인해 주세요. (로컬 파일로 열면 브라우저 보안 때문에 읽지 못합니다)"); }
@@ -557,7 +603,7 @@ if (STATIC){
       setLastRun(updatedAt);
       setCap("db", items.length?"ok":"wait", items.length?`${items.length}건`:(dbLoaded?"비어 있음":"불러오는 중"));
       status(items.length ? `기사 <b>${items.length}</b>건 보관 중` : (dbLoaded ? "아직 수집 기록이 없습니다" : "저장된 기사 불러오는 중…"));
-      renderWatch(); renderFeed(); renderBrief();
+      renderAll();
     }, e=>{ clearTimeout(timer); setCap("db","bad","오류 "+(e.code||"")); status("저장소 오류: "+esc(e.code||"")); });
     db.doc("feed/brief").onSnapshot(snap=>{ if(busy) return; brief = snap.exists ? snap.data() : null; renderBrief(); }, ()=>{});
   });
@@ -612,6 +658,17 @@ async function fetchQuery(q){
   }
   return rows;
 }
+// GitHub Pages에 매일 올라가는 수집본 (복지부·심평원·건보공단 공지 포함)
+const PUBLIC_FEED = "https://hey-n-y.github.io/health-policy-monitor/data/feed.json";
+async function fetchPublicNotices(){
+  const opt = ()=>{ const o={cache:false}; if (typeof AbortSignal!=="undefined" && AbortSignal.timeout) o.signal=AbortSignal.timeout(45000); return o; };
+  await mcp.callTool("host:claude_browser","navigate",{url:PUBLIC_FEED+"?ts="+Date.now()},opt());
+  const text = textOf(await mcp.callTool("host:claude_browser","get_page_text",{max_chars:400000},opt()));
+  const a = text.indexOf("{"), b = text.lastIndexOf("}");
+  if (a<0 || b<a) throw {code:"bad_page", message:"공개 수집본을 읽지 못함"};
+  const data = JSON.parse(text.slice(a,b+1));
+  return (data.items||[]).filter(r=>r.q==="notice");
+}
 async function summarize(list){
   if (!sample) return null;
   const top = list.slice(0,90).map(it=>({id:it.id,d:it.d,cat:it.cat,src:it.s,tier:it.tier,check:it.check,nsrc:it.nsrc,title:it.title}));
@@ -624,7 +681,7 @@ async function summarize(list){
 - status: 공식기관(tier=gov) 보도가 근거에 있으면 "gov", 서로 다른 출처 2곳 이상이면 "cross", 하나뿐이면 "single".
 - 2027년 수가·보험료·청구 변경, 건강보험정책심의위원회 의결, 제도 개편, 비대면진료, 만성질환관리료, 복지부 제도 변경, 협회(병협·의협·간협·약사회·의료기사)의 의견·성명을 우선하세요.
 - refs에는 근거 기사 id를 1~4개 넣으세요.
-출력은 JSON 객체 하나만: {"points":[{"title":"한 줄 제목","body":"2~3문장","status":"gov|cross|single|conflict","cats":["fee|council|reform|tele|chronic|watch|mohw|premium|kha|kma|kna|kpa|tech|auto|hira"],"refs":["id"]}]}
+출력은 JSON 객체 하나만: {"points":[{"title":"한 줄 제목","body":"2~3문장","status":"gov|cross|single|conflict","cats":["fee|council|reform|tele|chronic|notice|watch|mohw|premium|kha|kma|kna|kpa|tech|auto|hira"],"refs":["id"]}]}
 
 [팩트 노트]
 ${facts}
@@ -668,15 +725,21 @@ $("refreshBtn").addEventListener("click", async ()=>{
     }
     done++; prog.style.width = (done/jobs.length*85)+"%";
   }
+  // 3) 실무 정보(기관 공지): GitHub 자동 수집본에서 가져온다 (기관 게시판은 링크 추출이 필요해 GitHub 수집기가 담당)
+  status("실무 정보(기관 공지) 가져오는 중…");
+  try{
+    const notes = await fetchPublicNotices();
+    notes.forEach(r=>raw.push(r));
+  }catch(e){ errs.push(`[공지] ${errText(e)}`); }
   if (!raw.length) return finish("새 기사를 가져오지 못했습니다", `검색 ${jobs.length}개가 모두 실패했습니다. 첫 오류: ${errs[0]||"결과 없음"}`);
   if (errs.length) console.warn("일부 검색 실패", errs);
-  // merge with previous, keep newest 300
+  // merge with previous, keep newest 400
   const prev = prevRaw;
   const mergedRaw = raw.concat(prev);
-  const merged = normalize(mergedRaw).slice(0,300);
+  const merged = normalize(mergedRaw).slice(0,400);
   const store = merged.map(it=>({q:it.cat,t:it.title,s:it.s,su:it.su,d:it.d,l:it.l}));
   const now = new Date().toISOString();
-  items = merged; updatedAt = now; renderWatch(); renderFeed();
+  items = merged; updatedAt = now; renderWatch(); renderNotices(); renderFeed();
   try{ if (db) await db.doc("feed/latest").set({items:store, updatedAt:now, queries:jobs.length, failed, errors:errs.slice(0,5)}); setCap("db","ok",`${store.length}건`); }
   catch(e){ notice("수집 결과를 저장하지 못했습니다(권한 또는 용량). 이 화면에만 표시됩니다."); }
   status(`요약 작성 중 · 기사 ${merged.length}건`);
