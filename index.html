@@ -1,0 +1,700 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>보건의료 제도 모니터</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 관제판 — 상단 고정 바(갱신), 요약 브리핑 → 팩트체크 → 원문 피드(날짜별/키워드별) 순으로 위에서 아래로 상세화 */
+:root{
+  --bg:#f3f5f6; --panel:#ffffff; --ink:#14232b; --muted:#5b6b73; --line:#dbe2e5; --soft:#e9eef0;
+  --accent:#0e6b72; --accent-ink:#ffffff; --accent-soft:#d9eef0;
+  --ok:#1d7a47; --ok-soft:#dcf1e4; --info:#245fa8; --info-soft:#dfe9f7; --warn:#9a6200; --warn-soft:#f8ecd2; --bad:#b03a2e; --bad-soft:#f8e0dc;
+  --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171b; --panel:#162228; --ink:#e3ecef; --muted:#93a5ad; --line:#2a3a42; --soft:#1d2c33;
+  --accent:#4fb7bd; --accent-ink:#06191b; --accent-soft:#173a3e;
+  --ok:#6fd39a; --ok-soft:#173a28; --info:#86b4ef; --info-soft:#1a2c46; --warn:#e7b65a; --warn-soft:#3a2d12; --bad:#f08c80; --bad-soft:#41201c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171b; --panel:#162228; --ink:#e3ecef; --muted:#93a5ad; --line:#2a3a42; --soft:#1d2c33;
+  --accent:#4fb7bd; --accent-ink:#06191b; --accent-soft:#173a3e;
+  --ok:#6fd39a; --ok-soft:#173a28; --info:#86b4ef; --info-soft:#1a2c46; --warn:#e7b65a; --warn-soft:#3a2d12; --bad:#f08c80; --bad-soft:#41201c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:14.5px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-block:12px}
+.brand{display:flex;flex-direction:column;min-width:0;flex:1 1 260px}
+.brand h1{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em}
+.brand .sub{color:var(--muted);font-size:12.5px}
+.refresh{display:grid;grid-template-columns:auto auto;grid-template-areas:"status btn" "status last";align-items:center;gap:4px 14px}
+.refresh .status{grid-area:status}
+.refresh .btn{grid-area:btn;justify-self:end}
+.lastrun{grid-area:last;justify-self:end;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lastrun b{color:var(--ink);font-weight:600}
+@media (max-width:520px){.refresh{grid-template-columns:1fr auto;width:100%}}
+.status{font-size:12.5px;color:var(--muted);font-family:var(--font-mono);max-width:420px}
+.status b{color:var(--ink);font-weight:500}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:6px;padding:9px 16px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.btn:disabled{opacity:.55;cursor:progress}
+.btn:focus-visible,.chip:focus-visible,.seg button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn svg{width:16px;height:16px}
+.btn.busy svg{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.btn.busy svg{animation:none}}
+.ghost{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 12px}
+.progress{height:3px;background:var(--soft)}
+.progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+main .wrap{display:flex;flex-direction:column;gap:28px;padding-block:22px 48px}
+section>h2{font-size:13px;letter-spacing:.06em;color:var(--muted);font-weight:600;margin:0 0 10px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+section>h2 small{letter-spacing:0;font-weight:400;font-size:12px}
+.notice{background:var(--warn-soft);color:var(--ink);border-radius:6px;padding:10px 14px;font-size:13px}
+.notice[hidden]{display:none}
+.diag{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--muted);margin-top:-14px}
+.diag .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px;background:var(--line)}
+.diag .ok .dot{background:var(--ok)} .diag .bad .dot{background:var(--bad)} .diag .wait .dot{background:var(--warn)}
+/* KPI strip */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.kpi{background:var(--panel);padding:14px 16px;min-width:0}
+.kpi .k{font-size:12px;color:var(--muted)}
+.kpi .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.kpi .n{font-size:12px;color:var(--muted)}
+/* Brief */
+.brief{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+.pt{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pt .top{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.pt h3{margin:0;font-size:15.5px;line-height:1.45;text-wrap:balance}
+.pt p{margin:0;color:var(--ink);opacity:.9}
+.refs{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;margin-top:auto;padding-top:6px;border-top:1px dashed var(--line)}
+.refs a{color:var(--accent);text-decoration:none}
+.refs a:hover{text-decoration:underline}
+.badge{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.b-gov{background:var(--ok-soft);color:var(--ok)}
+.b-cross{background:var(--info-soft);color:var(--info)}
+.b-single{background:var(--warn-soft);color:var(--warn)}
+.b-conflict{background:var(--bad-soft);color:var(--bad)}
+.cat{font-size:11.5px;color:var(--muted);border:1px solid var(--line);padding:1px 7px;border-radius:4px;white-space:nowrap}
+/* Fact table */
+.tbl{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:600;background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td .refs{border:0;padding:0;margin:0}
+/* Feed controls */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.seg button{border:0;background:transparent;color:var(--ink);padding:7px 12px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+input[type=search],select{font:inherit;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+input[type=search]{flex:1 1 200px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:4px 11px;font-size:12.5px}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--ink);font-weight:600}
+.chip .c{color:var(--muted);font-family:var(--font-mono);font-size:11.5px;margin-left:4px}
+.terms{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 14px}
+.terms .chip{font-size:12px;padding:3px 9px}
+.terms .chip.pin{border-color:var(--accent);font-weight:600}
+.group{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.group>h3{margin:0;font-size:13.5px;padding:9px 14px;background:var(--soft);display:flex;justify-content:space-between;gap:8px}
+.group>h3 span{color:var(--muted);font-weight:400;font-family:var(--font-mono);font-size:12px}
+.row{display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:4px 14px;padding:10px 14px;border-top:1px solid var(--line);align-items:start}
+.group .row:first-of-type{border-top:0}
+.row .d{font-family:var(--font-mono);font-size:12px;color:var(--muted);padding-top:2px}
+.row .t a{text-decoration:none;font-weight:500}
+.row .t a:hover{color:var(--accent);text-decoration:underline}
+.row .meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:3px;font-size:12px;color:var(--muted)}
+.row .side{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.tier{font-size:11px;padding:1px 6px;border-radius:4px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.tier.gov{background:var(--ok-soft);color:var(--ok)}
+.tier.assoc{background:var(--accent-soft);color:var(--accent)}
+.empty{padding:28px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:8px}
+footer{color:var(--muted);font-size:12px}
+/* Watch banner */
+.watch{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
+.watch.hit{border-left-color:var(--bad);background:var(--bad-soft)}
+.watch .wtop{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.watch h3{margin:0;font-size:15.5px}
+.watch .known{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 18px;font-size:13px;margin:0;padding:0;list-style:none}
+.watch .known li{display:flex;gap:6px}
+.watch .known li::before{content:"·";color:var(--muted)}
+.watch .todo{font-size:12.5px;color:var(--muted)}
+.watch .todo b{color:var(--ink);font-weight:600}
+.watch .hits{display:flex;flex-direction:column;gap:4px;font-size:13.5px}
+.watch .hits a{color:var(--ink);font-weight:600}
+.watch .hits span{color:var(--muted);font-size:12px;font-family:var(--font-mono)}
+@media (max-width:640px){
+  .row{grid-template-columns:minmax(0,1fr)}
+  .row .side{flex-direction:row;align-items:center}
+  .brief{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brand">
+      <h1>보건의료 제도 모니터</h1>
+      <span class="sub">건강보험 수가 · 복지부 제도 · 보건의료단체 · 자동차보험 · 심평원 청구</span>
+    </div>
+    <div class="refresh">
+      <div class="status" id="status">데이터 불러오는 중…</div>
+      <button class="btn" id="refreshBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+        새로 수집
+      </button>
+      <div class="lastrun" id="lastRun">마지막 수집 <b>확인 중…</b></div>
+    </div>
+  </div>
+  <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="notice" id="notice" hidden></div>
+  <div class="diag" id="diag" aria-live="polite"></div>
+
+  <section aria-labelledby="h-watch">
+    <h2 id="h-watch">고시 감시 <small>새로 수집할 때마다 아래 고시가 나왔는지 확인합니다</small></h2>
+    <div id="watch"></div>
+  </section>
+
+  <section aria-labelledby="h-kpi">
+    <h2 id="h-kpi">2027년 핵심 수치 <small>공식 발표·고시 기준, 교차확인 완료</small></h2>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section aria-labelledby="h-brief">
+    <h2 id="h-brief">핵심 요약 <small id="briefMeta"></small></h2>
+    <div class="brief" id="brief"></div>
+  </section>
+
+  <section aria-labelledby="h-fact">
+    <h2 id="h-fact">팩트체크 노트 <small>보도 수치를 공식 출처와 대조한 결과</small></h2>
+    <div class="tbl"><table>
+      <thead><tr><th style="width:26%">확인 대상</th><th>확인 결과</th><th style="width:12%">판정</th><th style="width:24%">근거</th></tr></thead>
+      <tbody id="facts"></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-feed">
+    <h2 id="h-feed">원문 피드 <small id="feedMeta"></small></h2>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="보기 방식">
+        <button type="button" id="vDate" aria-pressed="true">최신 일자별</button>
+        <button type="button" id="vCat" aria-pressed="false">키워드별</button>
+      </div>
+      <select id="tierSel" aria-label="출처 신뢰도">
+        <option value="">모든 출처</option>
+        <option value="gov">공식기관</option>
+        <option value="assoc">협회·기관지</option>
+        <option value="major">주요 언론</option>
+        <option value="trade">보건의료 전문지</option>
+        <option value="other">기타</option>
+      </select>
+      <select id="checkSel" aria-label="교차확인 상태">
+        <option value="">교차확인 전체</option>
+        <option value="gov">공식확인</option>
+        <option value="cross">교차확인(2개 이상 출처)</option>
+        <option value="single">단일보도</option>
+      </select>
+      <input type="search" id="q" placeholder="제목·출처 검색 (예: 환산지수, 특사경)" aria-label="검색">
+    </div>
+    <div class="chips" id="cats" role="group" aria-label="키워드 분류"></div>
+    <div class="terms" id="terms" aria-label="자주 나온 키워드"></div>
+    <div id="feed"></div>
+  </section>
+
+  <footer>
+    수집: Google 뉴스 검색(키워드별 최근 60일). 교차확인은 제목 유사도로 같은 사안을 묶어 서로 다른 출처 수를 셉니다. 공식기관 보도가 묶이면 ‘공식확인’, 출처 2곳 이상이면 ‘교차확인’입니다.
+    새로고침 요약은 수집된 제목을 Claude가 정리한 것으로, 수치는 링크된 원문과 고시로 다시 확인하세요.
+  </footer>
+</div>
+</main>
+
+<script>
+(() => {
+const CATS = [
+  {k:"fee",   name:"2027 수가",    q:["2027 수가 협상 환산지수","2027년 수가 인상률","진찰료 입원료 2027 인상"]},
+  {k:"council",name:"건강보험정책심의위원회", q:["건강보험정책심의위원회","건정심 의결"]},
+  {k:"reform", name:"개편",        q:["건강보험 수가 개편","보건의료 제도 개편 보건복지부"]},
+  {k:"tele",   name:"비대면진료",  q:["비대면진료 제도화","비대면진료 시행규칙"]},
+  {k:"chronic",name:"만성질환관리료", q:["만성질환관리료","일차의료 만성질환관리"]},
+  {k:"mohw",  name:"복지부 제도",  q:["보건복지부 건강보험 제도 개선","보건복지부 고시 개정 건강보험"]},
+  {k:"premium",name:"보험료·재정", q:["2027년 건강보험료율","건강보험 재정"]},
+  {k:"kha",   name:"병원협회",     q:["대한병원협회"]},
+  {k:"kma",   name:"의사협회",     q:["대한의사협회 성명","의협 정부 정책 반대"]},
+  {k:"kna",   name:"간호협회",     q:["대한간호협회"]},
+  {k:"kpa",   name:"약사회",       q:["대한약사회"]},
+  {k:"tech",  name:"의료기사",     q:["임상병리사 OR 방사선사 OR 물리치료사 협회","치과위생사 OR 작업치료사 협회"]},
+  {k:"auto",  name:"자동차보험",   q:["자동차보험 진료수가","자동차보험 진료비 심사"]},
+  {k:"hira",  name:"심평원·청구",  q:["심평원 청구 심사","요양급여 청구 변경 2027"]},
+  {k:"watch", name:"고시 감시",    q:["임상결과 분석관리료 고시","검체검사 위수탁 고시 개정","검체검사 구분지급 고시","상대가치점수 고시 개정 검체검사","비대면진료 관리료 가산 폐지 건정심","비대면진료 수가 고시","비대면진료 청구 심평원"]},
+];
+
+// ---------- 고시 감시 목록 (사용자 요청 2026-11-19) ----------
+const WATCHES = [{
+  id:"consign-cond",
+  title:"검체검사 위·수탁 조건부 보상 고시 (위탁기관 ‘임상결과 분석·관리료’)",
+  since:"2026-11-19",
+  match:["임상결과 분석","분석·관리료","분석관리료","위·수탁","위수탁","위탁검사","구분지급","분리지급","검체검사"],
+  trigger:/고시|행정예고|개정안|산정기준|세부사항/,
+  known:[
+    "10.28 제19차 건정심 의결, 2027년 1월부터 2년간 시행",
+    "의원급 위탁기관만 대상, 회당 1,400원 · 환자당 연 4회 (연 최대 5,600원)",
+    "요건: 수탁기관과 검사결과 공유체계 + 만성질환자 등 분석·관리 제공",
+    "기관단위 성과보상: 환자당 평균 검사 처방량 적정성 등",
+    "위탁 몫 35% = 기본 25% + 조건부 최대 10% (6.25 확정 구조)",
+    "복지부: 관련 고시 11월 중 개정 예정"
+  ],
+  todo:"고시가 나오면 확인할 것: 대상 상병 범위 · 공유체계 요건(전자 연계·시간 기준) · 청구 주체(위탁기관 일괄청구 vs 각자) · 25/45·10/20 배분율 유지 여부 · 성과보상 지표와 금액"
+},{
+  id:"telemed-fee",
+  title:"비대면진료 본사업 수가·청구코드 (관리료 30% 가산 폐지 건정심·고시)",
+  since:"2026-11-19",
+  match:["비대면진료","비대면 진료","비대면"],
+  trigger:/고시|행정예고|건정심|건강보험정책심의위원회|의결|수가|관리료|가산|청구|코드|산정/,
+  known:[
+    "개정 의료법·시행령 2026.12.24 시행 (시범사업 → 본사업)",
+    "현행: 진찰료·조제료 + 시범사업 관리료 30% 가산",
+    "제도화 후: 관리료 가산 폐지, 진찰료·조제료 100%로 환원 방침 (11월 건정심 의결 예정, 미확인)",
+    "폐지 시 연 약 120억원 절감 (의료기관 107억 · 약국 13억)",
+    "신설 수가·새 청구코드는 아직 보도 없음",
+    "시행규칙안: 초진 같은 시·도, 처방 7일(1회 30일), 반기 진료의 30% 이내, 의사 월평균 500건"
+  ],
+  todo:"건정심·고시가 나오면 확인할 것: 관리료 폐지 의결 여부와 시행일 · 청구코드/특정내역 기재 방법 · 본인부담 변화 · 약국 조제료 가산 · 신설 수가(협진·자문 등) 여부 · 시행규칙 확정본(처방일수·건수 한도)"
+}];
+function watchHits(w){
+  return items.filter(it=>it.d>=w.since && w.match.some(m=>it.title.includes(m))
+    && (w.trigger.test(it.title) || it.tier==="gov") && !/예정|앞두고|추진/.test(it.title));
+}
+function renderWatch(){
+  $("watch").innerHTML = WATCHES.map(w=>{
+    const hits = watchHits(w);
+    const state = hits.length ? `<span class="badge b-conflict">고시 관련 보도 감지 ${hits.length}건 · 원문 확인 필요</span>` : `<span class="badge b-single">대기 중 · 아직 고시 보도 없음</span>`;
+    return `<article class="watch${hits.length?" hit":""}">
+      <div class="wtop">${state}<span class="cat">${w.since}부터 감시</span></div>
+      <h3>${esc(w.title)}</h3>
+      ${hits.length?`<div class="hits">${hits.slice(0,6).map(it=>`<div><span>${esc(it.d)} · ${esc(it.s)}</span><br><a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)} ↗</a></div>`).join("")}</div>`:""}
+      <ul class="known">${w.known.map(k=>`<li>${esc(k)}</li>`).join("")}</ul>
+      <div class="todo">${esc(w.todo).replace("고시가 나오면 확인할 것:","<b>고시가 나오면 확인할 것:</b>")}</div>
+    </article>`;
+  }).join("");
+}
+const LEGACY = {fee2:"fee",hira2:"hira"};
+// 항상 보이는 고정 핵심키워드: 제목에 아래 표현 중 하나가 있으면 해당
+const PINNED = [
+  {label:"건강보험정책심의위원회", match:["건강보험정책심의위원회","건정심"]},
+  {label:"개편", match:["개편"]},
+  {label:"비대면진료", match:["비대면진료","비대면 진료"]},
+  {label:"만성질환관리료", match:["만성질환관리료","만성질환관리","만성질환 관리"]},
+];
+const pinHit = (it,label) => { const p=PINNED.find(x=>x.label===label); return !!p && p.match.some(m=>it.title.includes(m)); };
+const catName = k => (CATS.find(c=>c.k===(LEGACY[k]||k))||{name:k}).name;
+
+const TIERS = {
+  gov:   {label:"공식기관", names:["보건복지부","대한민국 정책브리핑","국민건강보험공단","건강보험심사평가원","국토교통부","국회","식품의약품안전처","질병관리청"], dom:[/\.go\.kr/,/korea\.kr/,/nhis\.or\.kr/,/hira\.or\.kr/,/assembly/]},
+  assoc: {label:"협회·기관지", names:["의협신문","병원신문","간호사신문","약사공론","치의신보","한의신문","의사신문"], dom:[/kha\.or\.kr/,/kma\.org/,/koreanurse/,/kpanet/,/doctorsnews/,/khanews/,/nursenews/,/kpanews/,/dailydental/,/akomnews/,/doctorstimes/]},
+  major: {label:"주요 언론", names:["연합뉴스","연합뉴스TV","뉴스1","뉴시스","중앙일보","조선일보","Chosunbiz","동아일보","한겨레","경향신문","서울경제","서울경제TV","매일경제","한국경제","한경매거진","SBS","SBS Biz","KBS","MBC 뉴스","YTN","서울신문","머니투데이","이투데이","아시아경제","파이낸셜뉴스","헤럴드경제","국민일보","세계일보","전자신문","쿠키뉴스","더팩트","노컷뉴스","오마이뉴스"], dom:[]},
+  trade: {label:"전문지", names:["청년의사","데일리메디","MEDI:GATE NEWS","메디게이트뉴스","메디칼타임즈","메디파나뉴스","데일리팜","약업신문","히트뉴스","의학신문","메디칼업저버","라포르시안","의약뉴스","팜뉴스","메디포뉴스","후생신보","메디컬투데이","한국의약통신","팍스메디컬뉴스","경기메디뉴스","데일리메디팜","뉴스더보이스헬스케어","코리아헬스로그","메디소비자뉴스","헬스경향","매경헬스","의료&복지뉴스","보험신보","보험저널","팜이데일리","의약일보"], dom:[]},
+};
+function tierOf(s, su){
+  s = s||""; su = su||"";
+  for (const k of ["gov","assoc","major","trade"]){
+    const t = TIERS[k];
+    if (t.names.includes(s) || t.dom.some(r=>r.test(su))) return k;
+  }
+  return "other";
+}
+const TIER_LABEL = {gov:"공식기관",assoc:"협회·기관지",major:"주요 언론",trade:"전문지",other:"기타"};
+
+// ---------- verified facts (Claude 세션에서 공식자료와 대조, 2026-11-18) ----------
+const KPIS = [
+  {k:"2027 건강보험료율", v:"7.19%", n:"동결 · 제15차 건정심(9.8)"},
+  {k:"평균 수가 인상률", v:"1.65%", n:"환산지수 1.45%+상대가치 0.20%"},
+  {k:"의원 환산지수", v:"96.5원", n:"95.6원→ · 건정심 결정 1.6%"},
+  {k:"병원 환산지수", v:"84.7원", n:"인상률 1.2%"},
+  {k:"약국 환산지수", v:"109.4원", n:"인상률 3.7%"},
+  {k:"지역·필수의료 先투입", v:"2.7조원", n:"2027.1 시행 · 제19차 건정심(10.28)"},
+];
+const FACTS = [
+  {c:"의원 초진진찰료 인상률 ‘5.2%’ vs ‘12.6%’", r:"둘 다 맞음. 5.2%는 환산지수 연계분(1,413억)을 초진 상대가치점수에 넣은 인상분, 12.6%는 최종 금액 기준(18,840원→21,210원). 기사마다 기준이 달라 수치가 달라 보임.", s:"conflict", sl:"기준 상이", refs:[["데일리메디","https://www.dailymedi.com/news/news_view.php?wr_id=941990"],["데일리팜","https://dailypharm.com/user/news/343929"]]},
+  {c:"2027 의원 수가 인상률 1.6%", r:"협상 결렬 후 건정심(6.25) 결정. 1.6% 중 0.9%는 환산지수, 0.7%는 진찰료 상대가치에 반영. ‘환산지수 인상률 1.6%’라고 쓴 보도는 부정확.", s:"gov", sl:"공식확인", refs:[["의사신문","http://www.doctorstimes.com/news/articleView.html?idxno=238779"],["메디게이트","https://www.medigatenews.com/news/1584456939"]]},
+  {c:"유형별 2027 환산지수", r:"의원 96.5 · 병원 84.7 · 요양정신 85.3 · 치과 103.5 · 한의 107.3 · 약국 109.4 · 조산원 196.2 · 보건기관 101.3(원). 복수 전문지와 개정 고시 보도가 일치.", s:"cross", sl:"교차확인", refs:[["팍스메디컬뉴스","https://news.google.com/search?q=2027%EB%85%84%EB%8F%84%20%EC%9A%94%EC%96%91%EA%B8%89%EC%97%AC%EB%B9%84%EC%9A%A9%20%EC%A0%90%EC%88%98%EB%8B%B9%20%EB%8B%A8%EA%B0%80&hl=ko&gl=KR&ceid=KR:ko"],["머니투데이","https://www.mt.co.kr/thebio/2026/05/30/2026053011421269847"]]},
+  {c:"2027 건강보험료율 7.19% 동결", r:"제15차 건정심(2026.9.8) 의결. 재산보험료 부과점수당 금액 211.5원도 유지. 희귀·중증난치 본인부담 10%→5% 인하 함께 의결.", s:"gov", sl:"공식확인", refs:[["약사공론(복지부 보도자료)","https://www.kpanews.co.kr/news/articleView.html?idxno=543145"],["세계일보","https://www.segye.com/newsView/20260908515367"]]},
+  {c:"장기요양보험료율 인상", r:"2027년 인상 확정, 세대당 월평균 약 1,100원 증가(장기요양위원회 10.30). 칼럼이 제시한 0.9994%(건보료 합산 8.19%)는 고시 원문으로 재확인 필요.", s:"cross", sl:"교차확인", refs:[["연합뉴스","https://news.google.com/search?q=%EC%9E%A5%EA%B8%B0%EC%9A%94%EC%96%91%EB%B3%B4%ED%97%98%EB%A3%8C%EC%9C%A8%20%EC%9D%B8%EC%83%81%201%EC%B2%9C100%EC%9B%90&hl=ko&gl=KR&ceid=KR:ko"],["보험저널 칼럼","https://www.insjournal.co.kr/news/articleView.html?idxno=33858"]]},
+  {c:"지역·필수의료 2.7조 선투입", r:"제19차 건정심(10.28) 의결. 연 3.6조 중 2.7조 시행시기 확정, 0.9조는 연내 추가 논의. 의원 초진 상대가치 6%·재진 4%, 병원급 2%, 일반병실 입원료 7%·중환자실 10%, 중증수술 1,670개 20%, 비수도권 분만·신생아 10% 가산(1월), 수술·처치 2,740개 10% 가산(3월). 재원은 검체 702개·CT/MRI 480개 수가 인하 등 약 2.6조 절감. 관련 고시는 11월 중 개정 예정.", s:"gov", sl:"공식확인", refs:[["경향신문","https://www.khan.co.kr/article/202610281648001/"],["라포르시안","https://www.rapportian.com/news/articleView.html?idxno=241753"],["서울경제","https://www.sedaily.com/article/20107257"]]},
+  {c:"위탁기관(의원) 조건부 보상 ‘임상결과 분석·관리료’", r:"10.28 건정심 의결. 의원급 위탁기관이 검사결과 공유체계를 갖추고 만성질환자 등에 분석·관리를 제공하면 회당 1,400원, 환자당 연 4회(연 최대 5,600원). 2년 한시. 대상 상병·공유 요건·청구 방식은 공개 자료에 없음. 배분율 35:65(25/45+10/20)는 6.25 확정 구조이며 10.28 자료엔 수치 없음. 청구는 ‘위탁기관 일괄청구 후 분리지급’(의협 TF, 6월)과 ‘공단 직접 구분지급’(10월 보도) 표현이 엇갈림.", s:"cross", sl:"교차확인 · 고시 대기", refs:[["의학신문 10.28","https://www.bosa.co.kr/news/articleView.html?idxno=3015044"],["메디칼업저버 10.28","https://www.monews.co.kr/news/articleView.html?idxno=414909"],["청년의사 6.25","https://www.docdocdoc.co.kr/news/articleView.html?idxno=3040365"],["메디파나 11.5(내과의사회)","https://www.medipana.com/news/articleView.html?idxno=421018"]]},
+  {c:"비대면진료 제도화 후 수가·청구코드", r:"12.24 시행 확정(의료법·시행령). 수가는 시범사업 관리료 30% 가산(진찰료·조제료) 폐지 후 100% 환원 방침만 보도됨. ‘11월 건정심 의결 예정’ 단계이며 의결 보도는 아직 없음. 신설 수가·새 청구코드·본인부담 변화는 어떤 자료에도 없음. 비대면 건수 한도는 현행 지침 ‘월 30%’, 시행규칙안 ‘반기 30%’로 단위가 다름.", s:"single", sl:"예정 · 고시 대기", refs:[["데일리팜 11.12","https://dailypharm.com/user/news/344461"],["데일리팜 11.13","https://dailypharm.com/user/news/344512"],["정책브리핑 10.19","https://www.korea.kr/news/policyNewsView.do?newsId=148973762"],["의학신문 9.28","https://www.bosa.co.kr/news/articleView.html?idxno=3012809"]]},
+  {c:"건보공단 특사경법 ‘국회 통과’", r:"11.11 법사위 법안심사1소위 통과까지 확인. 법사위 전체회의·본회의 통과는 확인되지 않음. ‘국회 통과’ 제목은 소위 단계를 가리키는 경우가 많음. 의협·병협 반대, 건보노조 찬성.", s:"single", sl:"진행중", refs:[["데일리메디","https://dailymedi.com/news/news_view.php?wr_id=942500"],["데일리팜","https://dailypharm.com/user/news/344471"]]},
+  {c:"자동차보험 청구체계 건강보험 기준 정비", r:"국토부 ‘자동차보험진료수가 심사업무처리에 관한 규정’ 개정(행정예고 9.21~10.11). 건보와 같은 항목은 건보 청구기준 적용. 2027년 시행 여부는 고시 원문으로 확인 필요.", s:"single", sl:"확인 필요", refs:[["한의신문","https://akomnews.com/68888"],["국토부 입법예고","https://www.molit.go.kr/USR/I0204/m_45/dtl.jsp?idx=18600"]]},
+];
+const BADGE = {gov:["b-gov","공식확인"],cross:["b-cross","교차확인"],single:["b-single","단일보도"],conflict:["b-conflict","수치상충"]};
+
+// ---------- state ----------
+let items = [], brief = null, updatedAt = null;
+let view = "date", catSel = "", termSel = "";
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => /^https?:\/\//i.test(u||"") ? u : "#";
+const cleanTitle = (t,s) => { t = t||""; const suf = " - "+(s||""); return s && t.endsWith(suf) ? t.slice(0,-suf.length) : t; };
+
+// ---------- clustering / cross-check ----------
+const STOP = new Set(["the","and","대한","관련","위한","대해","통해","이번","올해","내년","있다","없다","한다","하는","위해","등","및","것","수","더","뉴스","기자","단독","사진","포토"]);
+function tokens(t){
+  return (t.toLowerCase().match(/[가-힣]{2,}|[a-z]{3,}|\d+(?:[.,]\d+)?/g)||[])
+    .map(w=>w.replace(/(은|는|이|가|을|를|에|의|도|로|과|와|에서|으로|부터|까지)$/,""))
+    .filter(w=>w.length>=2 && !STOP.has(w));
+}
+function crossCheck(list){
+  const toks = list.map(it=>new Set(tokens(it.title)));
+  const parent = list.map((_,i)=>i);
+  const find = i => parent[i]===i ? i : (parent[i]=find(parent[i]));
+  for (let i=0;i<list.length;i++) for (let j=i+1;j<list.length;j++){
+    const a=toks[i], b=toks[j]; if(!a.size||!b.size) continue;
+    let inter=0; a.forEach(w=>{ if(b.has(w)) inter++; });
+    const jac = inter/(a.size+b.size-inter);
+    if (inter>=3 && jac>=0.28) parent[find(i)]=find(j);
+  }
+  const groups = {};
+  list.forEach((it,i)=>{ (groups[find(i)] ||= []).push(it); });
+  Object.values(groups).forEach(g=>{
+    const srcs = new Set(g.map(x=>x.s));
+    const hasGov = g.some(x=>x.tier==="gov");
+    const check = hasGov ? "gov" : srcs.size>=2 ? "cross" : "single";
+    g.forEach(x=>{ x.check=check; x.nsrc=srcs.size; x.peers=g.filter(y=>y!==x).slice(0,4).map(y=>({s:y.s,l:y.l})); });
+  });
+}
+
+function normalize(raw){
+  const seen = new Map();
+  for (const r of raw||[]){
+    const s = r.s||"";
+    const title = cleanTitle(r.t, s);
+    const key = title.replace(/\s+/g,"");
+    if (!title || seen.has(key)) continue;
+    seen.set(key, {id:key.slice(0,60), cat:LEGACY[r.q]||r.q, title, s, su:r.su||"", d:r.d||"", l:r.l||"", tier:tierOf(s, r.su)});
+  }
+  const list = [...seen.values()].sort((a,b)=>b.d.localeCompare(a.d));
+  crossCheck(list);
+  return list;
+}
+
+// ---------- render ----------
+function renderKpis(){
+  $("kpis").innerHTML = KPIS.map(k=>`<div class="kpi"><div class="k">${esc(k.k)}</div><div class="v">${esc(k.v)}</div><div class="n">${esc(k.n)}</div></div>`).join("");
+}
+function renderFacts(){
+  $("facts").innerHTML = FACTS.map(f=>{
+    const cls = {gov:"b-gov",cross:"b-cross",single:"b-single",conflict:"b-conflict"}[f.s];
+    return `<tr><td><b>${esc(f.c)}</b></td><td>${esc(f.r)}</td><td><span class="badge ${cls}">${esc(f.sl)}</span></td>
+      <td><div class="refs">${f.refs.map(([n,u])=>`<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(n)} ↗</a>`).join("")}</div></td></tr>`;
+  }).join("");
+}
+function renderBrief(){
+  const box = $("brief");
+  if (!brief || !Array.isArray(brief.points) || !brief.points.length){
+    box.innerHTML = `<div class="empty">요약이 아직 없습니다. 상단 <b>새로 수집</b>을 누르면 최신 기사로 요약을 만듭니다.</div>`;
+    $("briefMeta").textContent = ""; return;
+  }
+  $("briefMeta").textContent = `${brief.by==="claude-session"?"Claude 검증 요약":"새로고침 자동 요약"} · ${fmtTime(brief.updatedAt)}`;
+  const byId = new Map(items.map(i=>[i.id,i]));
+  box.innerHTML = brief.points.map(p=>{
+    const [cls,label] = BADGE[p.status]||BADGE.single;
+    const refs = (p.refs||[]).map(r=>{
+      if (typeof r==="string"){ const it=byId.get(r); return it?[it.s,it.l]:null; }
+      return [r.label||r[0], r.url||r[1]];
+    }).filter(Boolean).slice(0,5);
+    return `<article class="pt">
+      <div class="top"><span class="badge ${cls}">${label}</span>${(p.cats||[]).map(c=>`<span class="cat">${esc(catName(c))}</span>`).join("")}</div>
+      <h3>${esc(p.title)}</h3><p>${esc(p.body)}</p>
+      ${refs.length?`<div class="refs">${refs.map(([n,u])=>`<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(n)} ↗</a>`).join("")}</div>`:""}
+    </article>`;
+  }).join("");
+}
+function filtered(){
+  const q = $("q").value.trim().toLowerCase(), tier=$("tierSel").value, chk=$("checkSel").value;
+  return items.filter(it=>(!catSel||it.cat===catSel) && (!tier||it.tier===tier) && (!chk||it.check===chk)
+    && (!q || (it.title+" "+it.s).toLowerCase().includes(q))
+    && (!termSel || (termSel.startsWith("pin:") ? pinHit(it,termSel.slice(4)) : tokens(it.title).includes(termSel))));
+}
+function renderChips(){
+  const counts = {}; items.forEach(i=>counts[i.cat]=(counts[i.cat]||0)+1);
+  $("cats").innerHTML = [`<button type="button" class="chip" data-c="" aria-pressed="${!catSel}">전체<span class="c">${items.length}</span></button>`]
+    .concat(CATS.map(c=>`<button type="button" class="chip" data-c="${c.k}" aria-pressed="${catSel===c.k}">${esc(c.name)}<span class="c">${counts[c.k]||0}</span></button>`)).join("");
+  // frequent terms within current category
+  const base = items.filter(it=>!catSel||it.cat===catSel), freq = {};
+  base.forEach(it=>new Set(tokens(it.title)).forEach(w=>{ if(!/^\d/.test(w)) freq[w]=(freq[w]||0)+1; }));
+  const skip = new Set(["2026","2027","건강보험","대한","협회","의료",...PINNED.map(p=>p.label)]);
+  const top = Object.entries(freq).filter(([w,n])=>n>=2 && !skip.has(w)).sort((a,b)=>b[1]-a[1]).slice(0,14);
+  const pins = PINNED.map(p=>{ const n=base.filter(it=>pinHit(it,p.label)).length; const v="pin:"+p.label;
+    return `<button type="button" class="chip pin" data-t="${esc(v)}" aria-pressed="${termSel===v}">${esc(p.label)}<span class="c">${n}</span></button>`; }).join("");
+  $("terms").innerHTML = `<span class="cat" style="border:0;padding-left:0">핵심키워드</span>` + pins
+    + top.map(([w,n])=>`<button type="button" class="chip" data-t="${esc(w)}" aria-pressed="${termSel===w}">${esc(w)}<span class="c">${n}</span></button>`).join("");
+}
+function rowHtml(it){
+  const [cls,label] = BADGE[it.check]||BADGE.single;
+  const peers = it.peers&&it.peers.length ? ` · 함께 보도: ${it.peers.map(p=>`<a href="${esc(safeUrl(p.l))}" target="_blank" rel="noopener">${esc(p.s)}</a>`).join(", ")}` : "";
+  return `<div class="row"><div class="d">${esc(it.d)}</div>
+    <div class="t"><a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)}</a>
+      <div class="meta"><span>${esc(it.s)}</span><span class="cat">${esc(catName(it.cat))}</span>${peers}</div></div>
+    <div class="side"><span class="badge ${cls}" title="같은 사안 보도 출처 ${it.nsrc}곳">${label}${it.nsrc>1?" "+it.nsrc:""}</span><span class="tier ${it.tier}">${TIER_LABEL[it.tier]}</span></div></div>`;
+}
+function renderFeed(){
+  renderChips();
+  const list = filtered();
+  $("feedMeta").textContent = `${list.length}건 표시 / 전체 ${items.length}건${updatedAt?` · 수집 ${fmtTime(updatedAt)}`:""}`;
+  if (!items.length){ $("feed").innerHTML = `<div class="empty">수집된 기사가 없습니다. 상단 <b>새로 수집</b>을 눌러 주세요.</div>`; return; }
+  if (!list.length){ $("feed").innerHTML = `<div class="empty">조건에 맞는 기사가 없습니다. 필터를 줄여 보세요.</div>`; return; }
+  const groups = new Map();
+  for (const it of list){ const g = view==="date" ? it.d : catName(it.cat); if(!groups.has(g)) groups.set(g,[]); groups.get(g).push(it); }
+  let keys = [...groups.keys()];
+  if (view==="date") keys.sort((a,b)=>b.localeCompare(a)); else keys.sort((a,b)=>groups.get(b).length-groups.get(a).length);
+  $("feed").innerHTML = keys.map(k=>`<div class="group"><h3>${esc(view==="date"?fmtDay(k):k)}<span>${groups.get(k).length}건</span></h3>${groups.get(k).map(rowHtml).join("")}</div>`).join("");
+}
+function fmtDay(d){ const dt=new Date(d+"T00:00:00"); if(isNaN(dt)) return d; return `${d} (${"일월화수목금토"[dt.getDay()]})`; }
+function fmtTime(t){ if(!t) return ""; const d=new Date(t); if(isNaN(d)) return String(t); const p=n=>String(n).padStart(2,"0"); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+function setLastRun(t){
+  const el=$("lastRun"); if(!el) return;
+  if(!t){ el.innerHTML="마지막 수집 <b>기록 없음</b>"; return; }
+  const d=new Date(t);
+  const day = isNaN(d) ? "" : ` (${"일월화수목금토"[d.getDay()]})`;
+  el.innerHTML=`마지막 수집 <b>${esc(fmtTime(t).replace(" ",day+" "))}</b>${(typeof STATIC!=="undefined"&&STATIC)?"<br>매일 09:00 자동 수집":""}`;
+  el.title = "브라우저 시간대 기준";
+}
+function renderAll(){ renderWatch(); renderBrief(); renderFeed(); }
+
+// ---------- events ----------
+$("cats").addEventListener("click",e=>{ const b=e.target.closest("[data-c]"); if(!b) return; catSel=b.dataset.c; termSel=""; renderFeed(); });
+$("terms").addEventListener("click",e=>{ const b=e.target.closest("[data-t]"); if(!b) return; termSel = termSel===b.dataset.t ? "" : b.dataset.t; renderFeed(); });
+["q","tierSel","checkSel"].forEach(id=>$(id).addEventListener("input",renderFeed));
+function setView(v){ view=v; $("vDate").setAttribute("aria-pressed",v==="date"); $("vCat").setAttribute("aria-pressed",v==="cat"); try{localStorage.setItem("hpm-view",v)}catch(e){} renderFeed(); }
+$("vDate").onclick=()=>setView("date"); $("vCat").onclick=()=>setView("cat");
+try{ const v=localStorage.getItem("hpm-view"); if(v==="cat"){ view="cat"; $("vDate").setAttribute("aria-pressed","false"); $("vCat").setAttribute("aria-pressed","true"); } }catch(e){}
+
+renderKpis(); renderFacts(); renderAll();
+
+// ---------- data: db ----------
+// 각 기능을 따로 연결한다. 하나가 늦거나 실패해도 나머지(특히 저장된 기사 표시)는 막히지 않게.
+let db=null, mcp=null, sample=null, dbLoaded=false, busy=false;
+const CAP = {db:["wait","확인 중"], mcp:["wait","확인 중"], sample:["wait","확인 중"]};
+const CAP_LABEL = {db:"저장된 기사", mcp:"새로 수집(브라우저 검색)", sample:"자동 요약"};
+const status = (html)=>{ $("status").innerHTML = html; };
+const notice = (msg)=>{ const n=$("notice"); n.hidden=!msg; n.textContent=msg||""; };
+function setCap(k, state, text){ CAP[k]=[state,text]; $("diag").innerHTML = Object.keys(CAP).map(x=>`<span class="${CAP[x][0]}"><span class="dot"></span>${CAP_LABEL[x]}: ${esc(CAP[x][1])}</span>`).join(""); }
+Object.keys(CAP).forEach(k=>setCap(k,...CAP[k]));
+const withTimeout = (p, ms) => Promise.race([p, new Promise(r=>setTimeout(()=>r("__timeout__"), ms))]);
+const errText = e => !e ? "알 수 없는 오류" : (e.code ? `${e.code}${e.message?": "+String(e.message).slice(0,80):""}` : String(e.message||e).slice(0,100));
+
+const C = window.claude;
+let mcpReady = Promise.resolve(null);
+
+// ---------- 공개 웹페이지 모드 (GitHub Pages 등, Claude 밖) ----------
+// data/feed.json · data/brief.json 을 읽는다. 수집은 GitHub Actions가 매일 09:00(KST)에 하고,
+// '새로 수집'은 GitHub의 수집 작업 실행 화면을 연다.
+const STATIC = !C || !C.use;
+const SCHEDULE_LABEL = "매일 09:00 자동 수집";
+function repoInfo(){
+  const meta = document.querySelector('meta[name="monitor-repo"]');
+  if (meta && /^[\w.-]+\/[\w.-]+$/.test(meta.content)) { const [o,r]=meta.content.split("/"); return {owner:o, repo:r}; }
+  const m = /^([\w-]+)\.github\.io$/i.exec(location.hostname);
+  if (!m) return null;
+  const seg = location.pathname.split("/").filter(Boolean)[0];
+  return {owner:m[1], repo: seg || `${m[1]}.github.io`};
+}
+async function loadStatic(quiet){
+  try{
+    const [f,b] = await Promise.all([
+      fetch(`data/feed.json?ts=${Date.now()}`,{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject(r.status)),
+      fetch(`data/brief.json?ts=${Date.now()}`,{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]);
+    const changed = f.updatedAt !== updatedAt;
+    items = normalize(f.items||[]); updatedAt = f.updatedAt||null; if (b) brief = b;
+    setLastRun(updatedAt);
+    setCap("db","ok",`${items.length}건`);
+    setCap("sample", brief&&brief.by==="refresh"?"ok":"wait", brief? `요약 ${fmtTime(brief.updatedAt)}` : "요약 없음");
+    status(`기사 <b>${items.length}</b>건 · ${f.source==="manual"?"수동":"자동"} 수집${f.failed?` (검색 ${f.failed}개 실패)`:""}`);
+    renderWatch(); renderFeed(); renderBrief();
+    return changed;
+  }catch(e){
+    if (!quiet){ setCap("db","bad","불러오기 실패"); status("데이터를 불러오지 못했습니다"); notice("data/feed.json을 읽지 못했습니다. 저장소에 data 폴더가 올라가 있는지 확인해 주세요. (로컬 파일로 열면 브라우저 보안 때문에 읽지 못합니다)"); }
+    return false;
+  }
+}
+let pollTimer=null;
+function openWorkflow(){
+  const r = repoInfo();
+  if (!r){ notice("GitHub Pages 주소에서 열었을 때만 수집 작업을 실행할 수 있습니다. 로컬에서는 README의 안내를 따라 주세요."); return; }
+  const url = `https://github.com/${r.owner}/${r.repo}/actions/workflows/collect.yml`;
+  window.open(url, "_blank", "noopener");
+  notice("GitHub 수집 작업 화면을 새 탭으로 열었습니다. 오른쪽 'Run workflow' → 초록 'Run workflow' 버튼을 누르세요(저장소 관리자만 가능). 2~4분 뒤 이 페이지가 자동으로 새 데이터를 불러옵니다.");
+  status("새 데이터 기다리는 중…");
+  clearInterval(pollTimer); let n=0;
+  pollTimer = setInterval(async()=>{ n++; const ch = await loadStatic(true); if (ch){ clearInterval(pollTimer); notice(""); status("새로 수집한 데이터를 불러왔습니다"); } else if (n>=20){ clearInterval(pollTimer); status("아직 새 데이터가 없습니다 · 잠시 후 새로고침해 주세요"); } }, 30000);
+}
+
+if (STATIC){
+  CAP_LABEL.mcp = "새로 수집"; CAP_LABEL.sample = "자동 요약";
+  setCap("mcp","ok", SCHEDULE_LABEL + " · 버튼은 관리자용");
+  setCap("db","wait","불러오는 중"); setCap("sample","wait","확인 중");
+  loadStatic(false);
+  setInterval(()=>loadStatic(true), 10*60*1000);   // 열어 둔 화면도 10분마다 최신 데이터 확인
+} else {
+  // 저장소
+  withTimeout(C.use("db"), 15000).then(v=>{
+    if (v==="__timeout__" || !v){ setCap("db","bad", v==="__timeout__"?"응답 없음":"연결 안 됨(로그인 필요)"); status("저장소에 연결할 수 없음"); notice("저장된 기사를 불러오지 못했습니다. Claude에 로그인한 상태로 페이지를 다시 열어 주세요."); return; }
+    db=v; setCap("db","wait","불러오는 중");
+    const timer = setTimeout(()=>{ if(!dbLoaded){ setCap("db","wait","응답 지연"); status("저장소 응답이 늦습니다 · 잠시 후 자동으로 표시됩니다"); } },10000);
+    db.doc("feed/latest").onSnapshot(snap=>{
+      if (!snap.fromCache){ dbLoaded=true; clearTimeout(timer); }
+      const d = snap.exists ? snap.data() : null;
+      if (busy) return;                       // 수집 중에는 화면을 덮어쓰지 않음
+      items = normalize(d && d.items || []);
+      updatedAt = d && d.updatedAt || null;
+      setLastRun(updatedAt);
+      setCap("db", items.length?"ok":"wait", items.length?`${items.length}건`:(dbLoaded?"비어 있음":"불러오는 중"));
+      status(items.length ? `기사 <b>${items.length}</b>건 보관 중` : (dbLoaded ? "아직 수집 기록이 없습니다" : "저장된 기사 불러오는 중…"));
+      renderWatch(); renderFeed(); renderBrief();
+    }, e=>{ clearTimeout(timer); setCap("db","bad","오류 "+(e.code||"")); status("저장소 오류: "+esc(e.code||"")); });
+    db.doc("feed/brief").onSnapshot(snap=>{ if(busy) return; brief = snap.exists ? snap.data() : null; renderBrief(); }, ()=>{});
+  });
+  // 브라우저 검색 (Claude 데스크톱 앱에서만 제공)
+  mcpReady = withTimeout(C.use("mcp"), 15000).then(v=>{
+    if (v==="__timeout__" || !v){ setCap("mcp","bad","이 화면에서는 사용 불가 · 데스크톱 앱에서 열어야 함"); return null; }
+    mcp=v; setCap("mcp","ok","사용 가능(첫 실행 시 허용 필요)"); return v;
+  });
+  // 요약
+  withTimeout(C.use("sample"), 15000).then(v=>{
+    if (v==="__timeout__" || !v){ setCap("sample","bad","사용 불가 · 기사 목록만 갱신"); return; }
+    sample=v; setCap("sample","ok","사용 가능");
+  });
+}
+
+// ---------- refresh: search via Claude browser, summarize via Claude ----------
+// 주의: 브라우저의 XML 화면 텍스트는 &nbsp;, &hl= 같은 이스케이프되지 않은 문자를 담고 있어 DOMParser(XML)로는 항상 실패한다.
+// 그래서 <item> 블록을 정규식으로 직접 읽는다. (2026-11-19 장애 원인)
+function decodeEnt(s){
+  return String(s||"").replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,"$1")
+    .replace(/&(nbsp|amp|lt|gt|quot|apos|#39|#x27);/g,(m,e)=>({nbsp:" ",amp:"&",lt:"<",gt:">",quot:'"',apos:"'","#39":"'","#x27":"'"}[e]))
+    .replace(/&#(\d+);/g,(m,n)=>String.fromCharCode(+n)).trim();
+}
+function parseRss(text){
+  const out=[]; const re=/<item>([\s\S]*?)(?:<\/item>|$)/g; let m;
+  const pick=(blk,tag)=>{ const r=new RegExp("<"+tag+"(?:\\s[^>]*)?>([\\s\\S]*?)</"+tag+">").exec(blk); return r?decodeEnt(r[1]):""; };
+  const p=n=>String(n).padStart(2,"0");
+  while((m=re.exec(text)) && out.length<15){
+    const blk=m[1], t=pick(blk,"title"), l=pick(blk,"link");
+    if (!t || !/^https?:\/\//.test(l)) continue;
+    const su=(/<source[^>]*url="([^"]*)"/.exec(blk)||[])[1]||"";
+    const pd=new Date(pick(blk,"pubDate"));
+    out.push({t, l, s:pick(blk,"source"), su, d:isNaN(pd)?"":`${pd.getFullYear()}-${p(pd.getMonth()+1)}-${p(pd.getDate())}`});
+  }
+  return out;
+}
+function textOf(res){
+  if (!res) return "";
+  if (typeof res.payload==="string") return res.payload;
+  return (res.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n");
+}
+async function fetchQuery(q){
+  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(q+" when:30d")}&hl=ko&gl=KR&ceid=KR:ko`;
+  const opt = ()=>{ const o={cache:false}; if (typeof AbortSignal!=="undefined" && AbortSignal.timeout) o.signal=AbortSignal.timeout(45000); return o; };
+  await mcp.callTool("host:claude_browser","navigate",{url},opt());
+  const res = await mcp.callTool("host:claude_browser","get_page_text",{max_chars:150000},opt());
+  const text = textOf(res);
+  const rows = parseRss(text);
+  if (!rows.length && !text.includes("<item")){
+    const head = text.replace(/\s+/g," ").slice(0,80);
+    throw {code:"bad_page", message:`검색 결과를 읽지 못함(받은 글자 ${text.length}자: ${head})`};
+  }
+  return rows;
+}
+async function summarize(list){
+  if (!sample) return null;
+  const top = list.slice(0,90).map(it=>({id:it.id,d:it.d,cat:it.cat,src:it.s,tier:it.tier,check:it.check,nsrc:it.nsrc,title:it.title}));
+  const facts = FACTS.map(f=>`- ${f.c}: ${f.r}`).join("\n");
+  const prompt = `당신은 한국 보건의료 정책 모니터링 담당자입니다. 아래는 오늘 수집한 뉴스 제목 목록(JSON)과, 이미 공식자료로 확인된 팩트 노트입니다.
+병원 경영·보험청구 실무자가 알아야 할 핵심 사안 6~8개를 골라 한국어로 요약하세요.
+규칙:
+- 제목 목록에 근거가 있는 내용만 쓰고, 추측하지 마세요. 수치는 제목에 있는 그대로만 쓰세요.
+- 팩트 노트와 충돌하거나 기사 간 수치가 다르면 status를 "conflict"로 하고 body에 어느 부분이 다른지 적으세요.
+- status: 공식기관(tier=gov) 보도가 근거에 있으면 "gov", 서로 다른 출처 2곳 이상이면 "cross", 하나뿐이면 "single".
+- 2027년 수가·보험료·청구 변경, 건강보험정책심의위원회 의결, 제도 개편, 비대면진료, 만성질환관리료, 복지부 제도 변경, 협회(병협·의협·간협·약사회·의료기사)의 의견·성명을 우선하세요.
+- refs에는 근거 기사 id를 1~4개 넣으세요.
+출력은 JSON 객체 하나만: {"points":[{"title":"한 줄 제목","body":"2~3문장","status":"gov|cross|single|conflict","cats":["fee|council|reform|tele|chronic|watch|mohw|premium|kha|kma|kna|kpa|tech|auto|hira"],"refs":["id"]}]}
+
+[팩트 노트]
+${facts}
+
+[기사 목록]
+${JSON.stringify(top)}`;
+  const out = await sample.json(prompt,{cache:false});
+  if (!out || !Array.isArray(out.points)) return null;
+  return {points: out.points.slice(0,8).map(p=>({title:String(p.title||""),body:String(p.body||""),status:["gov","cross","single","conflict"].includes(p.status)?p.status:"single",cats:(p.cats||[]).map(String).slice(0,3),refs:(p.refs||[]).map(String).slice(0,4)})), updatedAt:new Date().toISOString(), by:"refresh"};
+}
+const FATAL = new Set(["not_granted","consent_required","server_not_connected","not_in_manifest","capability_disabled","not_declared","cancelled"]);
+$("refreshBtn").addEventListener("click", async ()=>{
+  if (busy) return;
+  if (STATIC) return openWorkflow();
+  const btn=$("refreshBtn"), prog=$("prog");
+  busy=true; btn.disabled=true; btn.classList.add("busy"); notice("");
+  const finish = (msg, note) => { status(msg); if (note) notice(note); busy=false; btn.disabled=false; btn.classList.remove("busy"); prog.style.width="0"; };
+  // 1) 검색 기능 확인: 조용히 끝나지 않고 반드시 이유를 보여준다
+  status("검색 기능 확인 중…");
+  const m = mcp || await mcpReady;
+  if (!m) return finish("새로 수집을 할 수 없습니다",
+    "이 화면에서는 Claude 브라우저 검색을 쓸 수 없습니다. Claude 데스크톱 앱에서 이 아티팩트를 열고 다시 눌러 주세요. 웹 브라우저·모바일 앱에서는 저장된 기사만 볼 수 있습니다.");
+  // 2) 기존 기사를 저장소에서 최신으로 읽어 둔다(덮어쓰기 손실 방지)
+  let prevRaw = items.map(it=>({q:it.cat,t:it.title,s:it.s,su:it.su,d:it.d,l:it.l}));
+  if (db){ try{ const snap = await withTimeout(db.doc("feed/latest").get(), 10000); if (snap && snap!=="__timeout__" && snap.exists){ const d=snap.data(); if (Array.isArray(d.items) && d.items.length>prevRaw.length) prevRaw=d.items; } }catch(e){} }
+  const jobs = CATS.flatMap(c=>c.q.map(q=>({k:c.k,q})));
+  const raw=[]; let done=0, failed=0; const errs=[];
+  for (const j of jobs){
+    status(`검색 중 <b>${done+1}/${jobs.length}</b> · ${esc(catName(j.k))} “${esc(j.q)}”`);
+    try{ (await fetchQuery(j.q)).forEach(r=>raw.push({...r,q:j.k})); }
+    catch(e){
+      failed++; errs.push(`${j.q} → ${errText(e)}`);
+      if (e && FATAL.has(e.code)){
+        setCap("mcp","bad","허용 안 됨/연결 안 됨 ("+e.code+")");
+        return finish("새로 수집이 중단됐습니다",
+          `Claude 브라우저를 사용할 수 없습니다 (${errText(e)}). 데스크톱 앱에서 브라우저 사용을 허용한 뒤 다시 눌러 주세요. 아티팩트 오른쪽 위 메뉴의 권한 설정에서 바꿀 수 있습니다.`);
+      }
+      if (failed>=3 && raw.length===0){
+        return finish("새로 수집이 중단됐습니다", `처음 ${failed}개 검색이 모두 실패해 중단했습니다. 첫 오류: ${errs[0]}`);
+      }
+    }
+    done++; prog.style.width = (done/jobs.length*85)+"%";
+  }
+  if (!raw.length) return finish("새 기사를 가져오지 못했습니다", `검색 ${jobs.length}개가 모두 실패했습니다. 첫 오류: ${errs[0]||"결과 없음"}`);
+  if (errs.length) console.warn("일부 검색 실패", errs);
+  // merge with previous, keep newest 300
+  const prev = prevRaw;
+  const mergedRaw = raw.concat(prev);
+  const merged = normalize(mergedRaw).slice(0,300);
+  const store = merged.map(it=>({q:it.cat,t:it.title,s:it.s,su:it.su,d:it.d,l:it.l}));
+  const now = new Date().toISOString();
+  items = merged; updatedAt = now; renderWatch(); renderFeed();
+  try{ if (db) await db.doc("feed/latest").set({items:store, updatedAt:now, queries:jobs.length, failed, errors:errs.slice(0,5)}); setCap("db","ok",`${store.length}건`); }
+  catch(e){ notice("수집 결과를 저장하지 못했습니다(권한 또는 용량). 이 화면에만 표시됩니다."); }
+  status(`요약 작성 중 · 기사 ${merged.length}건`);
+  prog.style.width="92%";
+  try{
+    const nb = await summarize(merged);
+    if (nb){ brief = nb; renderBrief(); if (db) await db.doc("feed/brief").set(nb); }
+  }catch(e){
+    if (e && e.code==="not_granted") notice("요약 기능 사용이 허용되지 않아 기사 목록만 갱신했습니다.");
+    else if (e && e.code==="rate_limited") notice("요약 요청이 많아 잠시 후 다시 시도해 주세요. 기사 목록은 갱신됐습니다.");
+    else notice("요약을 만들지 못했습니다. 기사 목록은 갱신됐습니다.");
+  }
+  prog.style.width="100%"; setTimeout(()=>prog.style.width="0",800);
+  setLastRun(now);
+  status(`수집 완료 · 검색 ${jobs.length-failed}/${jobs.length} 성공 · 새 기사 ${raw.length}건 · 보관 ${items.length}건`);
+  busy=false; btn.disabled=false; btn.classList.remove("busy");
+});
+})();
+</script>
+
+</body></html>
