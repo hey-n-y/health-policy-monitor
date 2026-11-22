@@ -1,6 +1,14 @@
 {
  "items": [
   {
+   "q": "fee",
+   "t": "삼성은 2027년부터 갤럭시 A 시리즈의 가격을 대폭 인상할 가능성이 있다. - Vietnam.vn",
+   "s": "Vietnam.vn",
+   "su": "https://www.vietnam.vn",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQTmktRURQbWN5dDdGaElTQXRqYXMwZ2lpODRfSmJ0NGxuVkhpbnhiWmNrSmpjMXVKQUJaVlk4RlFzS2x4ZkJ3ZFFRZ2w0NWFiLXB5ckNmMUtWeGpjbnU2QWlHRC1HYWdpNWRXQ3VTaVkxRFlUWWZvWnl1Zlpzd01ZUmczTFdZMkE?oc=5"
+  },
+  {
    "q": "council",
    "t": "큐로셀, ‘림카토’ 건정심 상정…12월 1일 건강보험 적용 예정 - MEDI:GATE NEWS",
    "s": "MEDI:GATE NEWS",
@@ -9,12 +17,68 @@
    "l": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8zUmd5T2xoQUt1TlZ2N01rLXo5TmtfYmNFZXE1NVlwd2RiSU94Rlo4blVzRWljUmh6UExSclFnRldfM05FZWNibHZ2RVNva210dzllQkxfRQ?oc=5"
   },
   {
+   "q": "reform",
+   "t": "'건강보험도 AI 적용?' 보건복지부, '의료 AI' 건강보험 보상 체계 개편 추진 - 대구MBC",
+   "s": "대구MBC",
+   "su": "https://dgmbc.com",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9hOTlOWUd6RlV6V2NhcG5STVJhbWZJaGh6MEREZnN4TnFVM2RZUGpxLU95eEZkSEJhbkV1U29YZlh0TEx4NXQzNGhjaEI?oc=5"
+  },
+  {
+   "q": "chronic",
+   "t": "고혈압당뇨병센터 개편 논란 지속···환자·노인회 반발 - 더팩트",
+   "s": "더팩트",
+   "su": "https://m.tf.co.kr",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBOdTlsWFBBejBkWDFzN195VWhGTkVwX0tqLXVkazBIZlNEQno1TmlHZ3RmLTJadFY3TGNWMS0taGdrcjlmQUE5NGNudTQ1ZVBv0gFQQVVfeXFMUE51OWxYUEF6MGRYMXM3X3lVaEZORXBfS2otdWRrMEhmU0RCejVOaUdndGYtMlp0VjdMY1YxLS1oZ2tyOWZBQTk0Y251NDVlUG8?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "2026 제4차 다가치포럼, 국민연금·실업급여·건강보험 현안 종합 논의...\"공정한 제도 속 정당한 권리 보장을...\" - EKW이코리아월드(동포세계신문)",
+   "s": "EKW이코리아월드(동포세계신문)",
+   "su": "https://www.ekw.co.kr",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5EeWpyb0M5RDRYSGREZmJVMWY1UEF0Mi01NFRhT3BHSnhkQ3B5T2x3ckZJMzRMeTVqT28xdVUzZGRlck9mdUhXZHV6UW8zMmdOVGMtd0RkNDBSU1ZYdHNOU09GZXoyZw?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "소아 체외형 심실 보조장치 급여 확대…강심제 의존 환자 요건 완화 - 메디포뉴스",
+   "s": "메디포뉴스",
+   "su": "https://www.medifonews.com",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1rRS0zNE5EOWJ2Y3Npd3FJdlpmc003cURjNUxNVWR1dzlmS3htdTVPNk5SWFpNZnFqX3hxcGhkNG12ZUhrSGYzMnJXYThWR1ZDdml6YjAydU1rZlhGZmYxZVBRdFE?oc=5"
+  },
+  {
+   "q": "premium",
+   "t": "건보재정 여건 빠르게 악화되는데…\"건보 수가협상, 실제 의료비 지출 통제 효과 제한적\" - MEDI:GATE NEWS",
+   "s": "MEDI:GATE NEWS",
+   "su": "http://www.medigatenews.com",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE91TDcxQUs2ZUt5aF91RnNSSDhoY3hHRl93OUNBY2I1ZU5QSHpsZTA4azUtdDc2WjdQMDJBVFJhb0xWNm5HZkxMOFZZRFVvWW5uQ3pVbTd3?oc=5"
+  },
+  {
    "q": "kma",
    "t": "의정협의체 협상단장 지낸 이광래 의장 \"의료계 매번 정부에 지는 이유? 내부에 있다\" - MEDI:GATE NEWS",
    "s": "MEDI:GATE NEWS",
    "su": "https://www.medigatenews.com",
    "d": "2026-11-21",
    "l": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5HQWdZbEJ0elQ5YVI2aWNvWkU2cjc2dVYtdkVuWnB1VzdQQ3pDNVJieVBtRjFWWHFuZnB3bkktM3o2ck5WM1JYeTlrck9ub3dfWk13VnBzNA?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "원산협 \"비대면 약 인도·약 종류 검색 허용\"…정부에 건의 - 데일리팜",
+   "s": "데일리팜",
+   "su": "https://www.dailypharm.com",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tV1Q4bjNJc18zNnZhSHdsVDVhRXN5SklmcEJUT2Q4eXhMaUkxMnFWcHpnU2RPRkt2N3RzZWpTcS13U3ExcFlBUzNOaWtfeEVsZmhmRUJn?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "신경과의사회, 초진 비대면 진료 처방 제한 확대 촉구 : 정책 - 의약일보",
+   "s": "의약일보",
+   "su": "https://www.medicaldaily.co.kr",
+   "d": "2026-11-21",
+   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFA2OVJTUExYQUtfdnAwSEo1NnJKSnp1Zmh5ODN2bDBHbHo2Z0hMNTFsV09xc0RBVGVDRFdvTFlPeVBFbnVlQVFaQlp0ZXFNY094TzRqVg?oc=5"
   },
   {
    "q": "council",
@@ -26,27 +90,11 @@
   },
   {
    "q": "council",
-   "t": "큐로셀 '림카토', 보건복지부 건정심 상정…12월 1일부터 건강보험 적용 - 이투데이",
-   "s": "이투데이",
-   "su": "https://www.etoday.co.kr",
-   "d": "2026-11-20",
-   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB1c3pCLXU2aEt0ak1WdGNEV0duN2hwZTZ0QUxhaGxSOWVYakNYUmVYQVpRbE1jR0tNdzJFM1pFd2VVLWUtY2V3QjVGcHZCYWx1NWV4Ug?oc=5"
-  },
-  {
-   "q": "council",
    "t": "비대면 진료·조제 가산수가 내년 1월 폐지…건정심 소위 통과 - 데일리팜",
    "s": "데일리팜",
    "su": "https://www.dailypharm.com",
    "d": "2026-11-20",
    "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE56QVdpUDYtQk45VTJla3NfelJHYUZ3bGwtV2ZJdzZmWncxdXdpRmFBX19iSHY5S2NlNDVQM3RzNmhzTDlDcEhBMFlTeVNPX0NhRFQ3YzZ3?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "보건부는 새로운 단계에서 전국민 건강보험 제도를 시행하고 있습니다. - Vietnam.vn",
-   "s": "Vietnam.vn",
-   "su": "https://www.vietnam.vn",
-   "d": "2026-11-20",
-   "l": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRXZnQXpnSnRTLXB4YS1qMzZRRnJVUHUwdjl2N3RlNTNyUzV2SEViOUFYWkZKM0swVWJvVmdWd1hFeFM4bk0yOGk3V2hhV1hhSHFHM3VfX1BuQ2dpYVUwWHlWYzlrbEpLTE9oUEJJeUZ6YVBUY2dKQklHTE05MFpiN3QxVjl1aXF2NWFRMjdsQmZoQTUxWUZvbXdhZTB0QzN0TGNscDhMSUJ2UQ?oc=5"
   },
   {
    "q": "mohw",
@@ -97,6 +145,14 @@
    "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3WUtzbDA5b2F4OXBOM0k0dWtHRE9hcDFDU2FtTUZidjRnSzdpZTJEb3FhaUFxNDdYeDRYdFVSa1NFSlBzcEV1cjRtRlVNRlRuN3NXXzU1YkROZUE?oc=5"
   },
   {
+   "q": "kma",
+   "t": "건보공단 특사경 반대 5일째…의협 \"강제수사권 부여 중단\" - 메디파나뉴스",
+   "s": "메디파나뉴스",
+   "su": "https://www.medipana.com",
+   "d": "2026-11-20",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBvZU12VFVOWVZCejItNkVOTmx2Zk5WT0tFUFgxdEFLTUdhLThTS0RGbWdWYjJJWUtHalFmVHZyWmtYdDFsVjEybU5CYTZrYzlxa25yVThTelpqQjBYNlVuUWdnX2hlaC1DeUJJ?oc=5"
+  },
+  {
    "q": "kna",
    "t": "[게시판] 심평원, 병원·보험심사·가정 간호사회와 간담회 - 연합뉴스",
    "s": "연합뉴스",
@@ -105,12 +161,20 @@
    "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1NZmV5d2NZVzlSOVBBdk8xcGM2VVJ0MEl1WXA1SUZPRU1RQ0hsWThrZmoybHk1eGIwdDdEb0EzZkhEQmlMeEpDR21xOUlsZ1RGejFQYmJNY3Z3ck3SAWBBVV95cUxQeGNvZl9HSTNfUW5FWnROTld1djMwbGlmOWhLWkRBU2o0RkhhUkg5bDFFS0FSUjhvMVU1YXVQd2xVZ21MMElqeTlIc0V5bXhoUUhxU3lGQW5NTFR4VDR3VXU?oc=5"
   },
   {
-   "q": "auto",
-   "t": "자동차보험 '8주룰' 이중 규제 논란…한의계, 치료권 보장 위한 공동 대응 : 정책 - 의약일보",
-   "s": "의약일보",
-   "su": "https://www.medicaldaily.co.kr",
+   "q": "kpa",
+   "t": "대한약사회 “편의점약 확대보다 공공심야약국 확충이 먼저” - 더메디컬",
+   "s": "더메디컬",
+   "su": "https://www.themedical.kr",
    "d": "2026-11-20",
-   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1WTTcwWFhCSDNkcGNsRlBXZ3BKdUVHeFAtNnVBSUVfaUgyS1draktSaXdrcHljTk1PeXNpTUdsZUhwUnNLSTU2MjZzNTNOQS04ZHZlbQ?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5hSnJLWmg3bnhDaG8tRjBlaDdmUFV6WVlFdGk1MTFYSU9DSGl3V3RQM1RsWUxiUnRtVkVtQkhtc2h4ZHYzVmZyY0twcG9oTThzNE1URmtJMnlJTWdqWnBaMlpTWXcxazVWNHfSAW5BVV95cUxPMjJIcmZZMEZCeWtnamVoZGl0M0xuYnRjNkdJZ0M1TDBhTUVsRWRNdERDd0lLUmZmT2pfMVAtdnFOSzVsS1JLcTBFQ3RYSXJkV1RWQzFmUzFDZUhNM0xOQm1qUU1odTZ2Y0dyNE5SZw?oc=5"
+  },
+  {
+   "q": "tech",
+   "t": "개발원 제주센터-물리치료사협회 제주지부, 장애아동 지원체계 강화 맞손 - 에이블뉴스",
+   "s": "에이블뉴스",
+   "su": "https://www.ablenews.co.kr",
+   "d": "2026-11-20",
+   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0wZ0dqV1lKb2w4MnUza3c5OHNzVFVPNTI1eXhBbi0yNHRMMUhWVFBzaUttM2pRY2JjXzl2dlppVWRkVGdqVkFqZU5yRVBlM2VubFdMUVNyVnlLTDc5RTkzdzJZcjlPMmZXaVJ1dS1B0gFyQVVfeXFMUHVla2EwbkdxbGZ4UDc4LWpMOXNHYWdLWF9EcXAteXVKM3RHbnRkNnR2TElZUDdLTTM3ZHlVN2phTU9hckQ2MEM3S2pJejR3c29TWk1CRHd6bWFKd3FHRlljSVZTVkQycFZEV1BVZG5JNkhR?oc=5"
   },
   {
    "q": "auto",
@@ -177,6 +241,30 @@
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11015254"
   },
   {
+   "q": "council",
+   "t": "큐로셀 '림카토', 보건복지부 건정심 상정…12월 1일부터 건강보험 적용 - 이투데이",
+   "s": "이투데이",
+   "su": "https://www.etoday.co.kr",
+   "d": "2026-11-20",
+   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB1c3pCLXU2aEt0ak1WdGNEV0duN2hwZTZ0QUxhaGxSOWVYakNYUmVYQVpRbE1jR0tNdzJFM1pFd2VVLWUtY2V3QjVGcHZCYWx1NWV4Ug?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "보건부는 새로운 단계에서 전국민 건강보험 제도를 시행하고 있습니다. - Vietnam.vn",
+   "s": "Vietnam.vn",
+   "su": "https://www.vietnam.vn",
+   "d": "2026-11-20",
+   "l": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRXZnQXpnSnRTLXB4YS1qMzZRRnJVUHUwdjl2N3RlNTNyUzV2SEViOUFYWkZKM0swVWJvVmdWd1hFeFM4bk0yOGk3V2hhV1hhSHFHM3VfX1BuQ2dpYVUwWHlWYzlrbEpLTE9oUEJJeUZ6YVBUY2dKQklHTE05MFpiN3QxVjl1aXF2NWFRMjdsQmZoQTUxWUZvbXdhZTB0QzN0TGNscDhMSUJ2UQ?oc=5"
+  },
+  {
+   "q": "auto",
+   "t": "자동차보험 '8주룰' 이중 규제 논란…한의계, 치료권 보장 위한 공동 대응 : 정책 - 의약일보",
+   "s": "의약일보",
+   "su": "https://www.medicaldaily.co.kr",
+   "d": "2026-11-20",
+   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1WTTcwWFhCSDNkcGNsRlBXZ3BKdUVHeFAtNnVBSUVfaUgyS1draktSaXdrcHljTk1PeXNpTUdsZUhwUnNLSTU2MjZzNTNOQS04ZHZlbQ?oc=5"
+  },
+  {
    "q": "mohw",
    "t": "\"행위별 수가제 수명 끝났다\"…'가치 증명' 시험대 오른 의료기기 산업 - 약업신문",
    "s": "약업신문",
@@ -193,20 +281,12 @@
    "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBoYjIzUkR0cV9YVUcya3ZYM3pUTkxlT0dTTVpESWhkNFVRWWxKN184dFoyQ1NKbmVicWxCVU52YWpCb3RwOWllMWJqTklsdHJRQUtjc2FNaHVqVXFaMXQ4UUJCbnIta3JJVVljMzR3?oc=5"
   },
   {
-   "q": "reform",
-   "t": "복지부, 내년 의료급여관리사 306명 증원…예방·건강관리 강화 - 뉴시스",
-   "s": "뉴시스",
-   "su": "https://mobile.newsis.com",
+   "q": "mohw",
+   "t": "의료급여 9000억 '구멍‘ 올해 예산 확보 의지…'이자는 없다' - 의협신문",
+   "s": "의협신문",
+   "su": "https://www.doctorsnews.co.kr",
    "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9XODBITDRuMWJ1a2xQN2RDZVRTRlBYbTFtdW1qdTlPc1hvYkphRTljSklDZ3I4U3NGXzFaV2NWUW5KQ2dxczEwUTJGQmE2OVN4Rmp2cGdITzQ5VlE1b3N4eDZPYXNPU0NmUU15N0hFUFg0SktVY2lzetIBeEFVX3lxTE9XODBITDRuMWJ1a2xQN2RDZVRTRlBYbTFtdW1qdTlPc1hvYkphRTljSklDZ3I4U3NGXzFaV2NWUW5KQ2dxczEwUTJGQmE2OVN4Rmp2cGdITzQ5VlE1b3N4eDZPYXNPU0NmUU15N0hFUFg0SktVY2lzeg?oc=5"
-  },
-  {
-   "q": "reform",
-   "t": "복지부 “의료급여 지급 지연 3000억원 예비비로 연내 최대한 해소” - 후생신보",
-   "s": "후생신보",
-   "su": "http://www.whosaeng.com",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1lQWhBc08yTVRFQ0RYRmVFaXpMR2tDYV84M1lBNVNyZFRvNjVsaEtxMHdaVjhQODNIMFU3M3JRdFJKTEYz?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SRTRyQTNUWXcxeVE1dVFRNnM1ME9MbzJyXzRvUy0yLXU3UDlzTjVYTmxWVzNob092YnU1cU95Y2xHRUxpTWlFYnRmQ1RJdEtneGZGdndCbHBScjdZU255QmJLSkFLLXY0VlJTY0FrYTVGdw?oc=5"
   },
   {
    "q": "mohw",
@@ -218,19 +298,11 @@
   },
   {
    "q": "mohw",
-   "t": "의료급여 9000억 '구멍‘ 올해 예산 확보 의지…'이자는 없다' - 의협신문",
-   "s": "의협신문",
-   "su": "https://www.doctorsnews.co.kr",
+   "t": "난임 시술 건강보험 확대 추진…회당 300만원 치료비 부담 낮아지나 - 충청시사신문",
+   "s": "충청시사신문",
+   "su": "https://www.csnnews.co.kr",
    "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SRTRyQTNUWXcxeVE1dVFRNnM1ME9MbzJyXzRvUy0yLXU3UDlzTjVYTmxWVzNob092YnU1cU95Y2xHRUxpTWlFYnRmQ1RJdEtneGZGdndCbHBScjdZU255QmJLSkFLLXY0VlJTY0FrYTVGdw?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "연말 의료급여 미지급 불가피…복지부 “1월 중 해소” - 청년의사",
-   "s": "청년의사",
-   "su": "http://www.docdocdoc.co.kr",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBENDhibDJTb0MtaWRQRFJMMEh6bGxkMVk5TTZMX3A2RDVTNy12RHhJRlFrZ1A3RUhrb3lja045cDFnMkdwV1dibGlYZ1J0MF9yaWNSMGNYRkZ6dG80UHZaMDdVajVWMGVma1JzVUlUZ9IBc0FVX3lxTE51NG5wdTRuVXhMUnJPVXdHZGxPd1d6YjFvUW9mUHdBWGVpVjBlV2d1RXdXQTNjTWtRcUJ1N2xxN3Q5MG9QdUhBUFR6NXFCdXE0eUlnbjJiYnBqbTZYRjhIQWw0Q2NCbnRlOENkVkROeF9JMWM?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBIYk40QVBTcnlZSzVxWVhNVW9LZGZ1bUtobUJKUWF4WWw2NXBTSEdmb3dKSHBibU9keGlVUmlnU3pBWFIyd3ZCSVNmSTVadVFRUzNMeVZRUFFlVDJPV2h2T3FzNkdzckhvOE40?oc=5"
   },
   {
    "q": "mohw",
@@ -242,27 +314,11 @@
   },
   {
    "q": "mohw",
-   "t": "안 찾아간 실손보험금 최대 1조원…앱으로 찾아준다 - 노컷뉴스",
-   "s": "노컷뉴스",
-   "su": "https://www.nocutnews.co.kr",
+   "t": "연말 의료급여 미지급 불가피…복지부 “1월 중 해소” - 청년의사",
+   "s": "청년의사",
+   "su": "http://www.docdocdoc.co.kr",
    "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5hYmxtZWtVX0FPWW42dEtacmp1SllrMUxtNE51N21iT0dWU1pmSTl5R0k3UUJsc2ZIQ3RXYzMxQjMyWFlOdzh0S0JIZjVFd1QxZlE?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "잠자는 실손보험금 최대 1조원…\"내년부터 앱으로 찾을 수 있다\" - 아시아타임즈",
-   "s": "아시아타임즈",
-   "su": "https://www.asiatime.co.kr",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE4xX2hkWXpzb0t1U19FaUNQVzZCOE9RVkdXU0Q0dnRSMU91eFEyeXc3YW1BNHZvYTA2ME9vMjhjNkZlNm43cURoZVpXTElya2czN0NRRU9wOXl2Q0FIZHc?oc=5"
-  },
-  {
-   "q": "premium",
-   "t": "[데스크 칼럼] 건강보험료 동결한 정부, 국고지원 책임부터 다하라 - 헬스코리아뉴스",
-   "s": "헬스코리아뉴스",
-   "su": "https://www.hkn24.com",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBKUWVjV2docUwyRmxuUF9Cc04yNUxEZGpseWt6dkJoUGpyWUJQZUppb3FYMk5Kb2wxMVQ1SUV0OHZpTmkxWDJ6Q2JVNjNRcm9sTC1GcklRbGVBaU1JbGVudGdBZDBXek0?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBENDhibDJTb0MtaWRQRFJMMEh6bGxkMVk5TTZMX3A2RDVTNy12RHhJRlFrZ1A3RUhrb3lja045cDFnMkdwV1dibGlYZ1J0MF9yaWNSMGNYRkZ6dG80UHZaMDdVajVWMGVma1JzVUlUZ9IBc0FVX3lxTE51NG5wdTRuVXhMUnJPVXdHZGxPd1d6YjFvUW9mUHdBWGVpVjBlV2d1RXdXQTNjTWtRcUJ1N2xxN3Q5MG9QdUhBUFR6NXFCdXE0eUlnbjJiYnBqbTZYRjhIQWw0Q2NCbnRlOENkVkROeF9JMWM?oc=5"
   },
   {
    "q": "kha",
@@ -346,19 +402,19 @@
   },
   {
    "q": "hira",
-   "t": "심평원, AI로 진료비심사 혁신…심사 일관성 높이고 기간 단축 - 연합뉴스",
-   "s": "연합뉴스",
-   "su": "https://www.yna.co.kr",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5VDh6VXBlSzJFWFFVV1RvTXN2d2xrQVg4eDF5aWtvYjhzR3ZLODhhVklOaWtHRXZNY1NiMkxpRHlmaHE2OTlSMU82OXZ0NmJEeVBXVFM1ZE9UeWcyLUlRZdIBYEFVX3lxTFA5VDh6VXBlSzJFWFFVV1RvTXN2d2xrQVg4eDF5aWtvYjhzR3ZLODhhVklOaWtHRXZNY1NiMkxpRHlmaHE2OTlSMU82OXZ0NmJEeVBXVFM1ZE9UeWcyLUlRZQ?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "심평원, AI 활용 진료비 심사체계 개편…“올해 도수치료 ‘풍선효과’ 후속대책 마련” - 한겨레",
+   "t": "심평원, AI로 진료비 심사 개편…“올해 도수치료 ‘풍선효과’ 대책 마련” - 한겨레",
    "s": "한겨레",
    "su": "https://www.hani.co.kr",
    "d": "2026-11-19",
    "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBlcXhwTFZkWmxNS3U0OWI5NFluc3dvVDdLN25DdVFSQU1Gc1pGQzNGSS1RNGZHbHV2NkZRNWpaYUQxT0diUmlZQ3Nkb1NmUVlvb2c1NWRIekVQenl0RHZWSHNITWd3UQ?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "홍승권 \"AX로 심사 바꿔 필요한 곳에 의료비\"…심평원 혁신 구상 - 뉴스1",
+   "s": "뉴스1",
+   "su": "https://www.news1.kr",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBKZFc3VjJsWFV1RnJXZkRfNnZDOF9xQXlLVmRIbVFNZ3Nab1ktNkdVOGgwNWJOSDYtRmxwTTJRTm9DdEpyU2VWdF9pbjV2QUUxMVhmZWFOcHdrdkxV?oc=5"
   },
   {
    "q": "hira",
@@ -367,6 +423,14 @@
    "su": "https://biz.chosun.com",
    "d": "2026-11-19",
    "l": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOLWdrTE1iMWRJcW9WRkF1bkVXYjF2MHA3LTBfZTlQbW9iR0lJUDFfWnRmTmxfTW1Qb0NsNWZ5a2ZwS2p0UDNraUc1N3JFbnBBTGZQREw2QVlfT0NpSmZ3Ui1lVlpJTlpKNjdWb1J5TnFlN2VxaHBlYnNJNWcxaVgteUU4a0toaGfSAZsBQVVfeXFMTVFERTZfNHFMaFhSNGxBamxjSEFEZ0hvdmJKcVNhUnhENVIxNGxkUGExSVlnSGhqVVpsRGlGbkhMcHVOc3NuUGcySGU2R1o3ZUVST2RBUkV0LXBublNjT3d4Y3Q2X0tHQlZwcjkyMXd3dDlGY2NxZVFBWGxJWlB4ekFDbnotWURCTmQ3c0hzanZDbnUwVk9sRU15VHc?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "심평원, AI 도입해 심사 일관성 확보·약제 등재 단축 추진 : 정책 - 의약일보",
+   "s": "의약일보",
+   "su": "https://www.medicaldaily.co.kr",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1vQ0V3bG05S1E4aHlzT0pNeEFDNVpkVWtyN0liQkZSVk52MmhZRWFPa3JhaVFQU0MyX1JSbGV4TkI1UjBmUHFhWHJrZWRwUERYcW9Hcg?oc=5"
   },
   {
    "q": "watch",
@@ -401,6 +465,62 @@
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11015233"
   },
   {
+   "q": "reform",
+   "t": "복지부, 내년 의료급여관리사 306명 증원…예방·건강관리 강화 - 뉴시스",
+   "s": "뉴시스",
+   "su": "https://mobile.newsis.com",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9XODBITDRuMWJ1a2xQN2RDZVRTRlBYbTFtdW1qdTlPc1hvYkphRTljSklDZ3I4U3NGXzFaV2NWUW5KQ2dxczEwUTJGQmE2OVN4Rmp2cGdITzQ5VlE1b3N4eDZPYXNPU0NmUU15N0hFUFg0SktVY2lzetIBeEFVX3lxTE9XODBITDRuMWJ1a2xQN2RDZVRTRlBYbTFtdW1qdTlPc1hvYkphRTljSklDZ3I4U3NGXzFaV2NWUW5KQ2dxczEwUTJGQmE2OVN4Rmp2cGdITzQ5VlE1b3N4eDZPYXNPU0NmUU15N0hFUFg0SktVY2lzeg?oc=5"
+  },
+  {
+   "q": "reform",
+   "t": "복지부 “의료급여 지급 지연 3000억원 예비비로 연내 최대한 해소” - 후생신보",
+   "s": "후생신보",
+   "su": "http://www.whosaeng.com",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1lQWhBc08yTVRFQ0RYRmVFaXpMR2tDYV84M1lBNVNyZFRvNjVsaEtxMHdaVjhQODNIMFU3M3JRdFJKTEYz?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "안 찾아간 실손보험금 최대 1조원…앱으로 찾아준다 - 노컷뉴스",
+   "s": "노컷뉴스",
+   "su": "https://www.nocutnews.co.kr",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5hYmxtZWtVX0FPWW42dEtacmp1SllrMUxtNE51N21iT0dWU1pmSTl5R0k3UUJsc2ZIQ3RXYzMxQjMyWFlOdzh0S0JIZjVFd1QxZlE?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "잠자는 실손보험금 최대 1조원…\"내년부터 앱으로 찾을 수 있다\" - 아시아타임즈",
+   "s": "아시아타임즈",
+   "su": "https://www.asiatime.co.kr",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE4xX2hkWXpzb0t1U19FaUNQVzZCOE9RVkdXU0Q0dnRSMU91eFEyeXc3YW1BNHZvYTA2ME9vMjhjNkZlNm43cURoZVpXTElya2czN0NRRU9wOXl2Q0FIZHc?oc=5"
+  },
+  {
+   "q": "premium",
+   "t": "[데스크 칼럼] 건강보험료 동결한 정부, 국고지원 책임부터 다하라 - 헬스코리아뉴스",
+   "s": "헬스코리아뉴스",
+   "su": "https://www.hkn24.com",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBKUWVjV2docUwyRmxuUF9Cc04yNUxEZGpseWt6dkJoUGpyWUJQZUppb3FYMk5Kb2wxMVQ1SUV0OHZpTmkxWDJ6Q2JVNjNRcm9sTC1GcklRbGVBaU1JbGVudGdBZDBXek0?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "심평원, AI로 진료비심사 혁신…심사 일관성 높이고 기간 단축 - 연합뉴스",
+   "s": "연합뉴스",
+   "su": "https://www.yna.co.kr",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5VDh6VXBlSzJFWFFVV1RvTXN2d2xrQVg4eDF5aWtvYjhzR3ZLODhhVklOaWtHRXZNY1NiMkxpRHlmaHE2OTlSMU82OXZ0NmJEeVBXVFM1ZE9UeWcyLUlRZdIBYEFVX3lxTFA5VDh6VXBlSzJFWFFVV1RvTXN2d2xrQVg4eDF5aWtvYjhzR3ZLODhhVklOaWtHRXZNY1NiMkxpRHlmaHE2OTlSMU82OXZ0NmJEeVBXVFM1ZE9UeWcyLUlRZQ?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "심평원, AI 활용 진료비 심사체계 개편…“올해 도수치료 ‘풍선효과’ 후속대책 마련” - 한겨레",
+   "s": "한겨레",
+   "su": "https://www.hani.co.kr",
+   "d": "2026-11-19",
+   "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBlcXhwTFZkWmxNS3U0OWI5NFluc3dvVDdLN25DdVFSQU1Gc1pGQzNGSS1RNGZHbHV2NkZRNWpaYUQxT0diUmlZQ3Nkb1NmUVlvb2c1NWRIekVQenl0RHZWSHNITWd3UQ?oc=5"
+  },
+  {
    "q": "council",
    "t": "“노동자 대표를 정부가 고르나”…의료연대본부, 복지부 위원회 구성 비판 - 참세상",
    "s": "참세상",
@@ -415,30 +535,6 @@
    "su": "http://m.dailymedipharm.com",
    "d": "2026-11-19",
    "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1hNjBDT0F2Q19hOWhtU3djYWdCUDdfWFBYSUdHS3dTSkpHUFdOR1ozQzRBQU50WDVJTnUtdnpuS0pPa2VIZUV6QUtaTVJudzRta2FlT29vVW5nWVV4U3VXbWJkNDgyV1lWZm5XN0tn?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "난임 시술 건강보험 확대 추진…회당 300만원 치료비 부담 낮아지나 - 충청시사신문",
-   "s": "충청시사신문",
-   "su": "https://www.csnnews.co.kr",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBIYk40QVBTcnlZSzVxWVhNVW9LZGZ1bUtobUJKUWF4WWw2NXBTSEdmb3dKSHBibU9keGlVUmlnU3pBWFIyd3ZCSVNmSTVadVFRUzNMeVZRUFFlVDJPV2h2T3FzNkdzckhvOE40?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "심평원, AI로 진료비 심사 개편…“올해 도수치료 ‘풍선효과’ 대책 마련” - 한겨레",
-   "s": "한겨레",
-   "su": "https://www.hani.co.kr",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBlcXhwTFZkWmxNS3U0OWI5NFluc3dvVDdLN25DdVFSQU1Gc1pGQzNGSS1RNGZHbHV2NkZRNWpaYUQxT0diUmlZQ3Nkb1NmUVlvb2c1NWRIekVQenl0RHZWSHNITWd3UQ?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "홍승권 \"AX로 심사 바꿔 필요한 곳에 의료비\"…심평원 혁신 구상 - 뉴스1",
-   "s": "뉴스1",
-   "su": "https://www.news1.kr",
-   "d": "2026-11-19",
-   "l": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBKZFc3VjJsWFV1RnJXZkRfNnZDOF9xQXlLVmRIbVFNZ3Nab1ktNkdVOGgwNWJOSDYtRmxwTTJRTm9DdEpyU2VWdF9pbjV2QUUxMVhmZWFOcHdrdkxV?oc=5"
   },
   {
    "q": "fee",
@@ -458,27 +554,11 @@
   },
   {
    "q": "reform",
-   "t": "전국의사협 \"검체검사 수가 개편, 검사 시행률·만성질환 관리 지속성 미치는 영향 검증해야\" - MEDI:GATE NEWS",
-   "s": "MEDI:GATE NEWS",
-   "su": "https://m.medigatenews.com",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5UaV9iZ0p1VFZoQXp2T29YdWtkM0pkX2VnaUFfREF4RlRFdzZuSGcyNzZSZ0JEZ2VjNHpZbDhkcnVhampfLVlxelpJOVVPdjJvU0lJ?oc=5"
-  },
-  {
-   "q": "reform",
    "t": "의료 AI 투자 확대 복지부…건보 보상체계 개편·병원 실증 연계 - 메디칼타임즈",
    "s": "메디칼타임즈",
    "su": "https://www.medicaltimes.com",
    "d": "2026-11-18",
    "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE90SUhVYjVPalJoYTVuSXQ4OTNmZXlGT0Z3UVVicHZ5UVRFUkNuRXdySzU2Mm9xSDJ2UEhRVXAtVFNTTHVleWxvNDlYN3E3UlhyTFNYbFFIX1pIS3Z4X293WXBXSk1TOHBSLTJjN25QM20?oc=5"
-  },
-  {
-   "q": "chronic",
-   "t": "고혈압·당뇨병 의료비 지원 52억 삭감 논란…66만명 영향 우려 - 푸드투데이",
-   "s": "푸드투데이",
-   "su": "https://www.foodtoday.or.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzSXE1Q3JKV1k1bHBCcjhFc2s2ajVhb01JQ0tFdXhPRXM2ektheFM1eGhTblpXX3pzMHZHMGRJV0pkc2FadHhxRnM1Y1MwQ2FQbk02SzRvS05YQmJaQ3JzZ01KenB3dw?oc=5"
   },
   {
    "q": "chronic",
@@ -498,11 +578,123 @@
   },
   {
    "q": "mohw",
+   "t": "재한동포 사회보험 사각지대 해소 논의…“보험료 낸 만큼 권리 보장해야” - 세계한인신문",
+   "s": "세계한인신문",
+   "su": "https://www.oktimes.co.kr",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrc0Q4dmlMYUZoSjJnRVFsbDdIa2ZWRlQ0dzFBQWxpZE5lWTVnd0NFQ1NmdHRlRDBXR19ZaFkxYmNZVWQwNE5XRmRUREVMWU9lM19vSk1vc0MyOVdLdUE4YTFxQW4wQkdOeklR?oc=5"
+  },
+  {
+   "q": "mohw",
    "t": "PV 약가인하 차액 환급 '유형 다' 제외…재평가 약제 사전협상 2월 - 히트뉴스",
    "s": "히트뉴스",
    "su": "https://www.hitnews.co.kr",
    "d": "2026-11-18",
    "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NNE5jVzN2OVRBV2xXNVAxRjhGOWJQRnZmRUxHVEh2ZDFwcjV3cmY0MHJwWmM2TV9CWmZWYUNmdlBpSXFLVDZFRnhTV3ZPUGdyMExCNElsSElvS09QOGlXeVFxbUVEc1lybjVF?oc=5"
+  },
+  {
+   "q": "kna",
+   "t": "“간호사 1명당 환자 5명 법제화해야\"…대한간호협회 ‘4대 혁신’ 선포” - 시사타임즈",
+   "s": "시사타임즈",
+   "su": "http://www.timesisa.com",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRDZLNHp2WW5NaGVnOUQ3aUMzdmlUQ2h2ZHczVmtXZG1Pem5wUjlpUmZTR1hSdHB6dUlGbHRoS2VzUkE4bjRlNC1nbThaaXFDRTVhT2x2a0w0M3hkZzlsRXphTWY4NUUzOVBSU3AwckFhZ0l5a1U4RDRYWVFxeFNtVA?oc=5"
+  },
+  {
+   "q": "kna",
+   "t": "\"간호사 역할 커졌는데 보상은?\"…간협, 보상체계 개편 촉구 - 청년의사",
+   "s": "청년의사",
+   "su": "http://www.docdocdoc.co.kr",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5rSjZNaDl6NHJWUnAxdTd2dnNwMXhtWlMxaHhCbVNoLUFZSkVnblpJdWZXTUdqdmtheGhYamI1MzljNW00TVZpZ1dZRmpLbHVIb1FfeXFMSDBXU2haZndJajFSUmVUaE40VFoxM29YY9IBc0FVX3lxTE1maU81aXhmYUdmM3gyLTh1TVVhWnNEQ1RwcEZnMUl1bGZQMlVId3VkUTdta3JCcW93VXJjcXp2S2E5MzFtZGdXQTUtdlF1Q3YySmVFOUNMX1FTUkNzODNvLUtJQ1VDQ2loLU5ldUI4dDc3aTA?oc=5"
+  },
+  {
+   "q": "kna",
+   "t": "\"간호사 1명당 환자 5명 법제화해야\" 간협이 내놓은 혁신안은? - 메디칼업저버",
+   "s": "메디칼업저버",
+   "su": "https://www.monews.co.kr",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBYUkdoYmFIMDlBOUVGeUtuTVhRdFZndnBYM3lEdW5HZWpGRko3ZkJvWlFXTndQRHdVZzZaWV9KMjNjYXVRbll2RG93NEExcW5wR2hTWWY5X1pKUVk2eDF4S05WdmZpZ19HTmlj?oc=5"
+  },
+  {
+   "q": "tech",
+   "t": "한국장애인개발원 제주센터-대한물리치료사협회 제주지부, 업무협약 체결 - 소셜포커스",
+   "s": "소셜포커스",
+   "su": "https://www.socialfocus.co.kr",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4yMEFTVmx6ckYxZGtYazlSSnhRNk44WmZFbGdveHMxbnVZdE9EM0ZQZkpvOWd0RkwzNFZYdWFNcjk1am1HeEdTcE9qWDdjay1ydFl1M3ZZejV3TUdUbDN6YW9RMnpGSFJQdDJSOVVjSlg?oc=5"
+  },
+  {
+   "q": "tech",
+   "t": "도수치료 관리급여 전환 후 물리치료사 10명 중 7명 “월급 깎였다” - 병원신문",
+   "s": "병원신문",
+   "su": "https://www.khanews.com",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5xVkVaU0s5cU1kMHZWakFPRlVfb2tIdjQxcWZPbE5DcXoxU2t3TC1SalFTOVhPZzNTdU5DMHNUVXFUejVBS2hpZGU4dEU4c2ZLcG40dWhJTnkwUHBtUG9GdllsalROaTBCTkE?oc=5"
+  },
+  {
+   "q": "tech",
+   "t": "비활동 치과위생사 37% “6개월 내 재취업 희망” - 치의신보",
+   "s": "치의신보",
+   "su": "https://www.dailydental.co.kr",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBfakJLQ3liY0lTb2JYaFQzdEZDbTNEWktWQ2Nna3VPSDBCaFBYYnJNWHg1WU1oak84MzRvZ1REZWVIT05LMm8yZk9GazVhaWRJUkFmdndlMWlNY1R2dTVLTlUwN0VULUls?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "까다로워지는 약가우대 '사후관리'...2028년부터 전수점검 - 메디칼타임즈",
+   "s": "메디칼타임즈",
+   "su": "https://www.medicaltimes.com",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5rbHNRZDNfd3VWUTV0YmZubmZ1eG1zaXZVWmxtSmYxMU1RejUzdjJuZ0l4UTJTU2xqV21BSWpaVDc5WERCOHVrQ0NIeERMWVBiRTVVeUtLbDVqYmtoclFBajA3NV91X25BNFdjYnpYWTE?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "메틸페니데이트, 청소년 처방 환자 5년 새 2.8배 증가 - 경기메디뉴스",
+   "s": "경기메디뉴스",
+   "su": "http://www.ggmedinews.com",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU216UWllaGF4ZUlpMTlPNk9VYVVZNGtCZFhBYkpBQkRERW1zenBLWGF4d2lkYXJnNVE4d1lFME1SR1lUcjMtU3UxUEVXeEpseGRWdmtKckE0YWhRUEVZRWU1Ml9EYXZEZHc?oc=5"
+  },
+  {
+   "q": "notice",
+   "t": "2027년도 「필수의료 간호사 양성지원」사업 위탁기관 선정 공모(연장)",
+   "s": "보건복지부",
+   "su": "https://www.mohw.go.kr",
+   "d": "2026-11-18",
+   "l": "https://www.mohw.go.kr/board.es?mid=a10501010000&bid=0003&act=view&list_no=1492579&tag=&nPage=1"
+  },
+  {
+   "q": "notice",
+   "t": "[2026-21호] 민간자격 등록폐지 공고",
+   "s": "보건복지부",
+   "su": "https://www.mohw.go.kr",
+   "d": "2026-11-18",
+   "l": "https://www.mohw.go.kr/board.es?mid=a10501010000&bid=0003&act=view&list_no=1492578&tag=&nPage=1"
+  },
+  {
+   "q": "notice",
+   "t": "약제 상한금액 재평가 결과 사전열람 일정 안내",
+   "s": "건강보험심사평가원",
+   "su": "https://www.hira.or.kr",
+   "d": "2026-11-18",
+   "l": "https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100&brdScnBltNo=4&brdBltNo=12351&pageIndex=1&pageIndex2=1"
+  },
+  {
+   "q": "reform",
+   "t": "전국의사협 \"검체검사 수가 개편, 검사 시행률·만성질환 관리 지속성 미치는 영향 검증해야\" - MEDI:GATE NEWS",
+   "s": "MEDI:GATE NEWS",
+   "su": "https://m.medigatenews.com",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5UaV9iZ0p1VFZoQXp2T29YdWtkM0pkX2VnaUFfREF4RlRFdzZuSGcyNzZSZ0JEZ2VjNHpZbDhkcnVhampfLVlxelpJOVVPdjJvU0lJ?oc=5"
+  },
+  {
+   "q": "chronic",
+   "t": "고혈압·당뇨병 의료비 지원 52억 삭감 논란…66만명 영향 우려 - 푸드투데이",
+   "s": "푸드투데이",
+   "su": "https://www.foodtoday.or.kr",
+   "d": "2026-11-18",
+   "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzSXE1Q3JKV1k1bHBCcjhFc2s2ajVhb01JQ0tFdXhPRXM2ektheFM1eGhTblpXX3pzMHZHMGRJV0pkc2FadHhxRnM1Y1MwQ2FQbk02SzRvS05YQmJaQ3JzZ01KenB3dw?oc=5"
   },
   {
    "q": "premium",
@@ -538,107 +730,11 @@
   },
   {
    "q": "kna",
-   "t": "\"간호사 역할 커졌는데 보상은?\"…간협, 보상체계 개편 촉구 - 청년의사",
-   "s": "청년의사",
-   "su": "http://www.docdocdoc.co.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5rSjZNaDl6NHJWUnAxdTd2dnNwMXhtWlMxaHhCbVNoLUFZSkVnblpJdWZXTUdqdmtheGhYamI1MzljNW00TVZpZ1dZRmpLbHVIb1FfeXFMSDBXU2haZndJajFSUmVUaE40VFoxM29YY9IBc0FVX3lxTE1maU81aXhmYUdmM3gyLTh1TVVhWnNEQ1RwcEZnMUl1bGZQMlVId3VkUTdta3JCcW93VXJjcXp2S2E5MzFtZGdXQTUtdlF1Q3YySmVFOUNMX1FTUkNzODNvLUtJQ1VDQ2loLU5ldUI4dDc3aTA?oc=5"
-  },
-  {
-   "q": "kna",
-   "t": "“간호사 1명당 환자 5명 법제화해야\"…대한간호협회 ‘4대 혁신’ 선포” - 시사타임즈",
-   "s": "시사타임즈",
-   "su": "http://www.timesisa.com",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRDZLNHp2WW5NaGVnOUQ3aUMzdmlUQ2h2ZHczVmtXZG1Pem5wUjlpUmZTR1hSdHB6dUlGbHRoS2VzUkE4bjRlNC1nbThaaXFDRTVhT2x2a0w0M3hkZzlsRXphTWY4NUUzOVBSU3AwckFhZ0l5a1U4RDRYWVFxeFNtVA?oc=5"
-  },
-  {
-   "q": "kna",
-   "t": "\"간호사 1명당 환자 5명 법제화해야\" 간협이 내놓은 혁신안은? - 메디칼업저버",
-   "s": "메디칼업저버",
-   "su": "https://www.monews.co.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBYUkdoYmFIMDlBOUVGeUtuTVhRdFZndnBYM3lEdW5HZWpGRko3ZkJvWlFXTndQRHdVZzZaWV9KMjNjYXVRbll2RG93NEExcW5wR2hTWWY5X1pKUVk2eDF4S05WdmZpZ19HTmlj?oc=5"
-  },
-  {
-   "q": "kna",
    "t": "간호협회 “간호사 1명당 환자 5명”…적정 배치기준 법제화 촉구 - 팍스메디컬뉴스",
    "s": "팍스메디컬뉴스",
    "su": "https://www.paxmedicalnews.com",
    "d": "2026-11-18",
    "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAtUGlhWFUtcVlxWXhRaHgtcmdmUzZSaWVOZGpvY1MyajNndmZNbUxzNGpfX3phaVJPSExmdVVwd0V3bjBUREtLUkd6cndRek9ka1Q5X05TcW56YmpWOGszT3lEZEFmQ2FVTVZtYjVfQmQ?oc=5"
-  },
-  {
-   "q": "tech",
-   "t": "개발원 제주센터-물리치료사협회 제주지부, 장애아동 지원체계 강화 맞손 - 에이블뉴스",
-   "s": "에이블뉴스",
-   "su": "https://www.ablenews.co.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0wZ0dqV1lKb2w4MnUza3c5OHNzVFVPNTI1eXhBbi0yNHRMMUhWVFBzaUttM2pRY2JjXzl2dlppVWRkVGdqVkFqZU5yRVBlM2VubFdMUVNyVnlLTDc5RTkzdzJZcjlPMmZXaVJ1dS1B0gFyQVVfeXFMUHVla2EwbkdxbGZ4UDc4LWpMOXNHYWdLWF9EcXAteXVKM3RHbnRkNnR2TElZUDdLTTM3ZHlVN2phTU9hckQ2MEM3S2pJejR3c29TWk1CRHd6bWFKd3FHRlljSVZTVkQycFZEV1BVZG5JNkhR?oc=5"
-  },
-  {
-   "q": "tech",
-   "t": "한국장애인개발원 제주센터-대한물리치료사협회 제주지부, 업무협약 체결 - 소셜포커스",
-   "s": "소셜포커스",
-   "su": "https://www.socialfocus.co.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4yMEFTVmx6ckYxZGtYazlSSnhRNk44WmZFbGdveHMxbnVZdE9EM0ZQZkpvOWd0RkwzNFZYdWFNcjk1am1HeEdTcE9qWDdjay1ydFl1M3ZZejV3TUdUbDN6YW9RMnpGSFJQdDJSOVVjSlg?oc=5"
-  },
-  {
-   "q": "tech",
-   "t": "도수치료 관리급여 전환 후 물리치료사 10명 중 7명 “월급 깎였다” - 병원신문",
-   "s": "병원신문",
-   "su": "https://www.khanews.com",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5xVkVaU0s5cU1kMHZWakFPRlVfb2tIdjQxcWZPbE5DcXoxU2t3TC1SalFTOVhPZzNTdU5DMHNUVXFUejVBS2hpZGU4dEU4c2ZLcG40dWhJTnkwUHBtUG9GdllsalROaTBCTkE?oc=5"
-  },
-  {
-   "q": "tech",
-   "t": "비활동 치과위생사 37% “6개월 내 재취업 희망” - 치의신보",
-   "s": "치의신보",
-   "su": "https://www.dailydental.co.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBfakJLQ3liY0lTb2JYaFQzdEZDbTNEWktWQ2Nna3VPSDBCaFBYYnJNWHg1WU1oak84MzRvZ1REZWVIT05LMm8yZk9GazVhaWRJUkFmdndlMWlNY1R2dTVLTlUwN0VULUls?oc=5"
-  },
-  {
-   "q": "watch",
-   "t": "메틸페니데이트, 청소년 처방 환자 5년 새 2.8배 증가 - 경기메디뉴스",
-   "s": "경기메디뉴스",
-   "su": "http://www.ggmedinews.com",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU216UWllaGF4ZUlpMTlPNk9VYVVZNGtCZFhBYkpBQkRERW1zenBLWGF4d2lkYXJnNVE4d1lFME1SR1lUcjMtU3UxUEVXeEpseGRWdmtKckE0YWhRUEVZRWU1Ml9EYXZEZHc?oc=5"
-  },
-  {
-   "q": "notice",
-   "t": "2027년도 「필수의료 간호사 양성지원」사업 위탁기관 선정 공모(연장)",
-   "s": "보건복지부",
-   "su": "https://www.mohw.go.kr",
-   "d": "2026-11-18",
-   "l": "https://www.mohw.go.kr/board.es?mid=a10501010000&bid=0003&act=view&list_no=1492579&tag=&nPage=1"
-  },
-  {
-   "q": "notice",
-   "t": "[2026-21호] 민간자격 등록폐지 공고",
-   "s": "보건복지부",
-   "su": "https://www.mohw.go.kr",
-   "d": "2026-11-18",
-   "l": "https://www.mohw.go.kr/board.es?mid=a10501010000&bid=0003&act=view&list_no=1492578&tag=&nPage=1"
-  },
-  {
-   "q": "notice",
-   "t": "약제 상한금액 재평가 결과 사전열람 일정 안내",
-   "s": "건강보험심사평가원",
-   "su": "https://www.hira.or.kr",
-   "d": "2026-11-18",
-   "l": "https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100&brdScnBltNo=4&brdBltNo=12351&pageIndex=1&pageIndex2=1"
-  },
-  {
-   "q": "watch",
-   "t": "까다로워지는 약가우대 '사후관리'...2028년부터 전수점검 - 메디칼타임즈",
-   "s": "메디칼타임즈",
-   "su": "https://www.medicaltimes.com",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5rbHNRZDNfd3VWUTV0YmZubmZ1eG1zaXZVWmxtSmYxMU1RejUzdjJuZ0l4UTJTU2xqV21BSWpaVDc5WERCOHVrQ0NIeERMWVBiRTVVeUtLbDVqYmtoclFBajA3NV91X25BNFdjYnpYWTE?oc=5"
   },
   {
    "q": "reform",
@@ -647,14 +743,6 @@
    "su": "https://www.kyeonggi.com",
    "d": "2026-11-18",
    "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9oc1JDbDVrWWQ5V3l0YjBJd2RYNGpIcGZHLVBFUTlpOVhOZURvWWRaSUltZkJneEgxNWdfLTNzdXppeVhwcmFhZlVIWGxuZVhXUjhWNkh4MXF1TE0?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "재한동포 사회보험 사각지대 해소 논의…“보험료 낸 만큼 권리 보장해야” - 세계한인신문",
-   "s": "세계한인신문",
-   "su": "https://www.oktimes.co.kr",
-   "d": "2026-11-18",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrc0Q4dmlMYUZoSjJnRVFsbDdIa2ZWRlQ0dzFBQWxpZE5lWTVnd0NFQ1NmdHRlRDBXR19ZaFkxYmNZVWQwNE5XRmRUREVMWU9lM19vSk1vc0MyOVdLdUE4YTFxQW4wQkdOeklR?oc=5"
   },
   {
    "q": "mohw",
@@ -730,6 +818,14 @@
   },
   {
    "q": "kna",
+   "t": "'간호사 1명당 환자 5명 법제화'…2026 간호정책 선포식 [TF사진관] - 더팩트",
+   "s": "더팩트",
+   "su": "https://news.tf.co.kr",
+   "d": "2026-11-17",
+   "l": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1GV3pVbnpJdWhxUm5RMDFoRGtBR2RtREEzX1J6R1BDZHMxVmlZTEZ5ZTdNY0VlWExwNUo1alg4M1NRS3BxWGhJTlV2cUJFd1FoYTIzSzFFWk5iTEJEQ1HSAVhBVV95cUxOQ3NtR2ZuRHNGby1wTDQxMWplUFZBLTRnZmlEV0VLT2tzR3JVczhJUW1fOEJzQTBUUjFlbWNmMmtPc0tjLWQyWHV6ZUcwS3pDSW9oSmo3cUpT?oc=5"
+  },
+  {
+   "q": "kna",
    "t": "\"간호사 1명당 환자 5명\"…간호협회, 적정 인력배치 법제화 촉구 - 뉴스1",
    "s": "뉴스1",
    "su": "https://www.news1.kr",
@@ -759,14 +855,6 @@
    "su": "https://www.doctorsnews.co.kr",
    "d": "2026-11-17",
    "l": "https://news.google.com/rss/articles/CBMickFVX3lxTFBWb0U3NGVOYVFhUE0zR2dTcEVoV1lWSmZqTGpESlBseU5mVGQwRWdoUEpKNDlwVy1LYnhLb2pMcF9KRDFLWFZ0ODdFSVZhZXIyY1FJYkt4SFQ3LUNZb2FUaFdpNG85eWJjeFFFblFzRVlMZw?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "RSA 약가유연계약 확대 검토…기등재 재평가 내년 3월 본협상 - 메디소비자뉴스",
-   "s": "메디소비자뉴스",
-   "su": "http://www.medisobizanews.com",
-   "d": "2026-11-17",
-   "l": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9EQlhUd2cwQWRYQ2hpZzU1eW1tLTE4OTduNXFGNVlYSEZ5Y3g1STRRLXFmRUZPOVRKNTdUa3JNRkFEMmlxQ1ZkMk54LVRoR1E5ajFheTZZS250eVlsYXgyblRWR2J0OUJ2MDM1WTJ5Rjc0dTN2MEHSAXZBVV95cUxPREJYVHdnMEFkWENoaWc1NXltbS0xODk3bjVxRjVZWEhGeWN4NUk0US1xZkVGTzlUSjU3VGtyTUZBRDJpcUNWZDJOeC1UaEdROWoxYXk2WUtudHlZbGF4Mm5UVkdidDlCdjAzNVkyeUY3NHUzdjBB?oc=5"
   },
   {
    "q": "watch",
@@ -801,6 +889,14 @@
    "l": "https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100&brdScnBltNo=4&brdBltNo=12349&pageIndex=1&pageIndex2=1"
   },
   {
+   "q": "hira",
+   "t": "RSA 약가유연계약 확대 검토…기등재 재평가 내년 3월 본협상 - 메디소비자뉴스",
+   "s": "메디소비자뉴스",
+   "su": "http://www.medisobizanews.com",
+   "d": "2026-11-17",
+   "l": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9EQlhUd2cwQWRYQ2hpZzU1eW1tLTE4OTduNXFGNVlYSEZ5Y3g1STRRLXFmRUZPOVRKNTdUa3JNRkFEMmlxQ1ZkMk54LVRoR1E5ajFheTZZS250eVlsYXgyblRWR2J0OUJ2MDM1WTJ5Rjc0dTN2MEHSAXZBVV95cUxPREJYVHdnMEFkWENoaWc1NXltbS0xODk3bjVxRjVZWEhGeWN4NUk0US1xZkVGTzlUSjU3VGtyTUZBRDJpcUNWZDJOeC1UaEdROWoxYXk2WUtudHlZbGF4Mm5UVkdidDlCdjAzNVkyeUY3NHUzdjBB?oc=5"
+  },
+  {
    "q": "mohw",
    "t": "복지부 \"의료급여 진료비 9000억원 부족\"…지급 지연에 의료계 '우려' - MEDI:GATE NEWS",
    "s": "MEDI:GATE NEWS",
@@ -815,14 +911,6 @@
    "su": "https://www.fntoday.co.kr",
    "d": "2026-11-17",
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8zOWJhMFJLTW5fdGRSV0JIcFJCZnk4MjVneFdTeHZhRHV2VXlpeHk3dlJJOFJPRjJzTVVDYUVTMWJicFA2a3JUY0Jjb19rMmxqX212Nzl0ZVc4VVc2WGJ1dU9hZVRCN1pWNHdQcg?oc=5"
-  },
-  {
-   "q": "kna",
-   "t": "'간호사 1명당 환자 5명 법제화'…2026 간호정책 선포식 [TF사진관] - 더팩트",
-   "s": "더팩트",
-   "su": "https://m.tf.co.kr",
-   "d": "2026-11-17",
-   "l": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5Dc21HZm5Ec0ZvLXBMNDExamVQVkEtNGdmaURXRUtPa3NHclVzOElRbV84QnNBMFRSMWVtY2Yya09zS2MtZDJYdXplRzBLekNJb2hKajdxSlPSAVhBVV95cUxOQ3NtR2ZuRHNGby1wTDQxMWplUFZBLTRnZmlEV0VLT2tzR3JVczhJUW1fOEJzQTBUUjFlbWNmMmtPc0tjLWQyWHV6ZUcwS3pDSW9oSmo3cUpT?oc=5"
   },
   {
    "q": "tech",
@@ -897,20 +985,20 @@
    "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE52MFFtall3ZzBwOWhpalkwUklVT0tKOFNJa0V0UERKc3RWcXRIUUxXQ0NvRlJoUUMzQ1F0V3owUC1Hc3dISTI4Y0RNaVp0OGIxVjg5S3FuMnE1UExUSTZGOXliWnVGOC1Ld1gxZEt30gFyQVVfeXFMTkFSRGdiekJQZ3lZU2FLQnBWRFVjWXRqLTUxUS1xcGk3WEUwS0FIRTRCMk4zQ2xENEF6cGxKYnQ0eXh3SFJxSEh2cEY2WmFUelVNR0gwaHR6ZWV0N3ExQU1abU1kZFdnbUc2a0VHRHpodVJR?oc=5"
   },
   {
+   "q": "kha",
+   "t": "메스를 든 경영자, 대한병원협회 최초 여성 수장 유경하 - 이대학보",
+   "s": "이대학보",
+   "su": "https://inews.ewha.ac.kr",
+   "d": "2026-11-16",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE93eEROdGtmT3JsLXd2RENtWXphLXYzN1pSVW9odjV1YVptamNaSEtBeG9UR196a3dMR2JvRDVfQlJhQnZsdXNsNzY5UzZmMW93NjEzZmZBQlNYUWdfNWVtS2pPLTZVZWtBTUHSAW5BVV95cUxNSi1GM0lVdjBlMUNIc2lraWZSQk1WQ3FxSWZBZW42WGVrMnJBcGEtdFZEc1ZXd1dDNlRYTzFldjR4THJYdnpLcGZvT2FMNDhsYi1SRFdxSURwQ2xNUmVCTjhCT0E4NDRfWXlGTm1XUQ?oc=5"
+  },
+  {
    "q": "kma",
    "t": "[포토] 건보공단 특사경 도입 반대 입장 밝히는 의협 부회장 - 파이낸스투데이",
    "s": "파이낸스투데이",
    "su": "https://www.fntoday.co.kr",
    "d": "2026-11-16",
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBWWHVSSXR5dF9KUERmZGFaOU95LWl3LVdOZmVQblFBQ2Etb2pFQVV4elR4R3I4cXpoTVNvMm9WUy14NVgteHJ3bml5VjdlSlI5QzFxd0ZScWdqMm95ZlZFRTIxOUNkTjBPTUd1RQ?oc=5"
-  },
-  {
-   "q": "kma",
-   "t": "[기자수첩] 의료계, 건보공단 특사경 도입 왜 반대하나 - 의학신문",
-   "s": "의학신문",
-   "su": "https://www.bosa.co.kr",
-   "d": "2026-11-16",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAzcWw0MHp0NExMZ28tQjR0UDZsbGNTbGNxckRqQkh4cHl0dm12UWJ4NkJyVHZodmRoU2gybnpEeHJ0Mktmb1p6b0dDd1JsYkJ3Wll0c29YalZhS1VGUVkxUlAtSnhYZzlWVmc?oc=5"
   },
   {
    "q": "tech",
@@ -946,11 +1034,19 @@
   },
   {
    "q": "kma",
-   "t": "건보공단 특사경 반대 5일째…의협 \"강제수사권 부여 중단\" - 메디파나뉴스",
-   "s": "메디파나뉴스",
-   "su": "https://www.medipana.com",
+   "t": "[기자수첩] 의료계, 건보공단 특사경 도입 왜 반대하나 - 의학신문",
+   "s": "의학신문",
+   "su": "https://www.bosa.co.kr",
    "d": "2026-11-16",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBvZU12VFVOWVZCejItNkVOTmx2Zk5WT0tFUFgxdEFLTUdhLThTS0RGbWdWYjJJWUtHalFmVHZyWmtYdDFsVjEybU5CYTZrYzlxa25yVThTelpqQjBYNlVuUWdnX2hlaC1DeUJJ?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAzcWw0MHp0NExMZ28tQjR0UDZsbGNTbGNxckRqQkh4cHl0dm12UWJ4NkJyVHZodmRoU2gybnpEeHJ0Mktmb1p6b0dDd1JsYkJ3Wll0c29YalZhS1VGUVkxUlAtSnhYZzlWVmc?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "건보공단, 5개 단체 참여 ‘특사경 소통 기구’ 구성 추진 - 병원신문",
+   "s": "병원신문",
+   "su": "https://www.khanews.com",
+   "d": "2026-11-15",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5NN2JDOTZ1OVZHY3B3QmxSQVJqTVNoVzZrM3hrbWFjSldhbGd3bVZQcUFuY0JXWkNERFp3Q1ZKdzJrQkRBWF9aX0FDeXhaOWRKaE92WHBBNzZBMXZseUJRQ3lYejI0S2NJYnc?oc=5"
   },
   {
    "q": "tele",
@@ -1066,19 +1162,19 @@
   },
   {
    "q": "watch",
-   "t": "비급여 진료 국가 통제 법안 국회 발의 ‘파문’ - 치의신보",
-   "s": "치의신보",
-   "su": "https://www.dailydental.co.kr",
-   "d": "2026-11-13",
-   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9wcE45QXR6Ym5DbE5qRFVoYWJyc2Z0MW56ZHlJdFlYd3cwU1M1R1NJOXdBd0RxOHRVVFdQdUcySUxVNG1ya3ZzbG9uREJneGZTRUtHNWFyLWFTdTZ4bHlORFlRODNIaTV1?oc=5"
-  },
-  {
-   "q": "watch",
    "t": "\"혈압약 한 달치에 진료 네 번\"…비대면진료 국민청원 5만7천명 동의 - 일간투데이",
    "s": "일간투데이",
    "su": "https://www.dtoday.co.kr",
    "d": "2026-11-13",
    "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBFSzY3a2JTRTRpVjM4aG1SajhOOGpreFB4Zi1QNHg5c0JGdkI3TElIYlZUUmdhQUlwcEZ4Zm0yZXhXRGkxUVFQWnpYX28yLTFnVmhqNkU4M0VHRGNoOVVKMXFYMTJXYUdmQ3JN?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "비급여 진료 국가 통제 법안 국회 발의 ‘파문’ - 치의신보",
+   "s": "치의신보",
+   "su": "https://www.dailydental.co.kr",
+   "d": "2026-11-13",
+   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9wcE45QXR6Ym5DbE5qRFVoYWJyc2Z0MW56ZHlJdFlYd3cwU1M1R1NJOXdBd0RxOHRVVFdQdUcySUxVNG1ya3ZzbG9uREJneGZTRUtHNWFyLWFTdTZ4bHlORFlRODNIaTV1?oc=5"
   },
   {
    "q": "kma",
@@ -1193,22 +1289,6 @@
    "l": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWNWVpUVE5NHo3SGFjRVE0U25wb1NsdmhEWHJYQlF0ZVZacmR4b2Rhc3JqRUZqR2RJaGtXZVFJT3ZVYXlOOHg2eVVqSHV3RDlqTjdZeHVLOEdPaE45SXM00gFfQVVfeXFMUFY1ZWlRUTk0ejdIYWNFUTRTbnBvU2x2aERYclhCUXRlVlpyZHhvZGFzcmpFRmpHZEloa1dlUUlPdlVheU44eDZ5VWpIdXdEOWpON1l4dUs4R09oTjlJczQ?oc=5"
   },
   {
-   "q": "kpa",
-   "t": "\"약사 100년의 자부심, 한 문장으로\"…대한약사회 슬로건 공모 - 약사공론",
-   "s": "약사공론",
-   "su": "https://www.kpanews.co.kr",
-   "d": "2026-11-12",
-   "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xTUFsTlE3OEZPQU10T1J2Nk11RHlINHVkX2s2NHE1YkRrVEdzcl9KYjJ4azgwbmZMY0pDTWVtc3NsUDZ0Y3c0YS03dUNlTy15LUdSd1pwS1dmdXZfTnlkcFVFX1J5THlpU3BfdQ?oc=5"
-  },
-  {
-   "q": "tech",
-   "t": "현장 단체에 '법률 검토' 문자, 근거 달라자 발 뺀 물리치료사협회 임원 - 서울일보",
-   "s": "서울일보",
-   "su": "http://www.seoulilbo.com",
-   "d": "2026-11-12",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5XMEEyVGlseno0RlNoeWFpQjc3TC1aZWNoeUxkcmpPT2VLT2JtSHl4WWtYQ3QteFA1SzZvazRIcTdfYTFtaXlYUjZsUnAtczJiNlBTcnZmQVBCQlBrczdXWldqRWxsWFZVY3E40gFvQVVfeXFMTzVpenpkb0dRVkRrZUU2UVZnN1dZLXdOTThlYU9PWEZGMnd6ZjVjNmNmWElBbi03MlYyTVE5ZlEtQUZMQ2pHd3dkWFFMSUFyX2lOM2pLdGlyZ0c2S3VrMVllUnVxWmMyeUJ2X1lvbnFj?oc=5"
-  },
-  {
    "q": "tech",
    "t": "극동대 작업치료학과, 대만 작업치료사협회 학술대회 참가 - 뉴스1",
    "s": "뉴스1",
@@ -1239,6 +1319,22 @@
    "su": "https://www.hira.or.kr",
    "d": "2026-11-12",
    "l": "https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100&brdScnBltNo=4&brdBltNo=12346&pageIndex=1&pageIndex2=1"
+  },
+  {
+   "q": "kpa",
+   "t": "\"약사 100년의 자부심, 한 문장으로\"…대한약사회 슬로건 공모 - 약사공론",
+   "s": "약사공론",
+   "su": "https://www.kpanews.co.kr",
+   "d": "2026-11-12",
+   "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xTUFsTlE3OEZPQU10T1J2Nk11RHlINHVkX2s2NHE1YkRrVEdzcl9KYjJ4azgwbmZMY0pDTWVtc3NsUDZ0Y3c0YS03dUNlTy15LUdSd1pwS1dmdXZfTnlkcFVFX1J5THlpU3BfdQ?oc=5"
+  },
+  {
+   "q": "tech",
+   "t": "현장 단체에 '법률 검토' 문자, 근거 달라자 발 뺀 물리치료사협회 임원 - 서울일보",
+   "s": "서울일보",
+   "su": "http://www.seoulilbo.com",
+   "d": "2026-11-12",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5XMEEyVGlseno0RlNoeWFpQjc3TC1aZWNoeUxkcmpPT2VLT2JtSHl4WWtYQ3QteFA1SzZvazRIcTdfYTFtaXlYUjZsUnAtczJiNlBTcnZmQVBCQlBrczdXWldqRWxsWFZVY3E40gFvQVVfeXFMTzVpenpkb0dRVkRrZUU2UVZnN1dZLXdOTThlYU9PWEZGMnd6ZjVjNmNmWElBbi03MlYyTVE5ZlEtQUZMQ2pHd3dkWFFMSUFyX2lOM2pLdGlyZ0c2S3VrMVllUnVxWmMyeUJ2X1lvbnFj?oc=5"
   },
   {
    "q": "kha",
@@ -1369,14 +1465,6 @@
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5BdDRQY1planpaWEFKS2JOanpNMUpMS1hDX3VZYWc2a0pvYm1fck1pWTM0VDZxdUU5WXpxc2w5UDFwaUYxZjFfQ3FLTFVFR01CaVZ2SDdDdXU4X3hJOXVWLXZpV3FXOUh5R0tyWg?oc=5"
   },
   {
-   "q": "kma",
-   "t": "국민건강보험공단 특별사법경찰 권한 부여 반대 기자회견 - 의협신문",
-   "s": "의협신문",
-   "su": "https://www.doctorsnews.co.kr",
-   "d": "2026-11-11",
-   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE85Y0E5MmhORWpELUQ2S3FhazBnV0pYbDhtTmdhOVByNHZoWTRpMV9zTG54Q25uY1FDWDVzTlg5bDA1dFFkQUtVMXB6VjVyaV9wS3B2blEyNlJNM3R2VDZNWDFHTW80X3JnZjZYSmdRTk5sdw?oc=5"
-  },
-  {
    "q": "auto",
    "t": "실손서 확인한 절감 효과…손보사, 다음은 ‘8주룰’ 손익 개선 - 파이낸셜투데이",
    "s": "파이낸셜투데이",
@@ -1394,19 +1482,27 @@
   },
   {
    "q": "hira",
-   "t": "준보훈병원 12월 가동 앞두고…보훈공단·심평원, 진료비 심사 협력 강화 - 서울경제TV",
-   "s": "서울경제TV",
-   "su": "https://www.sentv.co.kr",
-   "d": "2026-11-11",
-   "l": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByX3B4MGFCV0dBUWtUT2Z1RWs2YjYtN0lFbnh4czVqTjlBbFZlVF81bHFyQUR5UExsMWNiYlVXS0gxRTM0LXZIbVF6QkVyc1JTakdnT0RMQlNselMyc1FldG9lTC0?oc=5"
-  },
-  {
-   "q": "hira",
    "t": "보훈공단-심평원, 국가유공자 적정진료·심사 협력 강화 - 연합뉴스",
    "s": "연합뉴스",
    "su": "https://www.yna.co.kr",
    "d": "2026-11-11",
    "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9BbExiQ3U1ZVNFV2ZxSEZxQ2Zyc3ZlcU1MSXZMZVhkWXNTRFBlUXZ0d1dPYnJzVkFydTR1cWdNTUM5aFpVYng2MmUxeEhwMjBqWVpnOXBKOGU2S1HSAWBBVV95cUxPZFlzanI4UVctNUh1TXdIYVFVU0VfWEdvbERyYlNUX0loUW4zcXFjeXRmdzFVMl9KbklXVTZHNWVuZEdhRzlUcDlJYndINGF5d0EySDRxblhaa0EzeVpidzg?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "준보훈병원 12월 출범…보훈 진료비 심사체계 강화 - 뉴시스",
+   "s": "뉴시스",
+   "su": "https://www.newsis.com",
+   "d": "2026-11-11",
+   "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE40aFd2VmpyOWJZYnlzV3BKaUhZdTJseWU2WTJ5dXVhTzItSzBnVHdGbzFHTDlYV0NoaUFKVThkTDRZa1NjREVmMTlqZndRRUZPY2V5YS1HbjRhaDN6SHE4RtIBeEFVX3lxTE1ocktjcVFzcDE3VUZlNUFhNXZzaGdwT2w4TzgzdGdKTEZZc0d6NGhPcU5DcUJCUzNfaWpvS21LcGZ1RUlRSTlCMWpjVi1wMF9Wd0Zqa0wyaE5sZzdaUV9VOUx1cTI3LVVTbW9WUWpyTmoxSDJaN2Jwaw?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "12월 준보훈병원 도입 앞두고…심평원·보훈공단, 진료비 심사 협력 강화 - 간호사신문",
+   "s": "간호사신문",
+   "su": "https://www.nursenews.co.kr",
+   "d": "2026-11-11",
+   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBfQnZBYndVdE1YaUlTa29ILVlGcGNqV1puSlZodzdfSmRjRlZHVGVlOUpQa012MlE4VnFMVmxQX1BuazdKOHQycmI5SUJBZVN3RGtvX3JLY1pzRkVhbWxUVjdobHpYb2tuYnlGVnV3?oc=5"
   },
   {
    "q": "watch",
@@ -1441,6 +1537,22 @@
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11014984"
   },
   {
+   "q": "kma",
+   "t": "국민건강보험공단 특별사법경찰 권한 부여 반대 기자회견 - 의협신문",
+   "s": "의협신문",
+   "su": "https://www.doctorsnews.co.kr",
+   "d": "2026-11-11",
+   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE85Y0E5MmhORWpELUQ2S3FhazBnV0pYbDhtTmdhOVByNHZoWTRpMV9zTG54Q25uY1FDWDVzTlg5bDA1dFFkQUtVMXB6VjVyaV9wS3B2blEyNlJNM3R2VDZNWDFHTW80X3JnZjZYSmdRTk5sdw?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "준보훈병원 12월 가동 앞두고…보훈공단·심평원, 진료비 심사 협력 강화 - 서울경제TV",
+   "s": "서울경제TV",
+   "su": "https://www.sentv.co.kr",
+   "d": "2026-11-11",
+   "l": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByX3B4MGFCV0dBUWtUT2Z1RWs2YjYtN0lFbnh4czVqTjlBbFZlVF81bHFyQUR5UExsMWNiYlVXS0gxRTM0LXZIbVF6QkVyc1JTakdnT0RMQlNselMyc1FldG9lTC0?oc=5"
+  },
+  {
    "q": "tele",
    "t": "서울시약사회, 비대면진료 시행규칙 개정안에 최종 의견 제출 外 - 의약뉴스",
    "s": "의약뉴스",
@@ -1455,22 +1567,6 @@
    "su": "https://www.newsis.com",
    "d": "2026-11-11",
    "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE13bEw4QlJ4OHN1WFhZR0FrcDVuMGJycVc3WWdVcGJBYkd5blloQzFGSllzd2ZVeXNvM0Y4NTloRFplZmJPQnVKSzJLdkRMOWFRTjJUUFFab0tDRXFKQlJGbNIBeEFVX3lxTFBUYzZZaWdnQ2pNTmhQQmNBOU9jUHhSTkk2M1h2bm5kdERsbVE3dWpCMk1GMnVaSXg0UmVnWUFhdFFRM0t1NXNfcFFwbnVWSm1sZUtuOHJRT01Dd2pvX29JaHBxVWJidl9POEg0RUdnZDhpb2QyVGtUaw?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "준보훈병원 12월 출범…보훈 진료비 심사체계 강화 - 뉴시스",
-   "s": "뉴시스",
-   "su": "https://www.newsis.com",
-   "d": "2026-11-11",
-   "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE40aFd2VmpyOWJZYnlzV3BKaUhZdTJseWU2WTJ5dXVhTzItSzBnVHdGbzFHTDlYV0NoaUFKVThkTDRZa1NjREVmMTlqZndRRUZPY2V5YS1HbjRhaDN6SHE4RtIBeEFVX3lxTE1ocktjcVFzcDE3VUZlNUFhNXZzaGdwT2w4TzgzdGdKTEZZc0d6NGhPcU5DcUJCUzNfaWpvS21LcGZ1RUlRSTlCMWpjVi1wMF9Wd0Zqa0wyaE5sZzdaUV9VOUx1cTI3LVVTbW9WUWpyTmoxSDJaN2Jwaw?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "12월 준보훈병원 도입 앞두고…심평원·보훈공단, 진료비 심사 협력 강화 - 간호사신문",
-   "s": "간호사신문",
-   "su": "https://www.nursenews.co.kr",
-   "d": "2026-11-11",
-   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBfQnZBYndVdE1YaUlTa29ILVlGcGNqV1puSlZodzdfSmRjRlZHVGVlOUpQa012MlE4VnFMVmxQX1BuazdKOHQycmI5SUJBZVN3RGtvX3JLY1pzRkVhbWxUVjdobHpYb2tuYnlGVnV3?oc=5"
   },
   {
    "q": "notice",
@@ -1553,14 +1649,6 @@
    "l": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5oV1hzWm96OE15YUlMaUtGVkxnUGpZYWRiTGgzZDdRcWJab1ZXcHVBM1NCSy1vQzV3Y21NeDFyMU82Uk5rdHM0SGhkdE9DcldEeTcwbU94NGNmelIzdEh6LV91TUptdw?oc=5"
   },
   {
-   "q": "kha",
-   "t": "메스를 든 경영자, 대한병원협회 최초 여성 수장 유경하 - 이대학보",
-   "s": "이대학보",
-   "su": "https://inews.ewha.ac.kr",
-   "d": "2026-11-10",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE93eEROdGtmT3JsLXd2RENtWXphLXYzN1pSVW9odjV1YVptamNaSEtBeG9UR196a3dMR2JvRDVfQlJhQnZsdXNsNzY5UzZmMW93NjEzZmZBQlNYUWdfNWVtS2pPLTZVZWtBTUHSAW5BVV95cUxNSi1GM0lVdjBlMUNIc2lraWZSQk1WQ3FxSWZBZW42WGVrMnJBcGEtdFZEc1ZXd1dDNlRYTzFldjR4THJYdnpLcGZvT2FMNDhsYi1SRFdxSURwQ2xNUmVCTjhCT0E4NDRfWXlGTm1XUQ?oc=5"
-  },
-  {
    "q": "kma",
    "t": "병의협 “회원 96.9%가 원한 의사노조, 의협이 외면…실행안 촉구” - medicalworldnews.co.kr",
    "s": "medicalworldnews.co.kr",
@@ -1594,6 +1682,14 @@
   },
   {
    "q": "kma",
+   "t": "“전국의사노조 설립 열망 외면한 의협, 회원 권익 보호에 한심한 작태” - 의사신문",
+   "s": "의사신문",
+   "su": "http://www.doctorstimes.com",
+   "d": "2026-11-09",
+   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBFY3p6SkNpZWx5VmJqVHNGVVpDRGZfQnlBWEZqdmpqSnZwTFUzS3hQWE16LTFZQUVCcEgzMUpvd2N4QmI3aXAzUDZNLWtQUmZyYnFVTVE3UG5CT3U2THZJU2l2NGFaUUd6alJXR3RsQQ?oc=5"
+  },
+  {
+   "q": "kma",
    "t": "의료계가 비급여 관리법을 반대하는 이유는? - 의학신문",
    "s": "의학신문",
    "su": "https://www.bosa.co.kr",
@@ -1610,6 +1706,14 @@
   },
   {
    "q": "hira",
+   "t": "홍승권 심평원장 \"보훈병원·지역 필수의료 연계체계 구축 필요\" - 의학신문",
+   "s": "의학신문",
+   "su": "https://www.bosa.co.kr",
+   "d": "2026-11-09",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB5OUVBT2d0Ym5rTmhVempZSFpfUUU5Z3RYaTZZYm9zWmN1bldrRGVLb1pEUjNWWDB4cTFPZG5MN0luMDFEM2tpQlh6YVFKTXlkMlRjZ2g1MXRoTzJ1T2ViQXJ4dEtTR0dTRnc?oc=5"
+  },
+  {
+   "q": "hira",
    "t": "[르포] 데이터는 차갑게, 심장은 뜨겁게, ‘심평원 대구경북본부’ - 병원신문",
    "s": "병원신문",
    "su": "https://www.khanews.com",
@@ -1623,14 +1727,6 @@
    "su": "https://www.medipana.com",
    "d": "2026-11-09",
    "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5pWlhXLVBadmUtUzRVZGtiME9TZzhBcDE3bjE3UnVzVnYxcXRzUl9kTDlUS0JJdWY0T1hOZ2JuMllVaVNBcVNvN21wckJham1keEVkTWJheUhIUlJLc2pLQnRmclRsWHFkVVpN?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "홍승권 심평원장 \"보훈병원·지역 필수의료 연계체계 구축 필요\" - 의학신문",
-   "s": "의학신문",
-   "su": "https://www.bosa.co.kr",
-   "d": "2026-11-09",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB5OUVBT2d0Ym5rTmhVempZSFpfUUU5Z3RYaTZZYm9zWmN1bldrRGVLb1pEUjNWWDB4cTFPZG5MN0luMDFEM2tpQlh6YVFKTXlkMlRjZ2g1MXRoTzJ1T2ViQXJ4dEtTR0dTRnc?oc=5"
   },
   {
    "q": "kna",
@@ -1673,20 +1769,20 @@
    "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE95X2dqWUVWczE1Vm1VSG56NkFGX1dhSThxWm5oZGVnSGxtc2RIbVRQUWlfeXluSlNpdEFndDE5SHhpN0Y2czFJNS1qS0FRTjB0eDM0QQ?oc=5"
   },
   {
-   "q": "reform",
-   "t": "정부, 의료계 반대에도 '건강검진' 검체검사 위·수탁 개편 재확인 - 의학신문",
-   "s": "의학신문",
-   "su": "https://www.bosa.co.kr",
-   "d": "2026-11-06",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1qRk02SUhxTzZIMk84SVlxSkxVVEZ3ZFFSTVZEbzU3N293Zy1kWG9Kc21hRG1PNVN3WGNQbGVKTHd3ZHNHSjV3clhIZHk2aHRXNjdaY1pwTXM1NXBMbmVPV1RLY293VGlLaFE?oc=5"
-  },
-  {
    "q": "tele",
    "t": "연말 비대면진료 제도화, 공공앱은 2028년 가세…공공·민간 역할 분담 과제 - MTN 머니투데이방송",
    "s": "MTN 머니투데이방송",
    "su": "https://news.mtn.co.kr",
    "d": "2026-11-06",
    "l": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5kRVcwbHBSRkZLTmtCTWNGMjNWZlBMTnJVODN0RXpia3hlTERzWGQ2RlZNeER1WmdZU21WRWNpTE9LVzQ3WkNzWlQ1Z2s2V2JxNWZGWnlBQW5qcDZTSWw0?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "정부, 의료계 반대에도 '건강검진' 검체검사 위·수탁 개편 재확인 - 의학신문",
+   "s": "의학신문",
+   "su": "https://www.bosa.co.kr",
+   "d": "2026-11-06",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1qRk02SUhxTzZIMk84SVlxSkxVVEZ3ZFFSTVZEbzU3N293Zy1kWG9Kc21hRG1PNVN3WGNQbGVKTHd3ZHNHSjV3clhIZHk2aHRXNjdaY1pwTXM1NXBMbmVPV1RLY293VGlLaFE?oc=5"
   },
   {
    "q": "kpa",
@@ -1705,6 +1801,14 @@
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8zQVhYRkhVQkh3WnVrNy1aSnV3aVJPZjVtdFhRVUhpcW0yWFQ0Ri0yb0RlSDBYNWRRVy02YnhKdnhIbkRHY0Y0U2dmUkdCejU3S2RqQUIzV2RaT3NJc1VlU3oyWmJHelR6UHJPQQ?oc=5"
   },
   {
+   "q": "kpa",
+   "t": "대한약사회 \"초광역특구법, 의료영리화 우려…특례 삭제해야\" - 메디파나뉴스",
+   "s": "메디파나뉴스",
+   "su": "https://www.medipana.com",
+   "d": "2026-11-06",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5IXzZUejBBeWdEeHY4WW5tWnZ5YkRqRHBucUVxUzJoWXNVQ0ROaDRBSE9aNU1jNTBtZFpiTnl2SU9WWU5zRTY0YmJoaXhoSUlWQkJTZXFDUkpoeTJQVWJjYkxOZjlUMWtaVmhJ?oc=5"
+  },
+  {
    "q": "kma",
    "t": "의협, 잇따른 의료진 흉기 위협에 “진료현장 안전 대책 시급” - 의사신문",
    "s": "의사신문",
@@ -1719,6 +1823,22 @@
    "su": "https://www.etnews.com",
    "d": "2026-11-05",
    "l": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBNMGIzV0FZUkUzMm5pdW1XQUhwSVg0cEFTR1pMeC1TbVduN1lrVG1XWXNpZVlJb00zTVV5aDNISHZRc3lybnZtNGZtTDB0UQ?oc=5"
+  },
+  {
+   "q": "reform",
+   "t": "정부, 지역거점공공병원 41곳 기능별로 재편 - 의학신문",
+   "s": "의학신문",
+   "su": "https://www.bosa.co.kr",
+   "d": "2026-11-05",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YakRhbGxReTl2blluTGdVRGRNaXlSMkJjeVZKT0toclZ6S3pveW1LVFBrcUk2dFRJTkRyamhuZE90bnNPTEJBeXFCTVVVclo2djJRU2NpMG1PQ2x4Y0gteUJ6Z2ZrRy13bFE?oc=5"
+  },
+  {
+   "q": "tele",
+   "t": "비대면진료 국민청원 5만 돌파…제도화 앞두고 국회 복지위 회부 - 유니콘팩토리",
+   "s": "유니콘팩토리",
+   "su": "https://www.unicornfactory.co.kr",
+   "d": "2026-11-05",
+   "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8td3p2T0NwaFNaRnN3MUZFSkZwUS1pa0VZNFpJbW0tYjY0TnJaWjdhVDVOakItdkl5WHVUMzRUYkJhREtXcnhPbTU4WjFZZUlxNlRCSGEtMVRQaktoSUlYcTlWVUlSWmFrVzNDMA?oc=5"
   },
   {
    "q": "tele",
@@ -1769,6 +1889,14 @@
    "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9OdEtlYUZpSGxaY2dGYnNvTHFZak13cFNEdnRSeTJ3UnFlM2t3TTlZbWVUOUdNRVlMMG8xUzR6MEc2ZjNrNDM3T0JMNkNRNU43QmZzUmtjaHVLVGN4djdYalFLZTJxOFdtcFHSAW9BVV95cUxOV3ExdHhSVzgySmt4NHU4SDRMR19fanZIR1BkUzRtMnVNQnNTcGhkVl83VG5GSldocUM0Ri1OMGdId0pubEVhM0hQVGZZUGZQS01JZEpMSzZ6R3lTdnlzeTJHMFBTV1lLeThtaHByRDA?oc=5"
   },
   {
+   "q": "kha",
+   "t": "대한병원협회, 세브란스병원 의사 피습에 \"참담하다\"...의료현장 안전대책 강화 촉구 - 소비자경제",
+   "s": "소비자경제",
+   "su": "https://www.dailycnc.com",
+   "d": "2026-11-05",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE40ejdSZjlLOUsyNjdCbkl4b0NhNGVaSnp4aTl1bmhQb3V3WkFHWGlMTTRnbkN4ZURveGVyb0NqMjhUYTVpNHpGaXExUHJYS1BjbHFld2tWSzBqZjlxVFFYZVdxdkRyOGVob2tv?oc=5"
+  },
+  {
    "q": "kpa",
    "t": "김성진 대한약사회 전남지부장, 나눔국민대상 국민포장 - 메디포뉴스",
    "s": "메디포뉴스",
@@ -1801,28 +1929,12 @@
    "l": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9OUUJrSTUwX1c0Y3lBMDhCWVBfUFdERE50dWxjSVFHSzU4SFYzY3o5YjRfRDJHb05ZNnF1VjNwQjRwcjdRZXVXMFVIWlhHUXh0bmp3?oc=5"
   },
   {
-   "q": "reform",
-   "t": "정부, 지역거점공공병원 41곳 기능별로 재편 - 의학신문",
-   "s": "의학신문",
-   "su": "https://www.bosa.co.kr",
-   "d": "2026-11-05",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YakRhbGxReTl2blluTGdVRGRNaXlSMkJjeVZKT0toclZ6S3pveW1LVFBrcUk2dFRJTkRyamhuZE90bnNPTEJBeXFCTVVVclo2djJRU2NpMG1PQ2x4Y0gteUJ6Z2ZrRy13bFE?oc=5"
-  },
-  {
    "q": "premium",
    "t": "[T나는 복지] 건보 재정지원 8년간 13조원 미달…내년에도 법정 14% 못지켜 - 티제이비",
    "s": "티제이비",
    "su": "https://www.tjb.co.kr",
    "d": "2026-11-05",
    "l": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBrRks2Z2hvSWVzN1BibFVKczJ0SEdOOEQ1emVVcG1WMHVCZFJJVjlkdnJjdHpVeTdLZWtGWm12WW10V3haYU1fWWtKUWdrQlBZN1ZoZnNkZDRVMnhGZ2FmYUVB?oc=5"
-  },
-  {
-   "q": "kha",
-   "t": "대한병원협회, 세브란스병원 의사 피습에 \"참담하다\"...의료현장 안전대책 강화 촉구 - 소비자경제",
-   "s": "소비자경제",
-   "su": "https://www.dailycnc.com",
-   "d": "2026-11-05",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE40ejdSZjlLOUsyNjdCbkl4b0NhNGVaSnp4aTl1bmhQb3V3WkFHWGlMTTRnbkN4ZURveGVyb0NqMjhUYTVpNHpGaXExUHJYS1BjbHFld2tWSzBqZjlxVFFYZVdxdkRyOGVob2tv?oc=5"
   },
   {
    "q": "tech",
@@ -1969,14 +2081,6 @@
    "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5xVmhNU1ZVT1VoY0hsNTBQd3FwRTdYTGJTUTNpdXE2T2w4Nl9raHE1eFkwUzJyeWREZ1lvTEptWGpyaUM3azd5eDR2enJnWnJzVEdvWWhyRmh4LV9CcTRlU1A5dlFRQkc4Q2c?oc=5"
   },
   {
-   "q": "council",
-   "t": "정부, 검체검사 원가 오류 일축…\"수가 인하 로드맵대로\" - 데일리팜",
-   "s": "데일리팜",
-   "su": "https://www.dailypharm.com",
-   "d": "2026-11-03",
-   "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE40RmxlNExXTmcyRjZlZnhjRDlrMzQ3VklNU2k2ZUhlUWZ5TUhwMFFSOEJVdDBBd003bEltZVhLR2ZZRDJRWDZtdlo4dWZvcmozN1VON1p3?oc=5"
-  },
-  {
    "q": "reform",
    "t": "가정의학과의사회 “검체검사 위·수탁 개편, 국가건강검진 확대 중단하라” - 의사신문",
    "s": "의사신문",
@@ -2031,6 +2135,14 @@
    "su": "https://www.nursenews.co.kr",
    "d": "2026-11-03",
    "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5ILTlwT3g5MW1BclNyb3dRb3NRQ2sxZGtDMk81T0hMUXYtMlhRRm94RTBmVzg5aXdTRlBKOHhQNGlRMmdsS3FEWEZGX0pzTG5IS25rRkJRWTA1YVA3QldfRXlCTFQzZks1djFGaUZB?oc=5"
+  },
+  {
+   "q": "tech",
+   "t": "임상병리사 국가시험 직무 중심 개편…4년제 학제일원화 로드맵 - 헬스경향",
+   "s": "헬스경향",
+   "su": "https://www.k-health.com",
+   "d": "2026-11-03",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QREstOVZpLUtTek40THJUd1piOXZqMUZMMEVKSDNwem1TVTByR0RDMGYzQ3FKV0JHeElIRFlqNzhZc3ZoaGJKamtnLVpfTmxGd2ZWbHlGc2pTYzZrSkdpWXdyOG9tSnpMMWJ3?oc=5"
   },
   {
    "q": "tech",
@@ -2089,12 +2201,12 @@
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11014779"
   },
   {
-   "q": "tech",
-   "t": "임상병리사 국가시험 직무 중심 개편…4년제 학제일원화 로드맵 - 헬스경향",
-   "s": "헬스경향",
-   "su": "https://www.k-health.com",
+   "q": "council",
+   "t": "정부, 검체검사 원가 오류 일축…\"수가 인하 로드맵대로\" - 데일리팜",
+   "s": "데일리팜",
+   "su": "https://www.dailypharm.com",
    "d": "2026-11-03",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QREstOVZpLUtTek40THJUd1piOXZqMUZMMEVKSDNwem1TVTByR0RDMGYzQ3FKV0JHeElIRFlqNzhZc3ZoaGJKamtnLVpfTmxGd2ZWbHlGc2pTYzZrSkdpWXdyOG9tSnpMMWJ3?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE40RmxlNExXTmcyRjZlZnhjRDlrMzQ3VklNU2k2ZUhlUWZ5TUhwMFFSOEJVdDBBd003bEltZVhLR2ZZRDJRWDZtdlo4dWZvcmozN1VON1p3?oc=5"
   },
   {
    "q": "reform",
@@ -2111,6 +2223,14 @@
    "su": "https://www.newsmp.com",
    "d": "2026-11-03",
    "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5OQks3bW9GNU92SmFnM2pBU2w4a0dTVzVFU3hRN28yemNzaldPaGpacVpDTE1FeXRYdmZxOUpabU1xS0c4Tzd5bGlSclpXVXBoeEh6ZXJsNTBaYm9WRTlyclN5UnFrQlVV?oc=5"
+  },
+  {
+   "q": "fee",
+   "t": "중증 어르신 재가 돌봄 월 이용 한도액 최대 37만 원 인상 - 실버아이뉴스",
+   "s": "실버아이뉴스",
+   "su": "http://m.silverinews.com",
+   "d": "2026-11-02",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5EOUZNbnQ1dmQzRW1oZi1vTHZvUWdNUHRIMW1nYWlaYXpIZ054anhKRGN3Z21wMExvQWNLajU1VzNGcU9iUXhiTG81SkpYX284S1kteUdLUDJUc0xkd1UyYnllbWtzZloyMEE?oc=5"
   },
   {
    "q": "fee",
@@ -2138,11 +2258,11 @@
   },
   {
    "q": "reform",
-   "t": "검진 현장 외면한 수가 개편… 일차의료 붕괴 경고 - 보건신문",
-   "s": "보건신문",
-   "su": "http://www.bokuennews.com",
+   "t": "26년 만에 첫 보건의료발전계획 수립 추진…12월 확정 목표 - 청년의사",
+   "s": "청년의사",
+   "su": "http://www.docdocdoc.co.kr",
    "d": "2026-11-02",
-   "l": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA2cmk5OUxPVjBySHdZU3E1OTg4WWN6aDV6OVlyWUd4NWU4ZUpQOWJJbDJUbG1ZZGR4aXpHY2kzYkJxRDJJNHFheTlrX2VkSDhaeXBxVFI0cFBXaUM1d2FiRWl3?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YQkVWXzRma0YzRWp1dGM0WVNOMFk5a1dqWHJkVlQxQ1RuRDBwcjJmanQyTUhZOUY2eV9uSmF6Y2JONXVFY0dUSHh2eWxaWW44bktCYnZjVDBHSEM3Y0pYek5vRzBhYm5wdmg0ZHN2b9IBc0FVX3lxTE1MLW13T3c5Z052QzBUenFjbnlLc2c5VllkUEFpbndTN240VWdaYk8wVU0zcVV1NVlwTUl4RDZqcEU1NXN0WUZYVUsxcEtKaHBYQkpaOFBQTUxqZnR1VXlSZHFaemVjOEtQdV9HNm5Na0tkbnM?oc=5"
   },
   {
    "q": "reform",
@@ -2225,20 +2345,20 @@
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11014720"
   },
   {
+   "q": "reform",
+   "t": "검진 현장 외면한 수가 개편… 일차의료 붕괴 경고 - 보건신문",
+   "s": "보건신문",
+   "su": "http://www.bokuennews.com",
+   "d": "2026-11-02",
+   "l": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA2cmk5OUxPVjBySHdZU3E1OTg4WWN6aDV6OVlyWUd4NWU4ZUpQOWJJbDJUbG1ZZGR4aXpHY2kzYkJxRDJJNHFheTlrX2VkSDhaeXBxVFI0cFBXaUM1d2FiRWl3?oc=5"
+  },
+  {
    "q": "council",
    "t": "지역·필수의료 강화 위해 올해 9000억 사용 계획 들어보니 - 의협신문",
    "s": "의협신문",
    "su": "https://www.doctorsnews.co.kr",
    "d": "2026-11-02",
    "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE5IdmthZlhsLTdKRTJMV1dOQklYWndmREtrOERUeGdtT2puaEpfT2g1NW5wb1RjTHEtX3Q3elNSaXNMZXRvc3BaMlVxc3dJZGRhXzRFNUg2TGZ5MDNId3I2S1Y2bnFQNEpBYmhUeEpIODJsdw?oc=5"
-  },
-  {
-   "q": "reform",
-   "t": "26년 만에 첫 보건의료발전계획 수립 추진…12월 확정 목표 - 청년의사",
-   "s": "청년의사",
-   "su": "http://www.docdocdoc.co.kr",
-   "d": "2026-11-02",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YQkVWXzRma0YzRWp1dGM0WVNOMFk5a1dqWHJkVlQxQ1RuRDBwcjJmanQyTUhZOUY2eV9uSmF6Y2JONXVFY0dUSHh2eWxaWW44bktCYnZjVDBHSEM3Y0pYek5vRzBhYm5wdmg0ZHN2b9IBc0FVX3lxTE1MLW13T3c5Z052QzBUenFjbnlLc2c5VllkUEFpbndTN240VWdaYk8wVU0zcVV1NVlwTUl4RDZqcEU1NXN0WUZYVUsxcEtKaHBYQkpaOFBQTUxqZnR1VXlSZHFaemVjOEtQdV9HNm5Na0tkbnM?oc=5"
   },
   {
    "q": "premium",
@@ -2255,14 +2375,6 @@
    "su": "https://www.bosa.co.kr",
    "d": "2026-11-02",
    "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA3YWNkUEdOTkZXS1FLRWpkWW1ubk02aWtUUmJ2T1BwVjBDUXJlV1RqcElMdnFZdGRJWEFvYTlMRUZSWGQzYU1ES3RJX2ZaOWtNZWJsdmFja1hrWWh2UWNUTXhWemlydXFDenc?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "[기획] 11월 진료현장 체크포인트…수가·처방·청구, 적용 대상부터 구분해야 - 메디포뉴스",
-   "s": "메디포뉴스",
-   "su": "https://www.medifonews.com",
-   "d": "2026-11-01",
-   "l": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0wMTZ4SkFYeV91R2VSYXJUdlFhSGxXNFBYN2Y3NVFRZnQ2TGEyVU5EZ2JCSm5UVFZWTE0wSnhyOTFLSWM3eEFMZGdUQ1JFMDVMSFlreWF2NVMxb2tLcVJPaXRwSDU?oc=5"
   },
   {
    "q": "premium",
@@ -2289,12 +2401,36 @@
    "l": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92UmRuZFBQNFUyMkNJcWhubU13VUxMNnU4dEJGNV96eWYzX3c4YUVRMjAtUm5DY0g0NkROcXJSYlhFY19NMjFKdmZrS2JwT01GLUV6VXJPaElhMXFUTU95bExGRHdhM0NOSjlYVGh2bGIydldq?oc=5"
   },
   {
+   "q": "watch",
+   "t": "건강검진학회, “국가검진 검체검사 위·수탁 개편은 일차의료 말살 탁상행정” - 의사신문",
+   "s": "의사신문",
+   "su": "http://www.doctorstimes.com",
+   "d": "2026-11-01",
+   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1VWmdDc2syRUtaeVRfby1QVHRFVnR6TGV3WkhnMUJUMnRsc2haUWlsZ2poZkQ2N0JoX1djd3NzVWdjMnNrVl9wMU9KWG1PZWZoa3B5RFFxMHBSTk5lOTNOZkgwT1hnR04tTEV6QzdmOA?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "[기획] 11월 진료현장 체크포인트…수가·처방·청구, 적용 대상부터 구분해야 - 메디포뉴스",
+   "s": "메디포뉴스",
+   "su": "https://www.medifonews.com",
+   "d": "2026-11-01",
+   "l": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0wMTZ4SkFYeV91R2VSYXJUdlFhSGxXNFBYN2Y3NVFRZnQ2TGEyVU5EZ2JCSm5UVFZWTE0wSnhyOTFLSWM3eEFMZGdUQ1JFMDVMSFlreWF2NVMxb2tLcVJPaXRwSDU?oc=5"
+  },
+  {
    "q": "premium",
    "t": "내년 장기요양보험료율 5.78% 오른다...국비 지원 강화 촉구도 - 더팩트",
    "s": "더팩트",
    "su": "https://news.tf.co.kr",
    "d": "2026-10-31",
    "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBRNTQxQl9PWUJyWDF5LTFVakpHaWZBNnh5ZjFJTzk2eGFmWnJValNBWS1wdnRKdUsyRU5zYnlIbGVGQ0IwZ3NiLWk5blpNc2NCM2pFRzN30gFQQVVfeXFMUGZnSVR6QXRNa2RLSnFYMHRBWTZhRTlOdmEtb0c4TmxKeWJtMlFONzZTUmcwQVY0QnVFU0NLMmE1UW92dUkwYTZCc1E3d2VmYWg?oc=5"
+  },
+  {
+   "q": "kma",
+   "t": "“아이 살리는 응급실까지 압수수색”…의사들 분노 커진다 - 한국NGO신문",
+   "s": "한국NGO신문",
+   "su": "https://www.ngonews.kr",
+   "d": "2026-10-31",
+   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9LdkU2Y1kxNEVQMHloOUhmVVRqSjY5U1I1c2tjMnFKeXJ1ZDAzOFJfaHctblV3MVBKOXlSZDNEcDV5WEh5OEw2dDczVlpKb0lGdlhQcC1sNXpJcnhpWUt2bDM5VDUxdU5L?oc=5"
   },
   {
    "q": "kpa",
@@ -2329,6 +2465,14 @@
    "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1kbndjVC1ZUVF1aEw4QXItaU52VEktVzRsbDU0LWs3R0ZXM0tvZHR6RFNzanVpZUI5UnZfalNLamFhNnV0WUhabk5FeTlrVjNDc0w2Nm5sY19iZmloMVZiT1VZbTQ4NU96d040?oc=5"
   },
   {
+   "q": "tech",
+   "t": "10월31일 제61차 대한방사선사 국제학술대회 송도 컨벤시아에서 성황리 개막 - 한국의약통신",
+   "s": "한국의약통신",
+   "su": "https://www.kmpnews.co.kr",
+   "d": "2026-10-31",
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NOWoxVjNOb0NYZHF1VWVuSUpiNncxcmJvN2pZQ29uT0IzNU0yU1lIOXFqamFZT3BUTHZhWHp2Y3U3b01oSTBMdXpJMXg3NnFmamZSYUVsR1p4VHFrd2g0Q05HLVZ6RW51SjV3?oc=5"
+  },
+  {
    "q": "hira",
    "t": "무릎 심사에 'AI 판독' 활용한 심평원…이의신청까지 확대하나 - 청년의사",
    "s": "청년의사",
@@ -2351,14 +2495,6 @@
    "su": "https://www.sentv.co.kr",
    "d": "2026-10-30",
    "l": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8yWUhsQVAwRFdiek92bW9pUkI4cUxmN1Q5V18yaDBjRFNuRzVyc0xWSVFHTHlDYTF4WWZWNmpwd0dUdFVyb3YxZDBwdkgtbzJteWN3b3VSSjFYS01CSUt6NW1EUVU?oc=5"
-  },
-  {
-   "q": "fee",
-   "t": "2026년 제5차 장기요양위원회를 개최 - 보건복지부 대표홈페이지",
-   "s": "보건복지부 대표홈페이지",
-   "su": "https://www.mohw.go.kr",
-   "d": "2026-10-30",
-   "l": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOVpUVEFSVk02ZFhRWndPZTBiU1dSLTVPOHdESWtDWHl6Ni0wMGJfRk1rcGNPbF9WUnktX0VKZ3FZUUc0eTNYUEk0ZU02VjUwTTk0aC02OUNrTkphY182Q1E0RjJkVkhTaTJnUnFFNXd4TVhTaDR6TWV3NWdlakI2UzNPdTc5Sk9LRFpJ?oc=5"
   },
   {
    "q": "fee",
@@ -2402,6 +2538,14 @@
   },
   {
    "q": "reform",
+   "t": "건강보험 의료수가 개편…초진진찰료·주사료 등 저평가 항목 보상 높인다 - 코리아이글뉴스",
+   "s": "코리아이글뉴스",
+   "su": "https://www.koreaeaglenews.com",
+   "d": "2026-10-30",
+   "l": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5CeXdNQ0MxMlNueWJycnNFbzhxczVlc2UtekQ3NHRTaFhmUnU4QlBGLUJ5VmFvNVQ5NlR5a2VMSEplQ1A2bG5seDJjNkFsaTlyV2t0Q1lKRVpuWi1wWTF0bDhhcHZuSW84cUdFZFdqU2NoQ1k?oc=5"
+  },
+  {
+   "q": "reform",
    "t": "“돈 되는 비급여에 의료인력 쏠림” 구조개혁 ‘시급’ - 매일노동뉴스",
    "s": "매일노동뉴스",
    "su": "https://www.labortoday.co.kr",
@@ -2433,12 +2577,36 @@
    "l": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1vSmxnYjlOR0FvMGdpVjY1ZENGcXZzdVBOZlRBWEowQlI4aTJ1N29sNkxhM1U3Q1daenNBSGlpZHVMQkdiZWxhUw?oc=5"
   },
   {
+   "q": "tele",
+   "t": "\"환자 안전 빠진 비대면진료 본사업 '강력 반대'\" - 의협신문",
+   "s": "의협신문",
+   "su": "https://www.doctorsnews.co.kr",
+   "d": "2026-10-30",
+   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE1vOHhCWk42WjhVUVlXd0xQSnktekVvVmQ4RkpHd1lBWFhTVWlkVDcyNmFlT1FoVHExZHR2dWNKV216eVFyQ3paMm5OeDBXMldTMWM2VUhyY09fWVkwbUpwam1KZDZrNExISkp6VkZQYVpfQQ?oc=5"
+  },
+  {
+   "q": "mohw",
+   "t": "2026년 제5차 장기요양위원회를 개최 - 보건복지부 대표홈페이지",
+   "s": "보건복지부 대표홈페이지",
+   "su": "https://www.mohw.go.kr",
+   "d": "2026-10-30",
+   "l": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOVpUVEFSVk02ZFhRWndPZTBiU1dSLTVPOHdESWtDWHl6Ni0wMGJfRk1rcGNPbF9WUnktX0VKZ3FZUUc0eTNYUEk0ZU02VjUwTTk0aC02OUNrTkphY182Q1E0RjJkVkhTaTJnUnFFNXd4TVhTaDR6TWV3NWdlakI2UzNPdTc5Sk9LRFpJ?oc=5"
+  },
+  {
    "q": "premium",
    "t": "내년 장기요양보험료율 인상…세대당 월평균 1천100원 오른다 - 연합뉴스",
    "s": "연합뉴스",
    "su": "https://www.yna.co.kr",
    "d": "2026-10-30",
    "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBwRGJWWlEwb09SNlhzU3U2eHg3bFd4T0VON3U4REhQWEdDZjNBUjNoS2x2eEViUThKVXZOOUltUzZtcHhNVTdmYmdlNndxemRMUVJ0VXhzeW1uX0HSAWBBVV95cUxQY2hqbWJ0VGtBZ2pES0E4b3JFVjJza045c0JJN2pfN1E5VWhfdGZpejF5T3k4YUZYbWhtMFpKcmc1ODhiYnRJTEI3dWs3ZVdfdkZkeEtUaFoyMmkwc3o5Tl8?oc=5"
+  },
+  {
+   "q": "premium",
+   "t": "내년 장기요양보험료율 전년 대비 5.78% 인상 - 병원신문",
+   "s": "병원신문",
+   "su": "https://www.khanews.com",
+   "d": "2026-10-30",
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE05UzA0bUZfay1GUUhmMjJucXBQTUJ6Nll6Mzc4emhoamk4Q01BZGJyeW82dHRTLUR0Z21GbmY4QlJTZnJYOVNMTUJWRzlzRFVvY1RZVUxrMjM4UlpSWXp6NHhZS1lvQkhobHc?oc=5"
   },
   {
    "q": "kma",
@@ -2449,12 +2617,12 @@
    "l": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBtUmhKYUJjMTZhajVfdkJaRnZFbGswM3lab1JZOFFzX2V1RzVBVjV5NDE0NVNTWGVKWU83OU1zOVh2MC1pNHhzYmRmSHlqQTNNemc?oc=5"
   },
   {
-   "q": "kma",
-   "t": "“국감서 ‘안타깝다’ 되풀이, 사과 거부”…의료계, 소아응급센터 압수수색 경찰 사과 촉구 - medicalworldnews.co.kr",
-   "s": "medicalworldnews.co.kr",
-   "su": "https://medicalworldnews.co.kr",
+   "q": "kna",
+   "t": "“지역 통합돌봄 강화”… 간협, 전국 단위 대응망 구축 - 간호사신문",
+   "s": "간호사신문",
+   "su": "https://www.nursenews.co.kr",
    "d": "2026-10-30",
-   "l": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1IUEZVRkQ0bWZwdW5HZDNBSEdDNThiNTdIZ3lpVDRZdWIzTEdjOURyMUp2MUhmU0QtOGpyRXl1U0ZpOFFKVWQ4U2VMa2t2LWJkS2JNc0hXREJIaE5oNWx1WWpqWjZyQXdWdFhGYnRVbFUxdmtHNWlGOEx3?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8ySGc0Wi12VFZzNXdPbGdSV1VXVThDLWx0bDJpTmRvaTBBa3d1TjhYQ0U1MnVqb1BjSHo2N2FiMlVzSURhTW1wUVpWOF9oSXFCem9wVkFIeC1xT2lscng0WmZ1UEx4MDhFNzJCQmZB?oc=5"
   },
   {
    "q": "kpa",
@@ -2497,6 +2665,14 @@
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11014695"
   },
   {
+   "q": "kma",
+   "t": "“국감서 ‘안타깝다’ 되풀이, 사과 거부”…의료계, 소아응급센터 압수수색 경찰 사과 촉구 - medicalworldnews.co.kr",
+   "s": "medicalworldnews.co.kr",
+   "su": "https://medicalworldnews.co.kr",
+   "d": "2026-10-30",
+   "l": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1IUEZVRkQ0bWZwdW5HZDNBSEdDNThiNTdIZ3lpVDRZdWIzTEdjOURyMUp2MUhmU0QtOGpyRXl1U0ZpOFFKVWQ4U2VMa2t2LWJkS2JNc0hXREJIaE5oNWx1WWpqWjZyQXdWdFhGYnRVbFUxdmtHNWlGOEx3?oc=5"
+  },
+  {
    "q": "fee",
    "t": "2027년 건강보험, 지역·필수의료에 2.7조원 우선 투입 - www.diarypoint.com",
    "s": "www.diarypoint.com",
@@ -2521,28 +2697,12 @@
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE42b3AxY3FqQnItUkxiZEp1UWVfX2RGcmo1ZEhJRUEtbnYxYmI3TzJVXzdtc0xTLUZZTldXSkdjNHVLOHhtOUlpVWhObUdGZzFUX1dpOHhRY0lQUUlfQlg0UXJsNTZ3eldacHluaA?oc=5"
   },
   {
-   "q": "reform",
-   "t": "건강보험 의료수가 개편…초진진찰료·주사료 등 저평가 항목 보상 높인다 - 코리아이글뉴스",
-   "s": "코리아이글뉴스",
-   "su": "https://www.koreaeaglenews.com",
-   "d": "2026-10-30",
-   "l": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5CeXdNQ0MxMlNueWJycnNFbzhxczVlc2UtekQ3NHRTaFhmUnU4QlBGLUJ5VmFvNVQ5NlR5a2VMSEplQ1A2bG5seDJjNkFsaTlyV2t0Q1lKRVpuWi1wWTF0bDhhcHZuSW84cUdFZFdqU2NoQ1k?oc=5"
-  },
-  {
    "q": "fee",
    "t": "환산지수-상대가치 연계 조정을 통한 수가체계 개선 추진 - 약사공론",
    "s": "약사공론",
    "su": "https://www.kpanews.co.kr",
    "d": "2026-10-30",
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1Yamd2eEJJS3hCQmtzX1lsYVFORVBjTFhmMkN5UUU1czk1VGEyM1NUSG1UMkhPWDRHSVlHM211TWVoankteXRaNEZCR3hoNUVveXhVaEdablRTRnFwN051SWNNLW1OaWVya2NHdw?oc=5"
-  },
-  {
-   "q": "fee",
-   "t": "내년 장기요양보험료율 전년 대비 5.78% 인상 - 병원신문",
-   "s": "병원신문",
-   "su": "https://www.khanews.com",
-   "d": "2026-10-30",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE05UzA0bUZfay1GUUhmMjJucXBQTUJ6Nll6Mzc4emhoamk4Q01BZGJyeW82dHRTLUR0Z21GbmY4QlJTZnJYOVNMTUJWRzlzRFVvY1RZVUxrMjM4UlpSWXp6NHhZS1lvQkhobHc?oc=5"
   },
   {
    "q": "fee",
@@ -2570,19 +2730,19 @@
   },
   {
    "q": "fee",
-   "t": "치과 초진 진찰료 1만 7,590원으로 인상... 치과 수가에 연계재정 99억 원 투입 - 덴탈아카이브",
-   "s": "덴탈아카이브",
-   "su": "https://www.dentalarchive.tv",
-   "d": "2026-10-29",
-   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE90VDdVTVRvT21hTDhjQjBBS3NpYTFWYVJCd0M5U09HejF0TDRlRXdlQ2FvcGxjSGNPQkZteURqS0U5MVVNTUZ6UHpGa0ZXMWpSS2U0WUlqV0gwSWxLRmdOalE3TFVWR1pYSW1wNDRR?oc=5"
-  },
-  {
-   "q": "fee",
    "t": "내년 지역·필수의료에 2.7조 투입…검체·CT·MRI 2.6조 감축 - 청년의사",
    "s": "청년의사",
    "su": "http://www.docdocdoc.co.kr",
    "d": "2026-10-29",
    "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9yd1MwWnh2UlBUN1F3UVlMMllYWW03R3hESjBteExGczlDMVJ5Tm1SaDBRTjJXWkRNWlJnWnRvdTVPTXAyQUl1alpnVVBtczA1aWtnSmVLWEF6SHZmV19tOFh0OEFSX1pwM1BKdi1wRdIBc0FVX3lxTE1VdDFNZzRiUGEyNjVBaW13ZVF2R0w3TERpVjYtcG9UWUoxX1pxTkRDWXlIdmpta1pKSVdxbVhBeTdfMnVtTHRQMWRNYko2Y0F2SFZFZS1jWDNNSW16ZHd5ME15MzRTNUtfM3FfN3JXM0ZDdnc?oc=5"
+  },
+  {
+   "q": "council",
+   "t": "“침례병원 공공 병원화 연내 건정심 심의” - 부산일보",
+   "s": "부산일보",
+   "su": "https://www.busan.com",
+   "d": "2026-10-29",
+   "l": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBlN1NxUEcxSEdPX215Z3N4WlBlcXZkWDNveWJ6RFowbW4tSFBIWmJiMlpmLXpXSENhRVNxVEV4SFd6VlpXeHJpYnM5NXhuWWNfS0FNa2o1NHBXdm5meUdKRjVmSFozcFdmb1BWNEdRWnJoeW50?oc=5"
   },
   {
    "q": "council",
@@ -2626,14 +2786,6 @@
   },
   {
    "q": "reform",
-   "t": "진료량보다 질·성과에 보상…혁신위, 건보 지불체계 개편 권고 - 청년의사",
-   "s": "청년의사",
-   "su": "http://www.docdocdoc.co.kr",
-   "d": "2026-10-29",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0zc3RTTFJVc2o0VTVyVS1vbXZWcnU1NU82MjZXTDdyaGczMXNtV3REWk5fU3dURkRHelZnZE51WVlvQXdYMXp4aUd0a2dYX3ZzNDFFUmxROElucnhfMTlOcmFnMXIwUFF6RkM3WUtHRdIBc0FVX3lxTFBVSkJhZmp4SWRjblRTYXdFMjk3aXpQa0xQQkU2RUZCZUV6ZFJ6NVU3bFcycUo5RERvYXhoVE9rZXhtZlZ5OVBDT2hwTkU2aGxfbUdMNzBUcDFhRDRqV0kzQmxGUzA4bzFMX0U5MWJzQV9ldzg?oc=5"
-  },
-  {
-   "q": "reform",
    "t": "의료비 216조 시대... 예방·일차의료 중심 보건의료체계 개편 - OhmyNews",
    "s": "OhmyNews",
    "su": "https://www.ohmynews.com",
@@ -2642,11 +2794,11 @@
   },
   {
    "q": "reform",
-   "t": "의료혁신위, 지속가능한 보건의료비 관리체계 구축 위한 3대 전략·10대 과제 제시 - 팍스메디컬뉴스",
-   "s": "팍스메디컬뉴스",
-   "su": "https://www.paxmedicalnews.com",
+   "t": "진료량보다 질·성과에 보상…혁신위, 건보 지불체계 개편 권고 - 코리아헬스로그",
+   "s": "코리아헬스로그",
+   "su": "https://www.koreahealthlog.com",
    "d": "2026-10-29",
-   "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9RU0habHlCVXIxV1p6SlhfYnNMTWVZNnBWd1FyWHpUUHJOSGlGSGdfUmhQUWZSUFZIWFNkeXRjcWhvQnZSTkVXMk0wWWgteFlsaEY0cTlRZTlCZWo5cUNTYm5yMGRndGJPaDE0b1dCMUk?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE1jeHlLYll4Nk54M3BFWHlJZTNfb3IyeHI0YkhfNElHeGdDMGZ3NkkyRm0yYmJfWFVVQ3NqYi1DR2VFb1BKVGVyS1VBT0llWTBsS0NWUFBZV254ZkhhTjRORm1rcDNkM2xueVg0Y1dWMWJkd9IBdkFVX3lxTFBhbnhrQXhrbEdMV3cwRF9wWkdHbXVMMzFrVzhSQldPWGowT294NHlmUnczSDhCYzlBM2RPSm9XTFNmSlZNLWJwNnlnNURSVVh5N2J1V0FwRC1oa3FCU3hOMEhyUzRGYWJKOXlsSjJLQzZ0ZUpWVlE?oc=5"
   },
   {
    "q": "reform",
@@ -2655,6 +2807,14 @@
    "su": "https://www.mkhealth.co.kr",
    "d": "2026-10-29",
    "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCdUI4ZDc5S2NQX05MbHFjTHhGSGhOQ1hMaG4ya1N4eHpnSFdFc29JS1dPUlROaVM4V3pzQ0lBYjR2VTVhNUtEQ1JhRjZrc0MtTUlEbzRwbjhKZGZiUjU2aG9YZFBfNXFKa1E5UQ?oc=5"
+  },
+  {
+   "q": "reform",
+   "t": "의료혁신위, 지속가능한 보건의료비 관리체계 구축 위한 3대 전략·10대 과제 제시 - 팍스메디컬뉴스",
+   "s": "팍스메디컬뉴스",
+   "su": "https://www.paxmedicalnews.com",
+   "d": "2026-10-29",
+   "l": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9RU0habHlCVXIxV1p6SlhfYnNMTWVZNnBWd1FyWHpUUHJOSGlGSGdfUmhQUWZSUFZIWFNkeXRjcWhvQnZSTkVXMk0wWWgteFlsaEY0cTlRZTlCZWo5cUNTYm5yMGRndGJPaDE0b1dCMUk?oc=5"
   },
   {
    "q": "chronic",
@@ -2689,12 +2849,12 @@
    "l": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ZbUdFS2lJZ0VqNTZCNkpkU001ZFdkdTduVDZqRFBWMW9sMHgwcHpacjlBWXBZUG5TSW9TVEFRVHJwTWk5ZmRpRjROTk1hY2tIUEVrRGFfdS1rVWU4TjFLQVJXWdIBZ0FVX3lxTE93NDM1X1hBb3FjUzZPNF9kV0hmQ09sVEtYUnhvTGxub2RIVWN0Mll2dHlobnpRQ1ZZU0hBU2p5X1hiN01wZkppWm5yYmlSWWNQMXgtZ3kyX0xfd0Fxdnh3TllZOVJxNU0?oc=5"
   },
   {
-   "q": "hira",
-   "t": "의료기관 부당청구 기관당 금액 5년 새 1.8배…보험사기 공조 실효성은 과제 - 녹색경제신문",
-   "s": "녹색경제신문",
-   "su": "https://www.greened.kr",
+   "q": "watch",
+   "t": "지역·필수의료 수가 2.7조 우선 투입···검사 수가는 2.6조 줄인다 - 더메디컬",
+   "s": "더메디컬",
+   "su": "https://www.themedical.kr",
    "d": "2026-10-29",
-   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5WS3ZCZW16WVdJNUJSVVB1SG5wVXRXVFYwRU1neFpic0ozenpxTF9sTTI0TmswaHloWXdGQzhycGtNT2F3OUIyWi1NOVFaSGN5QmUtTWh6Mk9YUXQ2UGllMkxaVmFaOWxD?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9wck93UHAwVzdRNktVcGdhTzgtQ3R2cWx4SjBXbUJUdnZzazE3UjRMV2V6VnJwRnlLcHNKcG52eXMzeURrckV2d1dxSFJkQXg0Z3pJWmp3NkZKWnVXV2VGNkhzX0FuVU56MUHSAW5BVV95cUxOekJvQlBSc0VmODNxdWxiSjBPWTJFSWU2WDRvc3MtSmpXeE1PZjJJczNVb2NMbllLcFNPQ3hnVk1NUWlQNVhxUWluUW5rdUxsQjJRV1dNakRBUXBNSm54M0VvRXY2b040b2NEU3lmQQ?oc=5"
   },
   {
    "q": "watch",
@@ -2706,19 +2866,35 @@
   },
   {
    "q": "watch",
-   "t": "지역·필수의료 수가 2.7조 우선 투입···검사 수가는 2.6조 줄인다 - 더메디컬",
-   "s": "더메디컬",
-   "su": "https://www.themedical.kr",
-   "d": "2026-10-29",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9wck93UHAwVzdRNktVcGdhTzgtQ3R2cWx4SjBXbUJUdnZzazE3UjRMV2V6VnJwRnlLcHNKcG52eXMzeURrckV2d1dxSFJkQXg0Z3pJWmp3NkZKWnVXV2VGNkhzX0FuVU56MUHSAW5BVV95cUxOekJvQlBSc0VmODNxdWxiSjBPWTJFSWU2WDRvc3MtSmpXeE1PZjJJczNVb2NMbllLcFNPQ3hnVk1NUWlQNVhxUWluUW5rdUxsQjJRV1dNakRBUXBNSm54M0VvRXY2b040b2NEU3lmQQ?oc=5"
-  },
-  {
-   "q": "watch",
    "t": "내년 지역·필수의료 수가 2.7조원 보강…간호사 배치·중증치료 보상 높인다 - 간호사신문",
    "s": "간호사신문",
    "su": "https://www.nursenews.co.kr",
    "d": "2026-10-29",
    "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBFbHc3bWVwNUdQVzFBMjkzY2NjRWpIc09XZGJsUXd6QnVLbG9WTXR5REdvbFlnMlY3ekpmS3VjRkxVeG41WGNheUFISy1lMWdaVEZTZ2RYRGFuYllMTHdIYmJDV0JSRWNRbGJmbTVR?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "복지부, 지역·필수의료에 2.7조 붓는다…건보 수가 25년 만의 대수술 - 아주경제",
+   "s": "아주경제",
+   "su": "https://www.ajunews.com",
+   "d": "2026-10-29",
+   "l": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5EV0hpWVJ1Z3dUZU9oV0NBcnJWVnlUcGhPUVo1R1dhc1dYSzZOX0t2SjVvd3BKRnNMekZRcVAtR0gtMDNPOWV2ZWpBaE5EY0FCeEZoOVJiVUJTUdIBWEFVX3lxTE5rSmFxSGZHQks0NWszQU03U2pSQU1QaUgxUlk3TDdURGZ6QTJ2TmF0bWw3Z1lILUQ0Z3JuSlEtU1AtN2t3VnpoSzViQ0c4SWY4RGtBREd2Qjk?oc=5"
+  },
+  {
+   "q": "watch",
+   "t": "치과 초진 진찰료 1만 7,590원으로 인상... 치과 수가에 연계재정 99억 원 투입 - 덴탈아카이브",
+   "s": "덴탈아카이브",
+   "su": "https://www.dentalarchive.tv",
+   "d": "2026-10-29",
+   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTE90VDdVTVRvT21hTDhjQjBBS3NpYTFWYVJCd0M5U09HejF0TDRlRXdlQ2FvcGxjSGNPQkZteURqS0U5MVVNTUZ6UHpGa0ZXMWpSS2U0WUlqV0gwSWxLRmdOalE3TFVWR1pYSW1wNDRR?oc=5"
+  },
+  {
+   "q": "hira",
+   "t": "의료기관 부당청구 기관당 금액 5년 새 1.8배…보험사기 공조 실효성은 과제 - 녹색경제신문",
+   "s": "녹색경제신문",
+   "su": "https://www.greened.kr",
+   "d": "2026-10-29",
+   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5WS3ZCZW16WVdJNUJSVVB1SG5wVXRXVFYwRU1neFpic0ozenpxTF9sTTI0TmswaHloWXdGQzhycGtNT2F3OUIyWi1NOVFaSGN5QmUtTWh6Mk9YUXQ2UGllMkxaVmFaOWxD?oc=5"
   },
   {
    "q": "watch",
@@ -2735,14 +2911,6 @@
    "su": "https://www.mohw.go.kr",
    "d": "2026-10-29",
    "l": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNS24tb3phRkI5a1lfeC1pRkU1S2hxLTVmeEJRajFPdlJGeU95WElxdUVjUDNKSjNZVVhLX2UxZUxGc1I0OUFQSGlPNmN4bktUNkZ1MW9jbktMai1FTzBWQ2E5ZkVsNkwtbmJsaUliaFR4WFFMUnZCVERVVWRlN2xXS05kWEltYzd3WUFKSnFOd1gzQQ?oc=5"
-  },
-  {
-   "q": "council",
-   "t": "“침례병원 공공 병원화 연내 건정심 심의” - 부산일보",
-   "s": "부산일보",
-   "su": "https://www.busan.com",
-   "d": "2026-10-29",
-   "l": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBlN1NxUEcxSEdPX215Z3N4WlBlcXZkWDNveWJ6RFowbW4tSFBIWmJiMlpmLXpXSENhRVNxVEV4SFd6VlpXeHJpYnM5NXhuWWNfS0FNa2o1NHBXdm5meUdKRjVmSFozcFdmb1BWNEdRWnJoeW50?oc=5"
   },
   {
    "q": "tele",
@@ -2783,14 +2951,6 @@
    "su": "http://www.docdocdoc.co.kr",
    "d": "2026-10-28",
    "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1CM09NeVJYUWRQQXE3UE5wZzY4dl90SUZXSnRrOXp0Y09IVHFMalZibkRVZG9NU212WF8wNkh3NUFwOVNSZHZWQ2N0MDRyeWlLZGZYZGhZVE9JRTBwanlRd1NCUnFlaXZobW9mT19XUdIBc0FVX3lxTFByRHV4M2U0UmhtOEZYMFFKckdfZE0zREl1T0VSY0poWWhBUDVNMXhtTHZfdm1mY1VSUnVfQkN0SUNJYy1OdXZ1VnNiZ0VGM3E2blhybThkUWhKWk5ERk9DQ0dkVHBlUzlPbGg3T0U4OV9tWGM?oc=5"
-  },
-  {
-   "q": "fee",
-   "t": "일본 노인요양시설 55.8% 적자, 13년 새 두 배 늘어 - 이투데이",
-   "s": "이투데이",
-   "su": "https://bravo.etoday.co.kr",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9lZndONDc0RWl3bWxjOXNXcWlpMXg5bGtuTmk5YmRVNXUwUnM3WEFPMG1LcmFENkVhcm04eUp4UDJPRnhtUEM2Rkd2VzZBbDVkblBaNGV6SEd5dw?oc=5"
   },
   {
    "q": "fee",
@@ -2874,6 +3034,14 @@
   },
   {
    "q": "council",
+   "t": "지역·필수 의료에 2조 7천억 투입... 내년부터 진찰료·입원료 올린다 - OhmyNews",
+   "s": "OhmyNews",
+   "su": "https://www.ohmynews.com",
+   "d": "2026-10-28",
+   "l": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBRMnZ4WUlaMFdBNkU3TlB2ZUpkYnQzZDF2TFU2bm15UTFpWngzUG1kMUp3Z2VTVDVjRFphbnZMTFlKR2VoVW9ORm1BcG5kWG16Ukg0OHdvV3hRc2FYRElQZ3lZVmZxVXRoeFdKWTZlOEV3eG0wc2RN?oc=5"
+  },
+  {
+   "q": "council",
    "t": "필수의료 수가 2.7조원 상향…검체·영상검사는 2.6조원 조정 - 히트뉴스",
    "s": "히트뉴스",
    "su": "https://www.hitnews.co.kr",
@@ -2882,11 +3050,11 @@
   },
   {
    "q": "council",
-   "t": "지역·필수 의료에 2조 7천억 투입... 내년부터 진찰료·입원료 올린다 - OhmyNews",
-   "s": "OhmyNews",
-   "su": "https://www.ohmynews.com",
+   "t": "검체검사 의원, 분석·관리수가 ‘회당 1400원’ - 데일리메디",
+   "s": "데일리메디",
+   "su": "https://www.dailymedi.com",
    "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBRMnZ4WUlaMFdBNkU3TlB2ZUpkYnQzZDF2TFU2bm15UTFpWngzUG1kMUp3Z2VTVDVjRFphbnZMTFlKR2VoVW9ORm1BcG5kWG16Ukg0OHdvV3hRc2FYRElQZ3lZVmZxVXRoeFdKWTZlOEV3eG0wc2RN?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE00U3k5aktiOWRGbXlrcDFOZXVKS09sVTh6Nm9CZDd3a0NtM3U1aDRIUHNNR3UwajVVVXdJUTdxUkgyN3YzY2t6c3p2Tm5aaWNsWUtDU0N6X1JKeUhwZGlrbEs1WU1TOGhf?oc=5"
   },
   {
    "q": "council",
@@ -2903,6 +3071,14 @@
    "su": "https://www.rehabnews.net",
    "d": "2026-10-28",
    "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4xYVN3WF9rQnM4R1JQZmhPOVRFVE93NmQ1NUkxc01JR2VaME9aR0lncV9JRF9PZk83aUMtWk8yQ0hfZFRqNFNqdEh6VExKMExrN2pTVEFFZ296VnBmZkdxVXA3ZmowZlFXYkM4?oc=5"
+  },
+  {
+   "q": "council",
+   "t": "내년 지역·필수의료 수가에 2.7조 투입…의원 초진료 2만원 돌파 - 뉴시스",
+   "s": "뉴시스",
+   "su": "https://www.newsis.com",
+   "d": "2026-10-28",
+   "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBNNXpORXlGeVBVRjJBTk5KTUZtU1UtakRSLVg2Y2pKNVUyODA5UlJLVDJLRE5DaE1yZkNjbElOYTVqeDgyQkFBRXVSX2RvR1pDU1lmSEp2dEo5LUpLbTRyRdIBeEFVX3lxTE1lYzF4V29tTEJlelJWTDdPbklsQzBiX2RYZmZ6QVJpNjhDbWpsU0RualV5eTRlaGhxSVNMbFI2MllMbzVrSUhIS0dlNVNUVGRqb0lZbmdjQ29lbkdnUGRSajM2RGlFTzhWeGhveVJaMmFxWEVaY3hTag?oc=5"
   },
   {
    "q": "reform",
@@ -2937,6 +3113,14 @@
    "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94SzZpdk9IdHNDSEVsVEtCX3cxaGFxNm51UDZoeEtZR3E3TTFvRWMwbDgyc05MNElvMzlMaVNOWmVPMnNpMDIzcF81Sk4zSXUxR2pIcDJ3UXZfLVdNczlodG5rTWpMM3J2Mmhj?oc=5"
   },
   {
+   "q": "reform",
+   "t": "문서뷰어 - 보건복지부 대표홈페이지",
+   "s": "보건복지부 대표홈페이지",
+   "su": "https://www.mohw.go.kr",
+   "d": "2026-10-28",
+   "l": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB4bG9VTWdMSkV0cUEwcEhVc2wxTm9ZelFoblBPMW9fZ2lsb3FYcmxNUFVBVUxLc3NNZGMwRWg1QVBrWkxFclQxWHlQbWpZSUhER1dYTm1jQzB1dkhodkpzQzdnS1ZnTTIyNXB1T1Z5UDAtM0JfUUo4MVBB?oc=5"
+  },
+  {
    "q": "chronic",
    "t": "지역·필수의료 수가 2.7조 투입…의원 초진·만성질환 보상 강화 - 약사공론",
    "s": "약사공론",
@@ -2961,28 +3145,12 @@
    "l": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1XSlkwUWRxeExJbU1RVWprS0l4RncxTlhlNmhwbjV1RWo3dkRpWlRpcjlKSE0zSmJNdWZlcHhHMnNlZm9VWUhPZ3lWWE04cFZ0LVNnOUp6Y0tWODl4bHJqTnNoQQ?oc=5"
   },
   {
-   "q": "kma",
-   "t": "의협, 아주대병원 7명 사직 교수에 \"자리 지켜달라\" 호소…\"재발 방지책 마련\" - MEDI:GATE NEWS",
-   "s": "MEDI:GATE NEWS",
-   "su": "https://m.medigatenews.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1MeTVfYk9ZeG40b2ExMU43VTc5SVJZNVNQRU13N1JYeVBSaEphLWRJNktKRGFVVHBvb3dhNGNraDRwT1R6NFFHdTRkcUxVMmpuM1pTSw?oc=5"
-  },
-  {
    "q": "kpa",
    "t": "실천약 \"약 배송 준비, 회원 뜻 외면 대한약사회 책임져라\" - 데일리팜",
    "s": "데일리팜",
    "su": "https://www.dailypharm.com",
    "d": "2026-10-28",
    "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9MNDNwbmNOTE5hbGJBU0xtUGQ3OUJzbjVpbkU1SmRhdEdQWmVkSmZwUGhqcXYzY0hzRXVJNDNxOEJ3Z1N4QTRFdXdneUNtcVZKeUYzb3B3?oc=5"
-  },
-  {
-   "q": "kpa",
-   "t": "약사회, '약은 직접 약사에게' SNS 릴레이 추진 - 메디파나뉴스",
-   "s": "메디파나뉴스",
-   "su": "https://www.medipana.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBNZnVGMHB1R25XMENIdmY4VnBVN0lOQXc1LXBFY091TmV0aUF5VS1FNzJtTTc4VUs3MlRpbVNJYjlLcGNJRkY2a1VieWYwXzVERWV4Z3EtVjlBWGdsZWRyVE1nTGtJREJWcHVz?oc=5"
   },
   {
    "q": "auto",
@@ -3006,7 +3174,7 @@
    "s": "의학신문",
    "su": "https://www.bosa.co.kr",
    "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE14QXNqQVROYXFERDU5aGhZdnR0SWlEWURBckhyNjR2UmZpMmk2dGN1TUxMTl9YUnU3cVFiQVpEOGNmWXo0eXNla2ZNZm40Y1I5Q2U1TzFvUkh6TWIxWHh6RUFkeko2SzVVZWc?oc=5"
+   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xX0w1Tm4yQXp2UzNuY2xkVVZUYy1qeXRtLWs5VUpRWDEtSE9XcTRjSTN1OHhEUHVLV2Z2SExOZkc2ZGptSWVtWDJtTW5OanNWRzV1VmY2TnVEZlRDRVJLTDY2MVlTMkZjNHhv?oc=5"
   },
   {
    "q": "watch",
@@ -3031,177 +3199,9 @@
    "su": "https://www.nhis.or.kr",
    "d": "2026-10-28",
    "l": "https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11014582"
-  },
-  {
-   "q": "council",
-   "t": "제19차 건강보험정책심의위원회서 발언하는 이형훈 차관 - 연합뉴스",
-   "s": "연합뉴스",
-   "su": "https://www.yna.co.kr",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1YbWtDZUZtRlV4TlgwZjFBYl8yenJ5bC1HUmN5R3FkTnNYeDR1VEZPdzBraktRRDVMNDNVVlpQT0EtNnM5cGtoNXpDSVc1VXoxT0ZnallibzhLWmvSAWBBVV95cUxNc3o2cXVYdWh6YzZDRjRfZkQ3LXZOY0FwcS05Zl9Zb3VQVTM2dmNuYmdtUWxjbXE5aVdvbFNCRHYtMjZ1eWpMc0NId2g5c1cwc2wtWGcxVnI4Y0l3SnRybEg?oc=5"
-  },
-  {
-   "q": "council",
-   "t": "지역필수의료 2.7조원 선투입 \"내년도 비수도권 의료기관 우대수가 적용\" - 뉴스더보이스헬스케어",
-   "s": "뉴스더보이스헬스케어",
-   "su": "https://www.newsthevoice.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9fZVdrY2drMHpNVldVU1MxaUdKcS1ZWEwwSXMzZElGdlN3XzFKRXZWNHQ2R1V1ZnhLclh1cE9lQUxJZ1B6OEx6dTBvNnFqV0FLUnIyd1laWl9vMXN3YUU0RjBvV2hlVnBOSkNRQ0NUdw?oc=5"
-  },
-  {
-   "q": "council",
-   "t": "내년 1월부터 영상·검체검사 수가 전격 인하…위수탁기관 '조건부 보상' - 뉴스더보이스헬스케어",
-   "s": "뉴스더보이스헬스케어",
-   "su": "https://www.newsthevoice.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE83cnRkQXJKWlZFX010d2FJQnE2S2pHc3FHZkN6WEs5dkVZT3ltbkFHcmlCTFdHS3Jjb1Q2RVBfVk1Qcy0waVBDZkU5RW1tMEp4a0VYdTBJYmhKLWQzemNVdHh0Ml9YWHVVVkRMc3U2MA?oc=5"
-  },
-  {
-   "q": "council",
-   "t": "내년 지역·필수의료 수가에 2.7조 투입…의원 초진료 2만원 돌파 - 뉴시스",
-   "s": "뉴시스",
-   "su": "https://www.newsis.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBNNXpORXlGeVBVRjJBTk5KTUZtU1UtakRSLVg2Y2pKNVUyODA5UlJLVDJLRE5DaE1yZkNjbElOYTVqeDgyQkFBRXVSX2RvR1pDU1lmSEp2dEo5LUpLbTRyRdIBeEFVX3lxTE1lYzF4V29tTEJlelJWTDdPbklsQzBiX2RYZmZ6QVJpNjhDbWpsU0RualV5eTRlaGhxSVNMbFI2MllMbzVrSUhIS0dlNVNUVGRqb0lZbmdjQ29lbkdnUGRSajM2RGlFTzhWeGhveVJaMmFxWEVaY3hTag?oc=5"
-  },
-  {
-   "q": "kma",
-   "t": "소아응급 붕괴 위기에 의협 “대책 마련할 테니 자리 지켜달라” - 코리아헬스로그",
-   "s": "코리아헬스로그",
-   "su": "https://www.koreahealthlog.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE15WVVaYzdvN1QwbDVTYWFSZThGUERxX2tMTlpXTzM1WWRBN1V1UVRMWlNlMzhueUZCTlRSbnVRWThPYlBkZXI1RmpGRHZmQ090SFIxaFMwN2ZiWlhNUy1mY3ZDandveEYyelpyMkRGeDlrZ9IBdkFVX3lxTE1lbEtjWlpQb3JYX3hDWXpqT19WSUZvSUl0cTc4OTMtUVctWG0wWUFPaXMyckNMTzRoZkVMZUE5RktpOXhxa1ZBMVE5eFBtOHVSQmZRSTFBRUlnOVhmbUZFUzR4ejZkMTMyal9lbEtmRVUyNVJwZ0E?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "한의 의료기관의 입원환자 식대 인력기준 점검 추가 등 건보청구 개정 > 뉴스 - 한의신문",
-   "s": "한의신문",
-   "su": "https://www.akomnews.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMickFVX3lxTE9BWG1RbTFvVnZwRWE5ZXU5aFdaNmNSaFpZZWdkZTlYcGNTcGhCNF9RZ2pDYzBUOC1hdjc5TnplRmpkMGxKWm9ZT1AyYWNXbkVZdlF6OWlVRzJxa1ZPMEhMeTBUdnd2YkZGS3VpYThOUzhEQQ?oc=5"
-  },
-  {
-   "q": "watch",
-   "t": "내년부터 동네의원 초진료 오른다는데…검사 수가 줄여 필수의료 지원 - 매일경제",
-   "s": "매일경제",
-   "su": "https://m.mk.co.kr",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE53emozY2loZ1pEcXV2MjY4NV9vZ2ZYU2hxNy1PVUo2b0ZVRV91Yk0zaGQyWnlvN0c5R3AtenZ6OF9hUDJZQXc?oc=5"
-  },
-  {
-   "q": "watch",
-   "t": "\"동네 병원 진료비 오른다\"…내년부터 65세 이상은 더 낼 수도 있다 - 위키트리",
-   "s": "위키트리",
-   "su": "https://www.wikitree.co.kr",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8yMHRLM2J1cV9ocUxTQ3NCQ04tb0hVMVZrdkVNc2kyRXNEYmtUMzBCX3BSMWNwVlB2Q3NlNVlxMWxLb0g0RnU2VlluUm45c295dzYwcWZB?oc=5"
-  },
-  {
-   "q": "council",
-   "t": "25년 만에 바뀐 건보 수가…경기·인천 의료취약지에 ‘우대 수가’ 적용 - 경기일보",
-   "s": "경기일보",
-   "su": "https://www.kyeonggi.com",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1rS0tzazM1ZGNSSFFvLWhTRmI4Q3RROUNsMi1QXzJtN3NFc0JoUmhPRjNmeFdxVDR5OUxkSWJuRUNrcXFCaHhHYnBudXBWOWZJUTlUc0pVU3oyTDg?oc=5"
-  },
-  {
-   "q": "reform",
-   "t": "25년 만에 바뀐 건강보험 수가, 내년 지역·필수의료에 2.7조 원 투입…고위험 분만 수가 대폭 오른다고? 🏥 - 뉴닉",
-   "s": "뉴닉",
-   "su": "https://newneek.co",
-   "d": "2026-10-28",
-   "l": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1GZWFRT1dDRGZKZ0VPMGxMbjQyaHl5ZFRZazdKVDZ2QkZVZUFqTnFZN0E1dzR3ekRTTEtYcVdzMzM3Q2FUMWl4d3hmVjQ3SDh3M2sw?oc=5"
-  },
-  {
-   "q": "council",
-   "t": "\"건강보험 수가 부정확성 개선해야 한다\" - 약사공론",
-   "s": "약사공론",
-   "su": "https://www.kpanews.co.kr",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1tMmpoREpLeDYtRVQxbGk2Q1hnQ18zRzdmYVhabmVoZU1ubXZQV2hxWjBGVW1NNjQtNXFPZFpUSlBSWnVkTkQ3b1dHU0kzdklXemxkc0xrcXZOMnI1dE4xWmMtZ2c0dUNQTFpxMg?oc=5"
-  },
-  {
-   "q": "tele",
-   "t": "\"7일은 짧다\" vs \"30일 예외 우려\"…비대면진료 세부기준 충돌 - 약업신문",
-   "s": "약업신문",
-   "su": "http://m.yakup.com",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9IQXZvdGN4R0pDRkVIUEJwckhqTTdHY2EwVkJFNjcxNkRZNGpkRVVBRjRsMU1URzFZX294TUdSTk9JMWc4YzdQLXpGa0pndWFSeWU4SGp2YmV6VjZKZ05odGE0eGF5T2tNV2dBOVJiQQ?oc=5"
-  },
-  {
-   "q": "tele",
-   "t": "대한약사회, 비대면진료 중개매체 규제 보완ㆍ자체 검증 주목 - 의약뉴스",
-   "s": "의약뉴스",
-   "su": "https://www.newsmp.com",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE42Y3p5ck9Ldk9KQ3BmZXNMVDVqU2N4QUc2djBBMGRzZzU0SElLY2d4cWxnb0RDcFpWZFQ4ZmNacjJfUXA0Y2EtQmRJdWswRFZ0R3ZjYVcxc1ptOS1OeV8yM2RKa2lmVGhh?oc=5"
-  },
-  {
-   "q": "tele",
-   "t": "의료계·산업계 반발 비대면진료 시행규칙, 돌파구 찾을 수 있을까? - 메디칼업저버",
-   "s": "메디칼업저버",
-   "su": "https://www.monews.co.kr",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8zb05STkF6QlRaWWxuYS14b3E0UWpoOG1WdVZvQjFzRUw0Ry16Vy1keU15Z2w3cjc1cElxUGVCUWFQc2RNTzJqVVRsSjZHYVNQa040NVQ5MXI2ajdLLTBNSy1kaXlrdXJtWXpZ?oc=5"
-  },
-  {
-   "q": "mohw",
-   "t": "복지부, 약제 급여 목록 개정고시… 11월부터 적용 - 간호사신문",
-   "s": "간호사신문",
-   "su": "https://www.nursenews.co.kr",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBaTldzbDF0Z3NIcDFoQ1QtMEtHWmZEUzZjR01jUE9veUt4SEpycEEwd1VuMDZQSmpUNkdHb1hlQjB3S0ttelh1NU1oR3BmaWNPbnc4SlVSME5hMkEyN0FSZTlTd1Y0QTdYQUMtcWdB?oc=5"
-  },
-  {
-   "q": "premium",
-   "t": "‘건강보험 재정 누수 주범’ 몰린 요양병원들 발끈 - 데일리메디",
-   "s": "데일리메디",
-   "su": "https://www.dailymedi.com",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5HdEhqeThaWmEwNzBGVEtTLS1UNmc5SkhyNkRZMkVLYnhtWWJNTmF0Q1VTTF9xTDBPUlZDWm9HYWdMTWFBbGwxc19VS0FZSGVMZmxBYnp5X2F0OEgzZjZDNTNWMXlvTVBw?oc=5"
-  },
-  {
-   "q": "premium",
-   "t": "‘외국인 건보’ 1조원대 흑자…1년만에 적자 돌아선 ‘중국인’ - 농민신문",
-   "s": "농민신문",
-   "su": "https://www.nongmin.com",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5SRzY4U1l0dnppWXl4R19ZNFpmLUpGcHo1Y0hkNUxkUjBkcVFLNFdqcEg3LUtzVkVQTERObHlSTzhtcDExMUJIRmlQZlpwNWRIMFVGN0MxUFRHZw?oc=5"
-  },
-  {
-   "q": "premium",
-   "t": "“건강보험 재정 위기, 일본 경험에서 한국 미래 묻다” - 재활뉴스",
-   "s": "재활뉴스",
-   "su": "https://www.rehabnews.net",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9mMllMV0UtQjI5VFczTjNxRFFHT3NzNGlLMFBWVks1STVRalpyTUlKZTc3SHFnNEF6TmFLRDdaRlRsTDBydXU4bWJoNWRQQUdqS2w3dW5Iek5fZ3NkV1dyak4xNDhDbEpSYlhN?oc=5"
-  },
-  {
-   "q": "kpa",
-   "t": "크레소티 손잡은 약사회, 제한적 약 배송 플랫폼 구축 - 데일리팜",
-   "s": "데일리팜",
-   "su": "https://www.dailypharm.com",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBZbkVzWHRfVWNhcThURGdwVWl0LUtVVlNuUC1oNUc1RUk3WDFXS3Y0NFZNM2laUDhQYmpIT0hYWHFjNjdDeGJYcWgxV3RKMTBIbnBPaWFn?oc=5"
-  },
-  {
-   "q": "tech",
-   "t": "경남정보대 치위생과, ‘치과위생사 선서식 및 학술제’ 개최 - 부산일보",
-   "s": "부산일보",
-   "su": "https://mobile.busan.com",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPa0hXenIzNUFlLThRcEdjaTF5Ml9HUldiM1prUzJPdFJjODNJMGZMbGhNMHV4Y3VOQVp2SllBNHE0cFBFSHBmdTJYRDRIczFzUFFRWW1qdlJpQ3FWMkx2czNzU3ROYXlYejUxLXhEbWdtVGUzVTZCTGJnckFOckZ4WTFJMV9NZw?oc=5"
-  },
-  {
-   "q": "hira",
-   "t": "심평원, 의료기관 이상징후 감지체계 구축 검토 - 의학신문",
-   "s": "의학신문",
-   "su": "https://www.bosa.co.kr",
-   "d": "2026-10-27",
-   "l": "https://news.google.com/rss/articles/CBMiakFVX3lxTE95VjJhbFBCWGJSM0lONHZFbC1EeW1oNkhCMTlZRFJCS3pkSzFMaWRSbTJ3ZVpjUEVMNEVQT2JmZHhwMmkyMnRhZ0duVTJFazFGMzlxOXlLcmxacG9HR3Y0T3Fyc2dLdzBtSlE?oc=5"
   }
  ],
- "updatedAt": "2026-11-21T00:52:48.364Z",
+ "updatedAt": "2026-11-22T00:44:40.430Z",
  "source": "auto",
  "queries": 33,
  "failed": 0,
