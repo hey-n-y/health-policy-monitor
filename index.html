@@ -1007,6 +1007,7 @@ function renderEdu(){
   if (!editingPost) $("postDate").value = todayStr();
   $("postFileWrap").querySelector(".hint").textContent = assetsApi
     ? "PDF·이미지·동영상·텍스트 파일, 한 파일 20MB까지. PPT·한글·워드는 PDF로 저장해 올리거나 아래 링크로 첨부해 주세요."
+    : STATIC_MODE ? "공개 페이지에서는 파일을 올릴 수 없습니다. 자료는 아래 참고 링크로 첨부해 주세요."
     : "파일 올리기는 이 아티팩트의 편집 권한이 있는 사람만 할 수 있습니다. 자료는 아래 링크로 첨부해 주세요.";
   $("postFiles").disabled = !assetsApi;
   const list = posts.slice().sort((a,b)=>(b.eduDate||b.postedAt||"").localeCompare(a.eduDate||a.postedAt||""));
@@ -1571,7 +1572,6 @@ const ROUTES = ["dashboard","planning","notices","news","factcheck","planning-to
 function route(scrollTop){
   let r = (location.hash||"").slice(1);
   if (!ROUTES.includes(r)) r = "dashboard";
-  if (STATIC_MODE && r.startsWith("planning")) r = "dashboard";
   const page = r.startsWith("planning") ? "planning" : r;
   planSub = r.startsWith("planning-") ? r.slice(9) : "overview";
   document.querySelectorAll(".page").forEach(p=>{ p.hidden = p.dataset.page!==page; });
@@ -1597,7 +1597,34 @@ $("vDate").onclick=()=>setView("date"); $("vCat").onclick=()=>setView("cat");
 try{ const v=localStorage.getItem("hpm-view"); if(v==="cat"){ view="cat"; $("vDate").setAttribute("aria-pressed","false"); $("vCat").setAttribute("aria-pressed","true"); } }catch(e){}
 
 renderTimeline(); renderMatrix(); renderKpis(); renderFacts(); renderAll(); route(false); setHdr();
-if (STATIC_MODE){ const n=$("navPlanning"); if (n) n.hidden = true; const s=$("planSubnav"); if (s) s.hidden = true; }
+// ---------- 기획·준비 관리 저장소 연결 (아티팩트: 팀 공유 db / 공개 페이지: 브라우저 저장) ----------
+function startPlanning(dbx){
+  planDb = dbx; canPlan = true; renderPlanning(); renderIssues();
+  const sub = (name, fn) => planDb.collection(name).onSnapshot(qs=>{ fn(qs.docs.map(d=>({id:d.id, ...(d.data()||{})}))); renderPlanning(); }, e=>{ notice("기획 데이터를 불러오지 못했습니다 ("+((e&&e.code)||"")+")."); });
+  sub("plans", a=>{ plans=a; renderIssues(); navCounts(); });
+  sub("posts", a=>{ posts=a; });
+  sub("events", a=>{ events=a; });
+  sub("releases", a=>{ releases=a; });
+}
+// 공개 페이지용: localStorage에 저장하는 작은 저장소 (db와 같은 호출 방식)
+function localPlanDb(){
+  const KEY = "wellcheck-planning-v1";
+  let store = {}; try{ store = JSON.parse(localStorage.getItem(KEY)||"{}") || {}; }catch(e){ store = {}; }
+  const subs = [];
+  const persist = () => { try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){ notice("이 브라우저에 저장할 수 없습니다(저장 공간 차단 또는 부족)."); } };
+  const fire = () => subs.forEach(s=>setTimeout(()=>s.fn(snap(s.col)),0));
+  const snap = col => { const docs = Object.keys(store[col]||{}).map(id=>({id, exists:true, data:()=>store[col][id]})); return {docs, size:docs.length, empty:!docs.length}; };
+  const uid = () => "l" + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+  const doc = (col, id) => ({ id,
+    set: async d => { (store[col] ||= {})[id] = JSON.parse(JSON.stringify(d)); persist(); fire(); },
+    update: async d => { if (!store[col] || !store[col][id]) throw {code:"invalid_argument"}; store[col][id] = {...store[col][id], ...JSON.parse(JSON.stringify(d))}; persist(); fire(); },
+    delete: async () => { if (store[col]) delete store[col][id]; persist(); fire(); } });
+  return { collection: col => ({
+    doc: id => doc(col, id || uid()),
+    add: async d => { const r = doc(col, uid()); await r.set(d); return r; },
+    onSnapshot: fn => { const s={col, fn}; subs.push(s); setTimeout(()=>fn(snap(col)),0); return ()=>{ const i=subs.indexOf(s); if (i>=0) subs.splice(i,1); }; } }) };
+}
+if (STATIC_MODE){ const pg=document.querySelector('.page[data-page="planning"] .purpose'); if (pg) pg.insertAdjacentHTML("afterend", `<div class="notice">공개 페이지에서는 기획·준비 관리 내용이 <b>지금 쓰는 이 브라우저에만</b> 저장되고 다른 사람과 공유되지 않습니다. 팀과 함께 쓰려면 사내 Claude 아티팩트를 이용하세요. 교육자료 파일 첨부는 링크로만 가능합니다.</div>`); }
 
 // ---------- data: db ----------
 // 각 기능을 따로 연결한다. 하나가 늦거나 실패해도 나머지(특히 저장된 기사 표시)는 막히지 않게.
@@ -1659,6 +1686,7 @@ function openWorkflow(){
 }
 
 if (STATIC){
+  startPlanning(localPlanDb());   // 공개 페이지: 기획·준비 관리는 이 브라우저에 저장
   CAP_LABEL.mcp = "새로 수집"; CAP_LABEL.sample = "자동 요약";
   setCap("mcp","ok", SCHEDULE_LABEL + " · 버튼은 관리자용");
   setCap("db","wait","불러오는 중"); setCap("sample","wait","확인 중");
@@ -1670,15 +1698,8 @@ if (STATIC){
     if (v==="__timeout__" || !v){ setCap("db","bad", v==="__timeout__"?"응답 없음":"연결 안 됨(로그인 필요)"); status("저장소에 연결할 수 없음"); notice("저장된 기사를 불러오지 못했습니다. Claude에 로그인한 상태로 페이지를 다시 열어 주세요."); return; }
     db=v; setCap("db","wait","불러오는 중");
     // 기획·준비 관리: plans 컬렉션 구독 (팀 공유)
-    planDb = v; canPlan = true; renderPlanning(); renderIssues();
+    startPlanning(v);
     C.use("user").then(u=>{ if (u && u.id) u.id().then(id=>{ planUid=id||null; }).catch(()=>{}); }).catch(()=>{});
-    planDb.collection("plans").onSnapshot(qs=>{
-      plans = qs.docs.map(d=>({id:d.id, ...(d.data()||{})}));
-      renderPlanning(); renderIssues(); navCounts();
-    }, e=>{ notice("기획 항목을 불러오지 못했습니다 ("+(e.code||"")+")."); });
-    planDb.collection("posts").onSnapshot(qs=>{ posts = qs.docs.map(d=>({id:d.id, ...(d.data()||{})})); renderPlanning(); }, ()=>{});
-    planDb.collection("events").onSnapshot(qs=>{ events = qs.docs.map(d=>({id:d.id, ...(d.data()||{})})); renderPlanning(); }, ()=>{});
-    planDb.collection("releases").onSnapshot(qs=>{ releases = qs.docs.map(d=>({id:d.id, ...(d.data()||{})})); renderPlanning(); }, ()=>{});
     C.use("assets").then(a=>{ assetsApi = a || null; renderPlanning(); }).catch(()=>{ assetsApi=null; });
     const timer = setTimeout(()=>{ if(!dbLoaded){ setCap("db","wait","응답 지연"); status("저장소 응답이 늦습니다 · 잠시 후 자동으로 표시됩니다"); } },10000);
     db.doc("feed/latest").onSnapshot(snap=>{
