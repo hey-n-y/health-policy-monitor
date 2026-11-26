@@ -139,15 +139,19 @@ async function summarize(items, catKeys) {
   const { default: Anthropic } = await import("@anthropic-ai/sdk");
   const client = new Anthropic();
   const top = items.slice(0, 90).map((r) => ({ id: idOf(r), d: r.d, cat: r.q, src: r.s, title: cleanTitle(r.t, r.s) }));
-  const prompt = `당신은 한국 보건의료 정책 모니터링 담당자입니다. 아래는 오늘 수집한 뉴스 제목 목록(JSON)입니다.
-병원 경영·보험청구 실무자가 알아야 할 핵심 사안 6~8개를 골라 한국어로 요약하세요.
+  const html = await fs.readFile(path.join(ROOT, "index.html"), "utf8");
+  const profile = (/const SERVICE_PROFILE = "([^"]*)"/.exec(html) || [])[1] || "만성질환 관리 서비스";
+  const prompt = `당신은 한국 보건의료 정책 모니터링 담당자입니다. 아래는 오늘 수집한 뉴스·기관 공지 제목 목록(JSON)입니다.
+목적: 국가사업·의료 법령·건강보험 제도 변경이 (1) 현장 의료기관과 (2) 우리 서비스에 미치는 영향을 파악해 선제적으로 대응하는 것입니다.
+우리 서비스: ${profile}
+의료기관 운영·보험청구와 우리 서비스에 영향이 큰 사안 6~8개를 골라 한국어로 요약하세요. 각 사안마다 clinic(현장 의료기관 영향 1문장), service(우리 서비스 영향 1문장, 관련 없으면 "직접 영향 낮음"), action(지금 준비할 대응 1문장)을 쓰세요.
 규칙:
 - 제목 목록에 근거가 있는 내용만 쓰고, 추측하지 마세요. 수치는 제목에 있는 그대로만 쓰세요.
 - 기사 간 수치가 다르면 status를 "conflict"로 하고 body에 어느 부분이 다른지 적으세요.
 - status: 정부 기관(보건복지부, 정책브리핑, 건보공단, 심평원) 보도가 근거에 있으면 "gov", 서로 다른 출처 2곳 이상이면 "cross", 하나뿐이면 "single".
 - 2027년 수가·보험료·청구 변경, 건강보험정책심의위원회 의결, 제도 개편, 비대면진료, 만성질환관리료, 검체검사 위·수탁 고시, 복지부 제도 변경, 협회(병협·의협·간협·약사회·의료기사)의 의견·성명을 우선하세요.
 - refs에는 근거 기사 id를 1~4개 넣으세요.
-출력은 JSON 객체 하나만, 다른 글 없이: {"points":[{"title":"한 줄 제목","body":"2~3문장","status":"gov|cross|single|conflict","cats":["${catKeys.join("|")}"],"refs":["id"]}]}
+출력은 JSON 객체 하나만, 다른 글 없이: {"points":[{"title":"한 줄 제목","body":"2~3문장","clinic":"1문장","service":"1문장","action":"1문장","status":"gov|cross|single|conflict","cats":["${catKeys.join("|")}"],"refs":["id"]}]}
 
 [기사 목록]
 ${JSON.stringify(top)}`;
@@ -172,6 +176,7 @@ ${JSON.stringify(top)}`;
     updatedAt: new Date().toISOString(),
     points: out.points.slice(0, 8).map((p) => ({
       title: String(p.title || ""), body: String(p.body || ""),
+      clinic: String(p.clinic || ""), service: String(p.service || ""), action: String(p.action || ""),
       status: ["gov", "cross", "single", "conflict"].includes(p.status) ? p.status : "single",
       cats: (p.cats || []).map(String).slice(0, 3), refs: (p.refs || []).map(String).slice(0, 4),
     })),

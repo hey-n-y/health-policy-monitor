@@ -1,30 +1,31 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
-<title>보건의료 제도 모니터</title>
+<title>[웰체크] 국가정책·제도 모니터링</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: 관제판 — 상단 고정 바(갱신), 요약 브리핑 → 팩트체크 → 원문 피드(날짜별/키워드별) 순으로 위에서 아래로 상세화 */
+/* Layout: 대응 관제판 — 시행 일정(D-day) → 선제 대응 과제(의료기관·웰체크 영향, 대응 방향) → 영향 매트릭스 → 고시 감시 → 실무 정보 → 뉴스 동향 → 근거(수치·팩트체크·원문) 순으로, 결정에 필요한 것부터 근거 순서로 내려간다.
+   Color: 웰체크 브랜드 Primary Blue #3E71F0 / Dark Blue #113694 / Teal #20C4A0 */
 :root{
-  --bg:#f3f5f6; --panel:#ffffff; --ink:#14232b; --muted:#5b6b73; --line:#dbe2e5; --soft:#e9eef0;
-  --accent:#0e6b72; --accent-ink:#ffffff; --accent-soft:#d9eef0;
+  --bg:#f4f6fb; --panel:#ffffff; --ink:#16203a; --muted:#5a6580; --line:#dbe1ee; --soft:#eaeef8;
+  --accent:#3E71F0; --accent-ink:#ffffff; --accent-soft:#e3ebfe; --brand-dark:#113694; --brand-teal:#20C4A0;
   --ok:#1d7a47; --ok-soft:#dcf1e4; --info:#245fa8; --info-soft:#dfe9f7; --warn:#9a6200; --warn-soft:#f8ecd2; --bad:#b03a2e; --bad-soft:#f8e0dc;
   --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   --font-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f171b; --panel:#162228; --ink:#e3ecef; --muted:#93a5ad; --line:#2a3a42; --soft:#1d2c33;
-  --accent:#4fb7bd; --accent-ink:#06191b; --accent-soft:#173a3e;
+  --bg:#0e1424; --panel:#151d31; --ink:#e4e9f6; --muted:#97a3bf; --line:#28324b; --soft:#1c2540;
+  --accent:#7C9EFF; --accent-ink:#0b1430; --accent-soft:#1f2c55; --brand-dark:#a9bfff; --brand-teal:#4fdcbc;
   --ok:#6fd39a; --ok-soft:#173a28; --info:#86b4ef; --info-soft:#1a2c46; --warn:#e7b65a; --warn-soft:#3a2d12; --bad:#f08c80; --bad-soft:#41201c; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0f171b; --panel:#162228; --ink:#e3ecef; --muted:#93a5ad; --line:#2a3a42; --soft:#1d2c33;
-  --accent:#4fb7bd; --accent-ink:#06191b; --accent-soft:#173a3e;
+  --bg:#0e1424; --panel:#151d31; --ink:#e4e9f6; --muted:#97a3bf; --line:#28324b; --soft:#1c2540;
+  --accent:#7C9EFF; --accent-ink:#0b1430; --accent-soft:#1f2c55; --brand-dark:#a9bfff; --brand-teal:#4fdcbc;
   --ok:#6fd39a; --ok-soft:#173a28; --info:#86b4ef; --info-soft:#1a2c46; --warn:#e7b65a; --warn-soft:#3a2d12; --bad:#f08c80; --bad-soft:#41201c; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:14.5px;line-height:1.6}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
 a{color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1440px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
 .bar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-block:12px}
 .brand{display:flex;flex-direction:column;min-width:0;flex:1 1 260px}
@@ -49,7 +50,28 @@ button{font:inherit;cursor:pointer}
 .ghost{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 12px}
 .progress{height:3px;background:var(--soft)}
 .progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
-main .wrap{display:flex;flex-direction:column;gap:28px;padding-block:22px 48px}
+/* 왼쪽 페이지 목록 + 본문 */
+.shell{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:1000px){ .shell{grid-template-columns:168px minmax(0,1fr);gap:16px} .side a{font-size:13.5px;gap:8px;padding:8px} }
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hdr,76px) + 16px);padding-block:22px;display:flex;flex-direction:column;gap:2px}
+.side .lbl{font-size:11.5px;letter-spacing:.06em;color:var(--muted);padding:0 10px 6px}
+.side a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:14px}
+.side a svg{width:17px;height:17px;flex:none;color:var(--muted)}
+.side a:hover{background:var(--soft)}
+.side a[aria-current="page"]{background:var(--accent-soft);color:var(--brand-dark);font-weight:600}
+.side a[aria-current="page"] svg{color:var(--accent)}
+.side a .n{margin-left:auto;font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.side a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.content{display:flex;flex-direction:column;gap:28px;padding-block:22px 48px;min-width:0}
+.page{display:flex;flex-direction:column;gap:28px;min-width:0}
+.ptitle{margin:0;font-size:20px;color:var(--brand-dark);text-wrap:balance}
+.ptitle + .purpose{margin-top:-20px}
+@media (max-width:560px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0}
+  .side{position:static;flex-direction:row;overflow-x:auto;padding-block:10px 0;gap:4px;border-bottom:1px solid var(--line)}
+  .side .lbl{display:none}
+  .side a{white-space:nowrap;padding:8px 10px}
+}
 section>h2{font-size:13px;letter-spacing:.06em;color:var(--muted);font-weight:600;margin:0 0 10px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 section>h2 small{letter-spacing:0;font-weight:400;font-size:12px}
 .notice{background:var(--warn-soft);color:var(--ink);border-radius:6px;padding:10px 14px;font-size:13px}
@@ -114,6 +136,173 @@ input[type=search]{flex:1 1 200px;min-width:0}
 .tier.assoc{background:var(--accent-soft);color:var(--accent)}
 .empty{padding:28px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:8px}
 footer{color:var(--muted);font-size:12px}
+/* 기획·준비 관리 */
+.pstats{display:flex;flex-wrap:wrap;gap:8px}
+.pstat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-width:120px;font:inherit;color:var(--ink);text-align:left}
+.pstat b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.pstat span{font-size:12px;color:var(--muted)}
+.pstat[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.ptools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.board{display:grid;grid-template-columns:repeat(5,minmax(220px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px}
+.bcol{background:var(--soft);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.bcol h3{margin:0 2px 2px;font-size:13px;display:flex;justify-content:space-between}
+.bcol h3 span{font-family:var(--font-mono);color:var(--muted);font-weight:400}
+.bcol .none{font-size:12px;color:var(--muted);padding:6px 2px}
+.pcard{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:13px;min-width:0}
+.pcard.p-high{border-left-color:var(--bad)} .pcard.p-mid{border-left-color:var(--warn)} .pcard.p-low{border-left-color:var(--line)}
+.pcard h4{margin:0;font-size:14px;line-height:1.4}
+.pcard .meta{display:flex;flex-wrap:wrap;gap:4px 8px;color:var(--muted);font-size:12px}
+.pcard .late{color:var(--bad);font-weight:600}
+.pcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.pcard li label{display:flex;gap:6px;align-items:flex-start;cursor:pointer}
+.pcard li input{margin-top:3px}
+.pcard li.done span{text-decoration:line-through;color:var(--muted)}
+.pcard .row{display:flex;gap:6px;align-items:center;justify-content:space-between;margin-top:2px}
+.pcard select{font-size:12px;padding:3px 6px}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font:inherit;font-size:12.5px;cursor:pointer}
+.linkbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.editor{background:var(--panel);border:1px solid var(--accent);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.editor h3{margin:0;font-size:15px;color:var(--brand-dark)}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 14px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field.wide{grid-column:1/-1}
+.field label{font-size:12px;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px 10px;min-width:0}
+.field textarea{min-height:84px;resize:vertical}
+.field .hint{font-size:11.5px;color:var(--muted)}
+.erow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn.ghost2{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn.danger{background:var(--bad);color:#fff}
+.imports{background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.imports > div{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px 12px;align-items:center;padding:8px 14px;border-top:1px solid var(--line);font-size:13px}
+.imports > div:first-child{border-top:0}
+.imports .src{font-size:12px;color:var(--muted)}
+.iss .act .addp{font-size:11.5px}
+.iss .plinks{font-size:12.5px;color:var(--brand-dark)}
+.empty-plan{padding:20px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:8px}
+.subnav{display:none;flex-direction:column;gap:1px;margin:0 0 4px 22px;border-left:1px solid var(--line);padding-left:6px}
+.subnav.open{display:flex}
+.side .subnav a{font-size:13px;padding:6px 10px}
+@media (max-width:560px){ .subnav{margin:0;border:0;padding:0;flex-direction:row} }
+.pbody{display:flex;flex-direction:column;gap:20px}
+.sub{display:flex;flex-direction:column;gap:24px}
+.stepper{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px}
+.stepper a{display:flex;flex-direction:column;justify-content:center;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 14px;text-decoration:none;color:var(--ink);min-width:104px}
+.stepper a b{font-size:18px;font-variant-numeric:tabular-nums}
+.stepper a span{font-size:12px;color:var(--muted)}
+.stepper a.on{border-color:var(--accent);background:var(--accent-soft)}
+.stepper a.on span{color:var(--brand-dark);font-weight:600}
+.stepper .arr{align-self:center;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.cards .empty-plan{grid-column:1/-1}
+.board{grid-template-columns:repeat(5,minmax(220px,1fr))}
+.bcol h3 a{color:inherit;text-decoration:none} .bcol h3 a:hover{color:var(--accent)}
+.pcard .row{flex-wrap:wrap}
+.pcard .row > span{display:flex;gap:6px;align-items:center;white-space:nowrap;margin-left:auto}
+.pcard .refs-in{font-size:12px;border-top:1px dashed var(--line);padding-top:4px}
+.pcard .refs-in li{display:flex;gap:4px;align-items:baseline}
+.pcard .refs-in a{color:var(--accent);text-decoration:none;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pcard .refs-in span{color:var(--muted);white-space:nowrap}
+.pcard .meta a{color:var(--accent);text-decoration:none}
+.pcard .fbnote{font-size:12.5px;background:var(--soft);border-radius:4px;padding:6px 8px;white-space:pre-wrap}
+.x{background:none;border:0;color:var(--muted);cursor:pointer;font-size:13px;padding:0 2px;line-height:1}
+.x:hover{color:var(--bad)} .x.armed{color:var(--bad);font-size:11.5px}
+.reflist{max-height:320px;overflow:auto;border:1px solid var(--line);border-radius:6px}
+.refrow{display:grid;grid-template-columns:18px 84px minmax(0,1fr) auto;gap:8px;align-items:start;padding:7px 10px;border-top:1px solid var(--line);font-size:13px;cursor:pointer}
+.refrow:first-child{border-top:0}
+.refrow:hover{background:var(--soft)}
+.refrow .d{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);padding-top:1px}
+.refrow .s{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.refchips{display:flex;flex-wrap:wrap;gap:6px}
+.reflist .none{padding:12px;color:var(--muted);font-size:13px}
+.posts{display:flex;flex-direction:column;gap:10px}
+.post{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 16px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+.post .ptop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;align-items:baseline}
+.post h4{margin:0;font-size:15px}
+.post .when{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.post .when b{color:var(--accent)}
+.post p{margin:0;white-space:pre-wrap}
+.post .meta{font-size:12.5px;color:var(--muted)}
+.post .files{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;font-size:13px}
+.post .files a{color:var(--accent);text-decoration:none;word-break:break-all}
+.post .files span{color:var(--muted);font-size:11.5px}
+.post .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.calhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.calhead b{font-size:17px;min-width:110px;text-align:center}
+.calhead .btn.ghost2{padding:6px 12px}
+.calwrap{overflow-x:auto}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(110px,1fr));border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--line);gap:1px;min-width:770px}
+.cal .dow{background:var(--soft);font-size:12px;text-align:center;padding:6px 0;color:var(--muted);font-weight:600}
+.cal .sun{color:var(--bad)} .cal .sat{color:var(--info)}
+.cal .day{background:var(--panel);min-height:104px;padding:4px 6px;display:flex;flex-direction:column;gap:3px;cursor:pointer;min-width:0}
+.cal .day:hover{background:var(--soft)}
+.cal .day.out{background:var(--bg)} .cal .day.out .dn{opacity:.45}
+.cal .dn{font-size:12px;font-variant-numeric:tabular-nums}
+.cal .day.today .dn{background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:0 6px;align-self:flex-start}
+.cal .pol{font-size:11px;background:var(--soft);color:var(--muted);border-radius:3px;padding:1px 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal .ev{display:block;text-align:left;border:0;border-left:3px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:3px;padding:2px 5px;font:inherit;font-size:11.5px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}
+.cal .ev span{color:var(--muted)}
+.cal .ev:focus-visible{outline:2px solid var(--accent)}
+.cal .ev.rel{border-left-color:var(--brand-teal);background:var(--ok-soft)}
+.muted{color:var(--muted)}
+.fblist{display:flex;flex-direction:column;gap:14px}
+.fbblock{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.fbhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.fbhead h3{margin:0 0 4px;font-size:15.5px}
+.fbhead .meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;color:var(--muted)}
+.fbblock .fbnote{font-size:13px;background:var(--soft);border-radius:6px;padding:8px 10px;white-space:pre-wrap}
+.fbblock h4{margin:0;font-size:13px;display:flex;gap:8px;align-items:baseline}
+.fbblock h4 span{font-weight:400;color:var(--muted);font-size:12px}
+.fbrel{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:6px}
+.fbrel li{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:2px 10px;padding:7px 10px;border-top:1px solid var(--line);font-size:13px;align-items:baseline}
+.fbrel li:first-child{border-top:0}
+.fbrel .d{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.fbrel a{text-decoration:none} .fbrel a:hover{color:var(--accent);text-decoration:underline}
+.fbrel .s{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.fbrel .acts{grid-column:2/-1;display:flex;gap:12px}
+.fbblock details summary{cursor:pointer;font-size:12.5px;color:var(--muted)}
+.fbblock details .fbrel{margin-top:6px}
+#h-posts{width:100%}
+.brand h1{color:var(--brand-dark)}
+.purpose{margin:0;font-size:13.5px;color:var(--muted);max-width:80ch}
+.purpose b{color:var(--ink);font-weight:600}
+/* 시행 일정 */
+.timeline{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity}
+.tl{flex:0 0 220px;scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.tl.plan{border-top-color:var(--warn)} .tl.past{opacity:.6;border-top-color:var(--line)}
+.tl .dd{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--accent)}
+.tl.plan .dd{color:var(--warn)}
+.tl .dt{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl .tt{font-size:13.5px;font-weight:600;line-height:1.4}
+.tl .ts{font-size:12px;color:var(--muted);line-height:1.45}
+/* 선제 대응 과제 */
+.issues{display:flex;flex-direction:column;gap:12px}
+.iss{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.iss .top{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.iss h3{margin:0;font-size:16px;line-height:1.4;text-wrap:balance}
+.iss .what{margin:0;color:var(--ink);font-size:13.5px}
+.iss .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.iss .col{background:var(--soft);border-radius:6px;padding:10px 12px;font-size:13px;min-width:0}
+.iss .col h4{margin:0 0 4px;font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.iss .col.svc{background:var(--accent-soft)}
+.iss .col.svc h4{color:var(--brand-dark)}
+.iss .col p{margin:0}
+.iss .act{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;font-size:13px}
+.iss .act li{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:6px;align-items:start}
+.iss .act li::before{content:"";width:12px;height:12px;border:1.5px solid var(--accent);border-radius:3px;margin-top:4px}
+.iss .act .who{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.iss .open{font-size:12.5px;color:var(--warn)}
+.dday{font-family:var(--font-mono);font-size:12px;font-weight:600;padding:1px 8px;border-radius:4px;background:var(--accent);color:var(--accent-ink)}
+.dday.plan{background:var(--warn-soft);color:var(--warn)}
+/* 영향 매트릭스 */
+table.matrix{min-width:680px}
+table.matrix td.m{text-align:center;font-size:13px;white-space:nowrap}
+.m-up{color:var(--ok)} .m-down{color:var(--bad)} .m-mix{color:var(--warn)}
+.m-3{font-weight:700;font-size:15px} .m-1{opacity:.75}
+table.matrix th.svc,table.matrix td.svc{background:var(--accent-soft)}
+/* 뉴스 요약의 영향 줄 */
+.pt .imp{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 8px;font-size:12.5px;margin:0}
+.pt .imp dt{color:var(--muted)} .pt .imp dd{margin:0}
 /* 실무 정보 */
 .notices{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
 .nbox{background:var(--panel);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;min-width:0}
@@ -149,8 +338,8 @@ footer{color:var(--muted);font-size:12px}
 <header class="bar">
   <div class="wrap">
     <div class="brand">
-      <h1>보건의료 제도 모니터</h1>
-      <span class="sub">건강보험 수가 · 복지부 제도 · 보건의료단체 · 자동차보험 · 심평원 청구</span>
+      <h1>[웰체크] 국가정책·제도 모니터링</h1>
+      <span class="sub">국가정책 및 제도 변화 동향을 수집·분석하고, 웰체크 서비스 영향도와 대응 과제를 통합 관리하는 대시보드</span>
     </div>
     <div class="refresh">
       <div class="status" id="status">데이터 불러오는 중…</div>
@@ -164,37 +353,210 @@ footer{color:var(--muted);font-size:12px}
   <div class="progress" aria-hidden="true"><i id="prog"></i></div>
 </header>
 
-<main>
-<div class="wrap">
+<div class="wrap shell">
+<nav class="side" aria-label="페이지 목록">
+  <div class="lbl">페이지</div>
+  <a href="#dashboard" data-route="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>대시보드</a>
+  <a href="#planning" data-route="planning" id="navPlanning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 17h8"/></svg>기획·준비 관리<span class="n" id="nPlanning"></span></a>
+  <div class="subnav" id="planSubnav">
+    <a href="#planning-todo" data-route="planning-todo">1. 검토 대기<span class="n" id="nSub-todo"></span></a>
+    <a href="#planning-edu" data-route="planning-edu">2. 교육 진행<span class="n" id="nSub-edu"></span></a>
+    <a href="#planning-plan" data-route="planning-plan">3. 기획 중<span class="n" id="nSub-plan"></span></a>
+    <a href="#planning-dev" data-route="planning-dev">4. 개발·배포<span class="n" id="nSub-dev"></span></a>
+    <a href="#planning-feedback" data-route="planning-feedback">5. 피드백<span class="n" id="nSub-feedback"></span></a>
+  </div>
+  <a href="#notices" data-route="notices"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>실무 정보<span class="n" id="nNotices"></span></a>
+  <a href="#news" data-route="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>뉴스 동향<span class="n" id="nNews"></span></a>
+  <a href="#factcheck" data-route="factcheck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11l2 2 4-4"/></svg>팩트체크</a>
+</nav>
+<main class="content">
   <div class="notice" id="notice" hidden></div>
   <div class="diag" id="diag" aria-live="polite"></div>
+
+<!-- ===== 페이지: 대시보드 ===== -->
+<div class="page" data-page="dashboard">
+  <p class="purpose">국가사업·의료 법령·건강보험 제도 변경을 분석해 <b>웰체크 서비스 적용 영향</b>과 <b>현장 의료기관 영향</b>을 함께 보고, 시행 전에 준비할 대응 방향을 정리합니다.</p>
+
+  <section aria-labelledby="h-time">
+    <h2 id="h-time">시행 일정 <small>오늘 기준 D-day · 확정과 예정을 구분</small></h2>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section aria-labelledby="h-issue">
+    <h2 id="h-issue">선제 대응 과제 <small>무엇이 바뀌나 → 의료기관 영향 → 웰체크 영향 → 대응 방향</small></h2>
+    <div class="issues" id="issues"></div>
+  </section>
+
+  <section aria-labelledby="h-matrix">
+    <h2 id="h-matrix">영향 매트릭스 <small>▲ 기회·수익 증가 · ▼ 부담·수익 감소 · ◆ 혼재 · 진할수록 영향 큼</small></h2>
+    <div class="tbl"><table class="matrix" id="matrix"></table></div>
+  </section>
 
   <section aria-labelledby="h-watch">
     <h2 id="h-watch">고시 감시 <small>새로 수집할 때마다 아래 고시가 나왔는지 확인합니다</small></h2>
     <div id="watch"></div>
   </section>
 
-  <section aria-labelledby="h-notice">
-    <h2 id="h-notice">실무 정보 <small>보건복지부 · 건강보험심사평가원 · 국민건강보험공단 공지사항 (채용 공고 제외)</small> <button type="button" class="chip" id="noticeAll">피드에서 전체 보기</button></h2>
-    <div class="notices" id="notices"></div>
-  </section>
-
   <section aria-labelledby="h-kpi">
     <h2 id="h-kpi">2027년 핵심 수치 <small>공식 발표·고시 기준, 교차확인 완료</small></h2>
     <div class="kpis" id="kpis"></div>
   </section>
+</div>
 
-  <section aria-labelledby="h-brief">
-    <h2 id="h-brief">핵심 요약 <small id="briefMeta"></small></h2>
-    <div class="brief" id="brief"></div>
+<!-- ===== 페이지: 기획·준비 관리 ===== -->
+<div class="page" data-page="planning" hidden>
+  <h2 class="ptitle">기획·준비 관리</h2>
+  <p class="purpose">정책·제도 변경에 맞춰 웰체크에서 준비할 항목을 <b>검토 대기 → 교육 진행 → 기획 중 → 개발·배포 → 피드백</b> 단계로 관리합니다. 대시보드를 공유한 팀원과 함께 보고 고칠 수 있습니다.</p>
+  <div id="planGate" class="empty-plan" hidden></div>
+  <div id="planBody" class="pbody">
+    <nav class="stepper" id="stepper" aria-label="기획 단계"></nav>
+    <div id="planEditorWrap"></div>
+
+    <!-- 전체 보드 -->
+    <div class="sub" data-sub="overview">
+      <div class="ptools">
+        <button type="button" class="btn" data-newplan="todo">+ 기획 항목 추가</button>
+        <select id="planIssue" aria-label="관련 정책 필터"></select>
+        <select id="planTeam" aria-label="담당 팀 필터"></select>
+        <input type="search" id="planQ" placeholder="제목·담당자·메모 검색" aria-label="기획 항목 검색">
+      </div>
+      <div class="board" id="board"></div>
+    </div>
+
+    <!-- 1. 검토 대기 -->
+    <div class="sub" data-sub="todo" hidden>
+      <section aria-labelledby="h-todo">
+        <h2 id="h-todo">검토 대기 항목 <small>근거 자료를 모아 검토한 뒤 ‘다음 단계’로 넘깁니다</small> <button type="button" class="chip" data-newplan="todo">+ 직접 추가</button></h2>
+        <div class="cards" id="todoCards"></div>
+      </section>
+      <section aria-labelledby="h-ref">
+        <h2 id="h-ref">기사·자료 담기 <small>수집된 뉴스·기관 공지나 외부 링크를 검토 항목의 근거 자료로 붙입니다</small></h2>
+        <div class="editor">
+          <div class="fgrid">
+            <div class="field"><label for="refTarget">담을 곳</label><select id="refTarget"></select></div>
+            <div class="field" id="refNewWrap"><label for="refNewTitle">새 검토 항목 제목</label><input id="refNewTitle" placeholder="비우면 첫 번째 자료 제목을 씁니다"></div>
+            <div class="field wide"><label for="refQ">수집된 기사·기관 공지 검색</label><input type="search" id="refQ" placeholder="예: 위·수탁, 비대면, 만성질환, 고시"></div>
+          </div>
+          <div class="reflist" id="refList" role="group" aria-label="담을 자료 선택"></div>
+          <div class="fgrid">
+            <div class="field"><label for="refManT">직접 추가: 자료 제목</label><input id="refManT" placeholder="예: 심평원 설명회 자료 PDF"></div>
+            <div class="field"><label for="refManU">URL</label><input id="refManU" type="url" placeholder="https://"></div>
+          </div>
+          <div class="erow"><button type="button" class="btn ghost2" id="refManAdd">링크 목록에 추가</button><span class="refchips" id="refManList"></span></div>
+          <div class="erow"><button type="button" class="btn" id="refSave">선택한 자료 담기</button><span class="hint" id="refCount"></span></div>
+        </div>
+      </section>
+      <section aria-labelledby="h-imp">
+        <h2 id="h-imp">대응 과제에서 가져오기 <small>대시보드 ‘선제 대응 과제’의 대응 방향 중 아직 등록하지 않은 항목</small></h2>
+        <div class="imports" id="imports"></div>
+      </section>
+    </div>
+
+    <!-- 2. 교육 진행 -->
+    <div class="sub" data-sub="edu" hidden>
+      <section aria-labelledby="h-posts">
+        <h2 id="h-posts">교육 게시물 <small id="postMeta"></small> <button type="button" class="btn" id="postNewBtn" style="margin-left:auto">+ 새 게시물 등록</button></h2>
+        <div class="posts" id="postList"></div>
+      </section>
+      <section aria-labelledby="h-post" id="postFormSec" hidden>
+        <h2 id="h-post">교육 게시물 올리기 <small>관련 교육자료와 간략한 내용을 올리고 교육 진행일을 기록합니다</small></h2>
+        <form class="editor" id="postForm" novalidate>
+          <h3 id="postFormTitle">새 교육 게시물</h3>
+          <div class="fgrid">
+            <div class="field wide"><label for="postTitle">제목 *</label><input id="postTitle" placeholder="예: 검체 위·수탁 개편 사내 교육 (기획·개발팀)"></div>
+            <div class="field"><label for="postPlan">관련 기획 항목</label><select id="postPlan"></select></div>
+            <div class="field"><label for="postEduDate">교육 진행일</label><input id="postEduDate" type="date"></div>
+            <div class="field"><label>게시일</label><input id="postDate" type="text" readonly aria-readonly="true"><span class="hint">올린 날이 자동으로 기록됩니다</span></div>
+            <div class="field wide"><label for="postSummary">간략 내용</label><textarea id="postSummary" placeholder="교육 목적, 핵심 내용, 결정·후속 조치"></textarea></div>
+            <div class="field wide" id="postFileWrap"><label for="postFiles">교육자료 파일</label><input id="postFiles" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.mp4,.webm,.txt,.md,.csv,.json">
+              <span class="hint">PDF·이미지·동영상·텍스트 파일, 한 파일 20MB까지. PPT·한글·워드는 PDF로 저장해 올리거나 아래 링크로 첨부해 주세요.</span></div>
+            <div class="field wide"><label for="postLinks">참고 링크</label><textarea id="postLinks" placeholder="한 줄에 하나씩 (예: 사내 드라이브 PPT 주소)" style="min-height:56px"></textarea></div>
+          </div>
+          <div class="erow"><button type="submit" class="btn" id="postSubmit">게시</button><button type="button" class="btn ghost2" id="postCancel">취소</button><span class="hint" id="postMsg" aria-live="polite"></span></div>
+        </form>
+      </section>
+      <section aria-labelledby="h-educ">
+        <h2 id="h-educ">교육 진행 단계 항목</h2>
+        <div class="cards" id="eduCards"></div>
+      </section>
+    </div>
+
+    <!-- 3. 기획 중 : 달력 -->
+    <div class="sub" data-sub="plan" hidden>
+      <section aria-labelledby="h-cal">
+        <h2 id="h-cal">기획 일정 <small>날짜를 누르면 일정을 넣을 수 있습니다 · 회색 표시는 정책 시행일</small></h2>
+        <div class="calhead">
+          <button type="button" class="btn ghost2" id="calPrev" aria-label="이전 달">‹</button>
+          <b id="calTitle"></b>
+          <button type="button" class="btn ghost2" id="calNext" aria-label="다음 달">›</button>
+          <button type="button" class="chip" id="calToday">오늘</button>
+          <button type="button" class="btn" id="evNew" style="margin-left:auto">+ 일정 추가</button>
+        </div>
+        <form class="editor" id="evForm" novalidate hidden>
+          <h3 id="evFormTitle">새 일정</h3>
+          <div class="fgrid">
+            <div class="field wide"><label for="evTitle">기획 제목 *</label><input id="evTitle" list="evTitles" placeholder="예: 분석·관리료 산정 지원 화면 기획 리뷰"><datalist id="evTitles"></datalist></div>
+            <div class="field"><label for="evOwner">담당자 *</label><input id="evOwner" placeholder="이름"></div>
+            <div class="field"><label for="evStart">시작일 *</label><input id="evStart" type="date"></div>
+            <div class="field"><label for="evEnd">종료일</label><input id="evEnd" type="date"><span class="hint">하루 일정이면 비워 두세요</span></div>
+            <div class="field"><label for="evPlan">관련 기획 항목</label><select id="evPlan"></select></div>
+            <div class="field wide"><label for="evNote">메모</label><textarea id="evNote" style="min-height:56px"></textarea></div>
+          </div>
+          <div class="erow"><button type="submit" class="btn">저장</button><button type="button" class="btn ghost2" id="evCancel">취소</button><span id="evDelWrap" style="margin-left:auto"></span></div>
+        </form>
+        <div class="calwrap"><div class="cal" id="cal"></div></div>
+      </section>
+    </div>
+
+    <!-- 4. 개발·배포 : 배포 달력 -->
+    <div class="sub" data-sub="dev" hidden>
+      <section aria-labelledby="h-rel">
+        <h2 id="h-rel">배포 기록 <small>날짜를 누르면 그날 배포한 버전을 기록할 수 있습니다</small></h2>
+        <div class="calhead">
+          <button type="button" class="btn ghost2" id="relPrev" aria-label="이전 달">‹</button>
+          <b id="relTitle"></b>
+          <button type="button" class="btn ghost2" id="relNext" aria-label="다음 달">›</button>
+          <button type="button" class="chip" id="relToday">오늘</button>
+          <button type="button" class="btn" id="relNew" style="margin-left:auto">+ 배포 기록</button>
+        </div>
+        <form class="editor" id="relForm" novalidate hidden>
+          <h3 id="relFormTitle">배포 기록</h3>
+          <div class="fgrid">
+            <div class="field"><label for="relDate">배포일 *</label><input id="relDate" type="date"></div>
+            <div class="field"><label for="relVer">업데이트 버전 *</label><input id="relVer" placeholder="예: v2.4.0"></div>
+          </div>
+          <div class="erow"><button type="submit" class="btn">저장</button><button type="button" class="btn ghost2" id="relCancel">취소</button><span id="relDelWrap" style="margin-left:auto"></span></div>
+        </form>
+        <div class="calwrap"><div class="cal" id="relCal"></div></div>
+      </section>
+    </div>
+
+    <!-- 5. 피드백 : 기획별 관련 기사 검토 -->
+    <div class="sub" data-sub="feedback" hidden>
+      <section aria-labelledby="h-fb">
+        <h2 id="h-fb">피드백 검토 <small>피드백 단계 기획마다 관련 주제의 새 기사·기관 공지를 모아 보여줍니다. 필요한 자료는 담거나 검토 대기로 보냅니다.</small> <button type="button" class="chip" data-newplan="feedback">+ 직접 추가</button></h2>
+        <div class="fblist" id="fbList"></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 페이지: 실무 정보 ===== -->
+<div class="page" data-page="notices" hidden>
+  <h2 class="ptitle">실무 정보</h2>
+  <p class="purpose">보건복지부 · 건강보험심사평가원 · 국민건강보험공단 공지사항 (채용 공고·이벤트 제외). 고시 개정, 행정해석, 수가파일, 지급 일정처럼 현장 실무에 바로 쓰이는 안내입니다.</p>
+  <section aria-labelledby="h-notice">
+    <h2 id="h-notice">기관별 최근 공지 <button type="button" class="chip" id="noticeAll">뉴스 피드에서 전체 보기</button></h2>
+    <div class="notices" id="notices"></div>
   </section>
+</div>
 
-  <section aria-labelledby="h-fact">
-    <h2 id="h-fact">팩트체크 노트 <small>보도 수치를 공식 출처와 대조한 결과</small></h2>
-    <div class="tbl"><table>
-      <thead><tr><th style="width:26%">확인 대상</th><th>확인 결과</th><th style="width:12%">판정</th><th style="width:24%">근거</th></tr></thead>
-      <tbody id="facts"></tbody>
-    </table></div>
+<!-- ===== 페이지: 뉴스 동향 ===== -->
+<div class="page" data-page="news" hidden>
+  <h2 class="ptitle">뉴스 동향</h2>
+  <section aria-labelledby="h-brief">
+    <h2 id="h-brief">뉴스 동향 요약 <small id="briefMeta"></small></h2>
+    <div class="brief" id="brief"></div>
   </section>
 
   <section aria-labelledby="h-feed">
@@ -224,13 +586,27 @@ footer{color:var(--muted);font-size:12px}
     <div class="terms" id="terms" aria-label="자주 나온 키워드"></div>
     <div id="feed"></div>
   </section>
+</div>
+
+<!-- ===== 페이지: 팩트체크 ===== -->
+<div class="page" data-page="factcheck" hidden>
+  <h2 class="ptitle">팩트체크</h2>
+  <p class="purpose">보도에 나온 수치와 주장을 정부·공단·심평원 발표, 고시 원문과 대조한 결과입니다. ‘기준 상이’는 보도마다 다른 기준(점수·금액 등)을 써서 숫자가 달라 보이는 경우입니다.</p>
+  <section aria-labelledby="h-fact">
+    <h2 id="h-fact">팩트체크 노트 <small>보도 수치를 공식 출처와 대조한 결과</small></h2>
+    <div class="tbl"><table>
+      <thead><tr><th style="width:26%">확인 대상</th><th>확인 결과</th><th style="width:12%">판정</th><th style="width:24%">근거</th></tr></thead>
+      <tbody id="facts"></tbody>
+    </table></div>
+  </section>
+</div>
 
   <footer>
     수집: Google 뉴스 검색(키워드별 최근 60일). 교차확인은 제목 유사도로 같은 사안을 묶어 서로 다른 출처 수를 셉니다. 공식기관 보도가 묶이면 ‘공식확인’, 출처 2곳 이상이면 ‘교차확인’입니다.
     새로고침 요약은 수집된 제목을 Claude가 정리한 것으로, 수치는 링크된 원문과 고시로 다시 확인하세요.
   </footer>
-</div>
 </main>
+</div>
 
 <script>
 (() => {
@@ -265,10 +641,12 @@ const WATCHES = [{
     "의원급 위탁기관만 대상, 회당 1,400원 · 환자당 연 4회 (연 최대 5,600원)",
     "요건: 수탁기관과 검사결과 공유체계 + 만성질환자 등 분석·관리 제공",
     "기관단위 성과보상: 환자당 평균 검사 처방량 적정성 등",
-    "위탁 몫 35% = 기본 25% + 조건부 최대 10% (6.25 확정 구조)",
-    "복지부: 관련 고시 11월 중 개정 예정"
+    "기본 배분 확정 보도: 진단검사 위탁 25%·수탁 45%, 병리 10%·80% (나머지는 조건부 보상)",
+    "청구: 위탁기관 일괄청구 유지, 위탁의뢰관리료(A)+수탁검사료(B) PAIR 코드, JS005에 수탁기관 기호·의뢰일·PAIR번호·재위탁 여부 (11.23 보도)",
+    "지급: 공단이 수탁검사료를 수탁기관에 직접 지급, 본인부담금은 위탁기관이 수납",
+    "「검체검사 위탁에 관한 기준」 개정안 행정예고(11.16) · 계약현황 신고 11.23~12.18 (1월 청구는 12.31까지 신고 필수)"
   ],
-  todo:"고시가 나오면 확인할 것: 대상 상병 범위 · 공유체계 요건(전자 연계·시간 기준) · 청구 주체(위탁기관 일괄청구 vs 각자) · 25/45·10/20 배분율 유지 여부 · 성과보상 지표와 금액"
+  todo:"아직 미확정: 임상결과 분석·관리료의 대상 상병·공유체계 요건·청구코드 · 수탁기관 질관리 평가 지표 · 행정예고 최종 고시"
 },{
   id:"telemed-fee",
   title:"비대면진료 본사업 수가·청구코드 (관리료 30% 가산 폐지 건정심·고시)",
@@ -338,6 +716,673 @@ function tierOf(s, su){
 const TIER_LABEL = {gov:"공식기관",assoc:"협회·기관지",major:"주요 언론",trade:"전문지",other:"기타"};
 
 // ---------- verified facts (Claude 세션에서 공식자료와 대조, 2026-11-18) ----------
+// ---------- 서비스 관점 (자동 요약 프롬프트에도 들어감) ----------
+const SERVICE_PROFILE = "웰체크((주)엠서클): 고혈압·당뇨 등 만성질환 관리 모바일 앱. 환자의 혈압·혈당 등 측정 기록과 관리를 돕고, 일차의료기관(의원)의 만성질환 관리와 연계된다.";
+
+// ---------- 시행 일정 (Claude 세션에서 공식자료로 확인, 2026-11-19) ----------
+// d: 날짜(YYYY-MM-DD, 월만 아는 경우 그 달 말일) · approx: 날짜가 '중/상반기' 등 근사치 · st: done(확정) | plan(예정·미확정)
+const TIMELINE = [
+  {d:"2026-11-30", approx:"11월 중", st:"plan", t:"상대가치점수·검체 위·수탁 고시 개정", s:"복지부 예고. 진찰료·입원료 인상, 검체 인하, 구분지급, 조건부 보상 세부 확정", issue:"lab"},
+  {d:"2026-11-30", approx:"11월 중", st:"plan", t:"건정심: 비대면 관리료 30% 가산 폐지 의결", s:"의결 예정 보도만 있음", issue:"tele"},
+  {d:"2026-12-03", st:"done", t:"심평원 수가 개편 온라인 설명회(청구SW 업체 대상)", s:"지역우대 수가 등 청구 변경 사항. 사전신청 11.24~11.27", issue:"fee"},
+  {d:"2026-12-18", st:"done", t:"검체 위·수탁 계약현황 신고 집중기간 마감", s:"위탁기관이 보건의료자원통합신고포털에서 신고 (11.23 시작)", issue:"lab"},
+  {d:"2026-12-31", st:"done", t:"계약현황 신고 최종 기한 (1월 청구분)", s:"미신고·불일치 시 요양급여비용 지급 차질", issue:"lab"},
+  {d:"2026-12-24", st:"done", t:"비대면진료 제도화 시행", s:"개정 의료법·시행령. 초진 같은 시·도, 처방 7일, 반기 30% 한도(시행규칙안)", issue:"tele"},
+  {d:"2027-01-01", st:"done", t:"2027 환산지수·지역필수의료 수가 개편", s:"의원 초진 21,210원(+12.6%), 입원료 7~10%, 중증수술 20%", issue:"fee"},
+  {d:"2027-01-01", st:"done", t:"검체 수가 인하 · 위·수탁 구분지급 · 조건부 보상 시작", s:"702개 항목 인하, 위탁관리료 폐지, 분석·관리료 1,400원 (2년)", issue:"lab"},
+  {d:"2027-01-01", st:"done", t:"건보료율 7.19% 동결 · 장기요양보험료 인상", s:"세대당 월평균 약 1,100원 증가", issue:null},
+  {d:"2027-03-31", approx:"3월", st:"done", t:"비수도권 수술·처치 2,740개 10% 가산", s:"종합병원급 이상", issue:"fee"},
+  {d:"2027-06-30", approx:"상반기", st:"plan", t:"희귀·중증난치 본인부담 10%→5%", s:"건정심 의결, 세부 시기 미정", issue:null},
+  {d:"2028-12-31", approx:"2028년 말", st:"plan", t:"위·수탁 조건부 보상 2년 종료 · 재평가", s:"2단계 검사 수가 조정과 함께 재논의", issue:"lab"},
+];
+
+// ---------- 선제 대응 과제 ----------
+// impact: 매트릭스 값. +n 기회, -n 부담, "m" 혼재 (n=1~3)
+const ISSUES = [
+  {id:"lab", title:"검체검사 위·수탁 개편과 ‘임상결과 분석·관리료’", st:"done", d:"2027-01-01", cats:["fee","watch"],
+   what:"검체 702개 수가 인하, 위탁검사관리료(검사료 10%) 폐지, 공단이 위탁·수탁기관에 검사료를 따로 지급. 의원급 위탁기관이 검사결과 공유체계를 갖추고 만성질환자 등을 분석·관리하면 회당 1,400원, 환자당 연 4회(2년 한시).",
+   clinic:"검사 수익이 줄어드는 대신 분석·관리료로 일부 보전. 내과·산부인과 의원의 손실 우려가 크고(산부인과 월 900만원 보도), 청구·정산 방식이 바뀌어 행정 부담이 늘어남. 요건을 갖춘 의원만 보상을 받음.",
+   service:"기회: ‘검사결과 공유 + 만성질환자 분석·관리’는 웰체크가 의원을 도울 수 있는 영역(검사결과 연동, 환자별 추이·관리 리포트). 리스크: 공유체계 요건(전자 연계 방식, 시간 기준)이 아직 공개되지 않아 설계 확정은 고시 후.",
+   actions:[["의원 고객에 계약현황 신고(12.18 집중·12.31 마감) 안내","운영"],["심평원 11.13 온라인 설명회 자료·질의응답 검토","기획"],["고시 공개 즉시 산정 요건을 기능 요건으로 매핑","기획"],["수탁기관(검사센터) 검사결과 연동 방식·API 사전 조사","개발"],["의원용 ‘분석·관리료 산정 지원’ 기능 기획안 작성","기획"],["의원 대상 안내 콘텐츠(바뀌는 점·준비할 것) 준비","운영"]],
+   open:"확정 보도(11.23): 위탁기관 일괄청구·공단 구분지급, 기본 배분 25/45(병리 10/80), 계약현황 신고 12.31 마감. 미확정: 분석·관리료 대상 상병·공유체계 요건·청구코드",
+   impact:{clinic:"m", hosp:-1, lab:"m", pharm:0, svc:3},
+   refs:[["의학신문 10.28","https://www.bosa.co.kr/news/articleView.html?idxno=3015044"],["심평원 설명회 자료","https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100&brdScnBltNo=4&brdBltNo=12348"],["메디파나(내과의사회)","https://www.medipana.com/news/articleView.html?idxno=421018"]]},
+  {id:"tele", title:"비대면진료 제도화 (2026.12.24)", st:"done", d:"2026-12-24", cats:["tele","watch"],
+   what:"시범사업이 본사업으로 바뀜. 초진은 주소지와 같은 시·도, 처방 7일(1회 30일), 의료기관별 반기 30% 한도, 의사 월평균 500건(시행규칙안). 관리료 30% 가산은 폐지 방침(11월 건정심 예정). 중개 플랫폼은 보건의료정보원 신고·인증 대상.",
+   clinic:"가산 폐지로 비대면 건당 수익 감소, 건수 한도·기록·보고 의무 관리 필요. 재진 중심 운영이 유리해짐.",
+   service:"기회: 재진 환자의 혈압·혈당 기록이 비대면 재진의 판단 근거가 될 수 있음. 확인 필요: 웰체크가 ‘비대면진료 중개매체’에 해당하는지(해당 시 신고·인증), 처방·약 배송 관련 기능 제한.",
+   actions:[["중개매체 해당 여부 법률 검토","법무"],["비대면 재진 시 측정 데이터 공유 화면 검토","기획"],["12.24 전 약관·개인정보처리방침 점검","법무"],["시행규칙 확정본(처방일수·건수 한도) 반영","기획"]],
+   open:"미확정: 관리료 폐지 의결·시행일, 본사업 청구코드, 시행규칙 확정본",
+   impact:{clinic:-1, hosp:-1, lab:0, pharm:-1, svc:"m"},
+   refs:[["정책브리핑 10.19","https://www.korea.kr/news/policyNewsView.do?newsId=148973762"],["데일리팜 11.12","https://dailypharm.com/user/news/344461"],["의학신문 9.28","https://www.bosa.co.kr/news/articleView.html?idxno=3012809"]]},
+  {id:"chronic", title:"만성질환 관리체계 개편 (일차의료·등록관리사업·관리료 확대)", st:"plan", d:"2027-01-01", cats:["chronic"],
+   what:"고혈압·당뇨 등록관리사업이 전국 단위로 개편되고(질병청), 일차의료 만성질환관리 참여 시 본인부담 20%·포인트 연 8만원 방안이 거론됨. 2027년부터 COPD·천식에 만성질환관리료 적용 보도(단일 보도).",
+   clinic:"참여 의원 확대, 케어플랜·교육상담 등 관리 업무와 보상이 함께 늘어남. 사업이 여러 갈래라 의원이 따라가기 어려움.",
+   service:"핵심 시장. 대상 질환이 COPD·천식으로 넓어지면 기능 확장 검토 대상. 환자 인센티브(포인트)·등록사업 통합 흐름에 맞춘 연계 기회.",
+   actions:[["COPD·천식 관리료 고시 확인 후 확장 범위 판단","기획"],["등록관리사업 개편안 원문 확보","기획"],["사업 참여 의원 대상 파트너십·영업 메시지 정리","사업"]],
+   open:"미확정: COPD·천식 적용 고시, 포인트·본인부담 확정안",
+   impact:{clinic:2, hosp:0, lab:0, pharm:0, svc:3},
+   refs:[["데일리메디 11.17","https://news.google.com/search?q=COPD%20%EC%B2%9C%EC%8B%9D%20%EB%A7%8C%EC%84%B1%EC%A7%88%ED%99%98%EA%B4%80%EB%A6%AC%EB%A3%8C&hl=ko&gl=KR&ceid=KR:ko"],["연합뉴스 10.1","https://news.google.com/search?q=%EA%B3%A0%ED%98%88%EC%95%95%C2%B7%EB%8B%B9%EB%87%A8%20%EB%93%B1%EB%A1%9D%EC%82%AC%EC%97%85%20%EA%B0%9C%ED%8E%B8%20%EC%A7%88%EB%B3%91%EC%B2%AD&hl=ko&gl=KR&ceid=KR:ko"]]},
+  {id:"fee", title:"2027 수가 개편: 진찰·입원 보상 강화, 검사 보상 축소", st:"done", d:"2027-01-01", cats:["fee","council"],
+   what:"환산지수 평균 1.65%(의원 96.5원). 지역·필수의료 2.7조 선투입: 의원 초진 상대가치 6%·재진 4%, 입원료 7~10%, 중증수술 20%, 인구감소지역 5% 가산. 재원은 검체·CT·MRI 2.6조 인하.",
+   clinic:"의원 초진 18,840→21,210원, 성인 본인부담 5,650→6,330원. 진찰 위주 의원은 유리, 검사 비중이 큰 의원은 상쇄 여부 점검 필요.",
+   service:"진찰 중심 보상 강화로 만성질환 정기 방문의 가치가 커짐. 앱에 진료비·본인부담 안내가 있다면 1월 1일 기준으로 갱신 필요.",
+   actions:[["앱 내 진료비·본인부담 안내 문구 2027.1.1 기준 갱신","운영"],["의원 대상 ‘2027 수가 변화’ 요약 자료 제공 검토","사업"]],
+   open:"",
+   impact:{clinic:"m", hosp:2, lab:-2, pharm:1, svc:1},
+   refs:[["경향신문 10.28","https://www.khan.co.kr/article/202610281648001/"],["데일리메디","https://www.dailymedi.com/news/news_view.php?wr_id=941990"]]},
+  {id:"spb", title:"건보공단 특별사법경찰(특사경) 법안", st:"plan", d:"", cats:["kma","kha"],
+   what:"건보공단 임직원에 사무장병원·면허대여약국 수사권 부여. 11.11 법사위 소위 통과, 전체회의·본회의 남음.",
+   clinic:"현지조사·수사 강도 상승 가능. 정상 기관은 직접 영향이 작지만 청구·기록 관리 점검 필요. 의협·병협 강력 반대.",
+   service:"직접 영향 낮음. 의원 고객의 청구 적정성 관심이 커지는 흐름으로만 참고.",
+   actions:[["본회의 통과 여부 모니터링","기획"]],
+   open:"미확정: 법사위 전체회의·본회의 결과",
+   impact:{clinic:-1, hosp:-1, lab:0, pharm:-1, svc:0},
+   refs:[["데일리메디","https://dailymedi.com/news/news_view.php?wr_id=942500"]]},
+];
+const MATRIX_COLS = [["clinic","의원"],["hosp","병원·종합병원"],["lab","검사 수탁기관"],["pharm","약국"],["svc","웰체크"]];
+
+function ddayOf(d){
+  if (!d) return null;
+  const t = new Date(d+"T00:00:00"), n = new Date(); n.setHours(0,0,0,0);
+  return Math.round((t-n)/864e5);
+}
+const ddayLabel = n => n===null ? "일정 미정" : n===0 ? "D-day" : n>0 ? `D-${n}` : `D+${-n}`;
+function renderTimeline(){
+  const box=$("timeline"); if(!box) return;
+  box.innerHTML = TIMELINE.map(e=>{
+    const n=ddayOf(e.d), past=n!==null && n<-7;
+    return `<div class="tl ${e.st==="plan"?"plan":""} ${past?"past":""}">
+      <div class="dd">${e.approx && e.st==="plan" ? esc(e.approx) : ddayLabel(n)}</div>
+      <div class="dt">${esc(e.approx || e.d)}${e.st==="plan"?" · 예정":" · 확정"}</div>
+      <div class="tt">${esc(e.t)}</div><div class="ts">${esc(e.s)}</div></div>`;
+  }).join("");
+}
+function renderIssues(){
+  const box=$("issues"); if(!box) return;
+  const order = ISSUES.slice().sort((a,b)=>(a.d||"9999").localeCompare(b.d||"9999"));
+  box.innerHTML = order.map(x=>{
+    const n=ddayOf(x.d);
+    const w = WATCHES.find(w=>w.id===({lab:"consign-cond", tele:"telemed-fee"})[x.id]);
+    const rel = w ? watchRelated(w).concat(watchHits(w)).slice(0,3) : [];
+    return `<article class="iss" id="issue-${x.id}">
+      <div class="top"><span class="dday ${x.st==="plan"?"plan":""}">${x.d?ddayLabel(n):"일정 미정"}</span>
+        <span class="badge ${x.st==="plan"?"b-single":"b-gov"}">${x.st==="plan"?"예정·미확정":"확정"}</span>
+        ${x.d?`<span class="cat">${esc(x.d)} 시행</span>`:""}${(x.cats||[]).filter(c=>c!=="watch").map(c=>`<span class="cat">${esc(catName(c))}</span>`).join("")}</div>
+      <h3>${esc(x.title)}</h3>
+      <p class="what">${esc(x.what)}</p>
+      <div class="cols">
+        <div class="col"><h4>현장 의료기관 영향</h4><p>${esc(x.clinic)}</p></div>
+        <div class="col svc"><h4>웰체크 서비스 영향</h4><p>${esc(x.service)}</p></div>
+      </div>
+      <div><h4 style="margin:0 0 6px;font-size:12px;color:var(--muted);letter-spacing:.04em">대응 방향</h4>
+        <ul class="act">${x.actions.map(([a,w],i)=>{
+          const p = canPlan ? plannedSrc().get(`${x.id}#${i}`) : null;
+          const tag = !canPlan ? "" : p ? `<a class="plinks" href="#planning">기획: ${esc(statusName(p.status))}</a>` : `<button type="button" class="linkbtn addp" data-addplan="${x.id}#${i}">+ 기획에 추가</button>`;
+          return `<li><span>${esc(a)}</span><span class="who">${esc(w)} ${tag}</span></li>`;
+        }).join("")}</ul></div>
+      ${canPlan ? (()=>{ const own=plans.filter(p=>p.issue===x.id); return own.length?`<div class="plinks">웰체크 기획 항목 ${own.length}건 · ${PLAN_STATUS.map(([k,n])=>{const c=own.filter(p=>p.status===k).length; return c?`${n} ${c}`:""}).filter(Boolean).join(" · ")} <a href="#planning" data-goissue="${x.id}">보기 →</a></div>`:""; })() : ""}
+      ${x.open?`<div class="open">${esc(x.open)}</div>`:""}
+      ${rel.length?`<div class="refs">${rel.map(it=>`<a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">[기관 공지] ${esc(it.title)} ↗</a>`).join("")}</div>`:""}
+      <div class="refs">${x.refs.map(([nm,u])=>`<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(nm)} ↗</a>`).join("")}</div>
+    </article>`;
+  }).join("");
+}
+function renderMatrix(){
+  const t=$("matrix"); if(!t) return;
+  const cell = v => {
+    if (v===0||v===undefined) return `<td class="m">—</td>`;
+    if (v==="m") return `<td class="m m-mix m-2" title="혜택과 부담이 함께 있음">◆</td>`;
+    const lv=Math.min(3,Math.abs(v)), up=v>0;
+    return `<td class="m ${up?"m-up":"m-down"} m-${lv}" title="${up?"기회·수익 증가":"부담·수익 감소"} ${lv}단계">${(up?"▲":"▼").repeat(lv)}</td>`;
+  };
+  t.innerHTML = `<thead><tr><th>과제</th>${MATRIX_COLS.map(([k,n])=>`<th class="${k==="svc"?"svc":""}" style="text-align:center">${n}</th>`).join("")}</tr></thead>
+    <tbody>${ISSUES.map(x=>`<tr><td><a href="#issue-${x.id}" style="text-decoration:none;font-weight:600">${esc(x.title)}</a></td>${MATRIX_COLS.map(([k])=>cell(x.impact[k]).replace('<td class="m','<td class="m'+(k==="svc"?" svc":""))).join("")}</tr>`).join("")}</tbody>`;
+}
+
+// ---------- 기획·준비 관리 (아티팩트 저장소: plans · posts · events 컬렉션, 팀 공유) ----------
+const PLAN_STATUS = [["todo","검토 대기"],["edu","교육 진행"],["plan","기획 중"],["dev","개발·배포"],["feedback","피드백"]];
+const SUB_OF = {todo:"todo", edu:"edu", plan:"plan", dev:"dev", feedback:"feedback"};
+const PLAN_TYPES = ["신규 기능","기능 개선","데이터·연동","운영·콘텐츠","법무·정책 대응","제휴·사업"];
+const PLAN_TEAMS = ["기획","개발","디자인","법무","운영","사업"];
+const PLAN_PRIO = [["high","높음"],["mid","보통"],["low","낮음"]];
+const normStatus = s => ({done:"feedback", hold:"todo"})[s] || (PLAN_STATUS.some(x=>x[0]===s) ? s : "todo");
+const statusName = k => (PLAN_STATUS.find(s=>s[0]===normStatus(k))||["","-"])[1];
+const nextStatus = k => { const i = PLAN_STATUS.findIndex(s=>s[0]===normStatus(k)); return i>=0 && i<PLAN_STATUS.length-1 ? PLAN_STATUS[i+1][0] : null; };
+let plans = [], posts = [], events = [], canPlan = false, planDb = null, planUid = null, assetsApi = null;
+const STATIC_MODE = !window.claude || !window.claude.use;
+let planSub = "overview", planFilter = {issue:"", team:"", q:""}, editing = null, confirmDel = false;
+const issueById = id => ISSUES.find(x=>x.id===id);
+const todayStr = () => { const d=new Date(), p=n=>String(n).padStart(2,"0"); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`; };
+
+function planErr(e){
+  const code = e && e.code;
+  notice(code==="permission_denied"||code==="not_granted" ? "저장할 권한이 없습니다. 아티팩트 소유자에게 편집 권한을 요청해 주세요."
+    : code==="quota_exceeded"||code==="quota_or_state" ? "저장 공간이 가득 찼습니다. 오래된 항목이나 파일을 정리해 주세요."
+    : `저장하지 못했습니다 (${errText(e)}). 잠시 후 다시 시도해 주세요.`);
+}
+const stamp = () => ({updatedAt:new Date().toISOString(), updatedBy:planUid||""});
+async function savePlan(id, data){
+  if (!canPlan) return false;
+  try{
+    if (id) await planDb.collection("plans").doc(id).set({...data, ...stamp()});
+    else await planDb.collection("plans").add({...data, ...stamp(), createdAt:new Date().toISOString(), createdBy:planUid||""});
+    return true;
+  }catch(e){ planErr(e); return false; }
+}
+async function patchDoc(col, id, patch){
+  if (!canPlan) return false;
+  try{ await planDb.collection(col).doc(id).update({...patch, ...stamp()}); return true; }catch(e){ planErr(e); return false; }
+}
+const patchPlan = (id, patch) => patchDoc("plans", id, patch);
+const blankPlan = st => ({title:"", issue:"", src:"", type:PLAN_TYPES[0], status:st||"todo", priority:"mid", team:"기획", owner:"", due:"", note:"", checklist:[], refs:[]});
+async function addFromIssue(issueId, idx){
+  const x = issueById(issueId); if (!x) return;
+  const [title, team] = x.actions[idx];
+  const ok = await savePlan(null, {...blankPlan("todo"), title, issue:issueId, src:`${issueId}#${idx}`,
+    type: team==="법무"?"법무·정책 대응":team==="개발"?"데이터·연동":"기능 개선",
+    priority: (x.impact.svc===3||x.impact.svc==="m") ? "high" : "mid", team: PLAN_TEAMS.includes(team)?team:"기획",
+    refs: x.refs.slice(0,3).map(([t,l])=>({t, l, s:"대응 과제 근거", d:""}))});
+  if (ok) status(`검토 대기에 추가했습니다: ${esc(title)}`);
+}
+const plannedSrc = () => new Map(plans.filter(p=>p.src).map(p=>[p.src,p]));
+const planOptions = (sel, label) => `<option value="">${label||"선택 안 함"}</option>` + plans.slice().sort((a,b)=>(a.title||"").localeCompare(b.title||"")).map(p=>`<option value="${esc(p.id)}" ${sel===p.id?"selected":""}>[${esc(statusName(p.status))}] ${esc(p.title)}</option>`).join("");
+function fillSelect(id, html){ const el=$(id); if (!el) return; const v=el.value; el.innerHTML=html; if ([...el.options].some(o=>o.value===v)) el.value=v; }
+
+// ---------- 공통 렌더 ----------
+function renderPlanning(){
+  const open = plans.filter(p=>normStatus(p.status)!=="feedback").length;
+  const nP = $("nPlanning"); if (nP) nP.textContent = canPlan && plans.length ? open : "";
+  PLAN_STATUS.forEach(([k])=>{ const el=$("nSub-"+k); if (el) el.textContent = canPlan ? (plans.filter(p=>normStatus(p.status)===k).length || "") : ""; });
+  const gate = $("planGate"), body = $("planBody"); if (!gate) return;
+  if (!canPlan){
+    gate.hidden = false; body.hidden = true;
+    gate.textContent = STATIC_MODE ? "기획·준비 관리는 사내 전용입니다. Claude 앱의 아티팩트에서 이용해 주세요."
+      : "저장소에 연결되면 기획 항목이 표시됩니다. Claude에 로그인한 상태로 열어 주세요.";
+    return;
+  }
+  gate.hidden = true; body.hidden = false;
+  document.querySelectorAll("#planBody .sub").forEach(s=>{ s.hidden = s.dataset.sub!==planSub; });
+  renderStepper();
+  if (planSub==="overview") renderOverview();
+  if (planSub==="todo") renderTodo();
+  if (planSub==="edu") renderEdu();
+  if (planSub==="plan") renderCal();
+  if (planSub==="dev") renderRel();
+  if (planSub==="feedback") renderFeedback();
+}
+function renderStepper(){
+  const cnt = k => plans.filter(p=>normStatus(p.status)===k).length;
+  $("stepper").innerHTML = `<a href="#planning" class="${planSub==="overview"?"on":""}"><b>${plans.length}</b><span>전체 보드</span></a>`
+    + PLAN_STATUS.map(([k,n],i)=>`<span class="arr" aria-hidden="true">›</span><a href="#planning-${k}" class="${planSub===k?"on":""}"><b>${cnt(k)}</b><span>${i+1}. ${n}</span></a>`).join("");
+}
+function stageCards(st, emptyMsg){
+  const list = plans.filter(p=>normStatus(p.status)===st).sort(byPrio);
+  return list.length ? list.map(planCard).join("") : `<div class="empty-plan">${esc(emptyMsg)}</div>`;
+}
+const byPrio = (a,b) => (({high:0,mid:1,low:2})[a.priority]??1) - (({high:0,mid:1,low:2})[b.priority]??1) || (a.due||"9999").localeCompare(b.due||"9999");
+function renderOverview(){
+  fillSelect("planIssue", `<option value="">관련 정책 전체</option>${ISSUES.map(x=>`<option value="${x.id}">${esc(x.title)}</option>`).join("")}<option value="etc">기타</option>`);
+  fillSelect("planTeam", `<option value="">담당 팀 전체</option>${PLAN_TEAMS.map(t=>`<option>${t}</option>`).join("")}`);
+  $("planIssue").value = planFilter.issue; $("planTeam").value = planFilter.team;
+  const q = planFilter.q.toLowerCase();
+  const list = plans.filter(p=>(!planFilter.issue || (planFilter.issue==="etc" ? !issueById(p.issue) : p.issue===planFilter.issue))
+    && (!planFilter.team||p.team===planFilter.team) && (!q || [p.title,p.owner,p.note].join(" ").toLowerCase().includes(q)));
+  $("board").innerHTML = PLAN_STATUS.map(([k,n])=>{
+    const cards = list.filter(p=>normStatus(p.status)===k).sort(byPrio);
+    return `<div class="bcol"><h3><a href="#planning-${k}">${n}</a><span>${cards.length}</span></h3>${cards.length?cards.map(planCard).join(""):`<div class="none">항목 없음</div>`}</div>`;
+  }).join("");
+}
+function planCard(p){
+  const x = issueById(p.issue), st = normStatus(p.status), nx = nextStatus(st);
+  const dd = p.due ? ddayOf(p.due) : null;
+  const late = p.due && x && x.d && p.due > x.d;
+  const overdue = p.due && p.due < todayStr() && st!=="feedback";
+  const ck = Array.isArray(p.checklist) ? p.checklist : [];
+  const refs = Array.isArray(p.refs) ? p.refs : [];
+  const nPosts = posts.filter(o=>o.planId===p.id).length, nEv = events.filter(o=>o.planId===p.id).length;
+  return `<article class="pcard p-${esc(p.priority||"mid")}">
+    <h4>${esc(p.title)}</h4>
+    <div class="meta">${x?`<span class="cat">${esc(x.title.length>22?x.title.slice(0,22)+"…":x.title)}</span>`:""}<span>${esc(p.type||"")}</span></div>
+    <div class="meta"><span>${esc(p.team||"-")}${p.owner?` · ${esc(p.owner)}`:""}</span>
+      ${p.due?`<span class="${overdue?"late":""}">${st==="dev"?"배포":"목표"} ${esc(p.due)} (${ddayLabel(dd)})</span>`:"<span>목표일 미정</span>"}</div>
+    ${late?`<div class="meta"><span class="late">정책 시행일(${esc(x.d)}) 이후로 잡혀 있습니다</span></div>`:""}
+    ${(nPosts||nEv)?`<div class="meta">${nPosts?`<a href="#planning-edu">교육 게시물 ${nPosts}</a>`:""}${nEv?`<a href="#planning-plan">일정 ${nEv}</a>`:""}</div>`:""}
+    ${refs.length?`<ul class="refs-in">${refs.slice(0,4).map((r,i)=>`<li><a href="${esc(safeUrl(r.l))}" target="_blank" rel="noopener">${esc(r.t)}</a>${r.s?` <span>${esc(r.s)}</span>`:""}<button type="button" class="x" data-unref="${p.id}" data-i="${i}" aria-label="자료 빼기">×</button></li>`).join("")}${refs.length>4?`<li><span>외 ${refs.length-4}건</span></li>`:""}</ul>`:""}
+    ${ck.length?`<ul>${ck.map((c,i)=>`<li class="${c.done?"done":""}"><label><input type="checkbox" data-ck="${p.id}" data-i="${i}" ${c.done?"checked":""}><span>${esc(c.t)}</span></label></li>`).join("")}</ul>`:""}
+    ${st==="feedback"&&p.note?`<div class="fbnote">${esc(p.note)}</div>`:""}
+    <div class="row"><select data-mv="${p.id}" aria-label="단계 변경">${PLAN_STATUS.map(([k,n])=>`<option value="${k}" ${st===k?"selected":""}>${n}</option>`).join("")}</select>
+      <span>${nx?`<button type="button" class="linkbtn" data-next="${p.id}">다음 단계 →</button> · `:""}<button type="button" class="linkbtn" data-edit="${p.id}">편집</button></span></div>
+  </article>`;
+}
+
+// ---------- 1. 검토 대기 ----------
+let refSel = new Set(), refManual = [];
+function renderTodo(){
+  $("todoCards").innerHTML = stageCards("todo", "검토 대기 항목이 없습니다. 아래에서 대응 과제를 가져오거나 기사·자료를 담아 새 항목을 만드세요.");
+  fillSelect("refTarget", `<option value="__new">새 검토 항목 만들기</option>` + plans.filter(p=>normStatus(p.status)==="todo").map(p=>`<option value="${esc(p.id)}">${esc(p.title)}</option>`).join(""));
+  $("refNewWrap").hidden = $("refTarget").value!=="__new";
+  renderRefList();
+  const done = plannedSrc();
+  const rows = ISSUES.flatMap(x=>x.actions.map(([a,w],i)=>({x,a,w,i}))).filter(r=>!done.has(`${r.x.id}#${r.i}`));
+  $("imports").innerHTML = rows.length ? rows.map(r=>`<div><span>${esc(r.a)}<br><span class="src">${esc(r.x.title)}</span></span><span class="cat">${esc(r.w)}</span><button type="button" class="linkbtn" data-imp="${r.x.id}#${r.i}">+ 검토 대기에 추가</button></div>`).join("")
+    : `<div><span class="src">대응 과제의 모든 항목이 등록되어 있습니다.</span></div>`;
+}
+function renderRefList(){
+  const q = ($("refQ").value||"").trim().toLowerCase();
+  const list = items.filter(it=>!q || (it.title+" "+it.s).toLowerCase().includes(q)).slice(0, q?60:30);
+  $("refList").innerHTML = list.length ? list.map(it=>`<label class="refrow"><input type="checkbox" data-refpick="${esc(it.id)}" ${refSel.has(it.id)?"checked":""}>
+      <span class="d">${esc(it.d)}</span><span class="t">${esc(it.title)}</span><span class="s">${esc(it.s)}${it.cat==="notice"?" · 실무 정보":""}</span></label>`).join("")
+    : `<div class="none">검색 결과가 없습니다.</div>`;
+  $("refManList").innerHTML = refManual.map((r,i)=>`<span class="cat">${esc(r.t)} <button type="button" class="x" data-unman="${i}" aria-label="빼기">×</button></span>`).join("");
+  updateRefCount();
+}
+function updateRefCount(){
+  const n = refSel.size + refManual.length;
+  $("refCount").textContent = n ? `${n}건 선택됨` : "기사를 체크하거나 링크를 추가하세요";
+}
+async function saveRefs(){
+  const byId = new Map(items.map(it=>[it.id,it]));
+  const picked = [...refSel].map(id=>byId.get(id)).filter(Boolean).map(it=>({t:it.title, l:it.l, s:it.s, d:it.d}))
+    .concat(refManual.map(r=>({t:r.t, l:r.l, s:"직접 추가", d:todayStr()})));
+  if (!picked.length){ notice("담을 기사나 링크를 먼저 선택해 주세요."); return; }
+  const target = $("refTarget").value;
+  let ok;
+  if (target==="__new"){
+    const title = ($("refNewTitle").value||"").trim() || picked[0].t;
+    ok = await savePlan(null, {...blankPlan("todo"), title, refs:picked});
+  } else {
+    const p = plans.find(x=>x.id===target); if (!p) return;
+    const have = new Set((p.refs||[]).map(r=>r.l));
+    ok = await patchPlan(p.id, {refs:(p.refs||[]).concat(picked.filter(r=>!have.has(r.l)))});
+  }
+  if (ok){ refSel.clear(); refManual=[]; $("refNewTitle").value=""; notice(""); status(`자료 ${picked.length}건을 담았습니다`); renderRefList(); }
+}
+
+// ---------- 2. 교육 진행 ----------
+let editingPost = null, confirmPostDel = null;
+function renderEdu(){
+  $("eduCards").innerHTML = stageCards("edu", "교육 진행 단계 항목이 없습니다. 검토 대기 항목에서 ‘다음 단계’를 누르면 여기로 옵니다.");
+  fillSelect("postPlan", planOptions("", "선택 안 함"));
+  if (!editingPost) $("postDate").value = todayStr();
+  $("postFileWrap").querySelector(".hint").textContent = assetsApi
+    ? "PDF·이미지·동영상·텍스트 파일, 한 파일 20MB까지. PPT·한글·워드는 PDF로 저장해 올리거나 아래 링크로 첨부해 주세요."
+    : "파일 올리기는 이 아티팩트의 편집 권한이 있는 사람만 할 수 있습니다. 자료는 아래 링크로 첨부해 주세요.";
+  $("postFiles").disabled = !assetsApi;
+  const list = posts.slice().sort((a,b)=>(b.eduDate||b.postedAt||"").localeCompare(a.eduDate||a.postedAt||""));
+  $("postMeta").textContent = list.length ? `${list.length}건 · 교육일 최신순` : "";
+  $("postList").innerHTML = list.length ? list.map(postCard).join("") : `<div class="empty-plan">아직 교육 게시물이 없습니다. ‘+ 새 게시물 등록’을 눌러 첫 게시물을 올려 주세요.</div>`;
+}
+function postCard(o){
+  const p = plans.find(x=>x.id===o.planId);
+  const dd = o.eduDate ? ddayOf(o.eduDate) : null;
+  const files = Array.isArray(o.files) ? o.files : [], links = Array.isArray(o.links) ? o.links : [];
+  return `<article class="post">
+    <div class="ptop"><h4>${esc(o.title)}</h4>
+      <span class="when">게시 ${esc(o.postedAt||"-")} · 교육 ${o.eduDate?`${esc(o.eduDate)} <b>${dd>0?ddayLabel(dd):dd===0?"오늘":"완료"}</b>`:"미정"}</span></div>
+    ${p?`<div class="meta"><span class="cat">${esc(statusName(p.status))}</span> ${esc(p.title)}</div>`:""}
+    ${o.summary?`<p>${esc(o.summary)}</p>`:""}
+    ${files.length||links.length?`<ul class="files">${files.map((f,i)=>`<li><a href="${esc("/_blob/"+f.id)}" target="_blank" rel="noopener">📎 ${esc(f.name)}</a> <span>${(f.size/1048576).toFixed(1)}MB</span>${assetsApi?` <button type="button" class="x" data-unfile="${o.id}" data-i="${i}" aria-label="파일 삭제">×</button>`:""}</li>`).join("")}${links.map(l=>`<li><a href="${esc(safeUrl(l))}" target="_blank" rel="noopener">🔗 ${esc(l)}</a></li>`).join("")}</ul>`:""}
+    <div class="row">${confirmPostDel===o.id?`<span style="color:var(--bad);font-size:12.5px">게시물과 첨부 파일을 삭제합니다. 되돌릴 수 없습니다.</span><button type="button" class="btn danger" data-postdel-yes="${o.id}">삭제</button><button type="button" class="btn ghost2" data-postdel-no="1">유지</button>`
+      :`<button type="button" class="linkbtn" data-postedit="${o.id}">편집</button><button type="button" class="linkbtn" style="color:var(--bad)" data-postdel="${o.id}">삭제</button>`}</div>
+  </article>`;
+}
+const TEXT_TYPES = {txt:"text/plain", md:"text/markdown", csv:"text/csv", json:"application/json"};
+async function uploadFiles(fileList){
+  const out = [];
+  for (const f of fileList){
+    const ext = (f.name.split(".").pop()||"").toLowerCase();
+    const opt = TEXT_TYPES[ext] ? {type:TEXT_TYPES[ext]} : (f.type ? undefined : (ext==="pdf"?{type:"application/pdf"}:undefined));
+    $("postMsg").textContent = `파일 올리는 중… ${f.name}`;
+    try{ const r = await assetsApi.upload(f, opt); out.push({id:r.id, name:f.name, size:r.sizeBytes, type:r.contentType}); }
+    catch(e){
+      const why = e&&e.code==="too_large" ? "20MB를 넘습니다" : e&&e.code==="unsupported_type" ? "올릴 수 없는 형식입니다(PDF로 바꿔 주세요)" : e&&e.code==="quota_or_state" ? "저장 공간이 부족합니다" : errText(e);
+      throw {code:"upload", message:`${f.name}: ${why}`};
+    }
+  }
+  return out;
+}
+function resetPostForm(){
+  editingPost=null; $("postForm").reset(); $("postDate").value=todayStr(); $("postFormTitle").textContent="새 교육 게시물"; $("postSubmit").textContent="게시";
+  $("postFormSec").hidden = true; $("postNewBtn").hidden = false;
+}
+function showPostForm(){ $("postFormSec").hidden = false; $("postNewBtn").hidden = true; $("postFormSec").scrollIntoView({block:"start"}); $("postTitle").focus(); }
+
+// ---------- 공통 달력 격자 ----------
+const p2 = n=>String(n).padStart(2,"0");
+const dkey = d=>`${d.getFullYear()}-${p2(d.getMonth()+1)}-${p2(d.getDate())}`;
+function calGrid(month, cellHtml){
+  const y = month.getFullYear(), m = month.getMonth();
+  const start = new Date(y, m, 1 - new Date(y, m, 1).getDay()), today = todayStr();
+  let html = ["일","월","화","수","목","금","토"].map((d,i)=>`<div class="dow ${i===0?"sun":i===6?"sat":""}">${d}</div>`).join("");
+  for (let i=0;i<42;i++){
+    const d = new Date(start); d.setDate(start.getDate()+i);
+    const k = dkey(d), inMonth = d.getMonth()===m;
+    if (i>=35 && !inMonth) break;
+    html += `<div class="day ${inMonth?"":"out"} ${k===today?"today":""} ${d.getDay()===0?"sun":d.getDay()===6?"sat":""}" data-day="${k}"><span class="dn">${d.getDate()}</span>${cellHtml(k)}</div>`;
+  }
+  return html;
+}
+
+// ---------- 4. 개발·배포: 배포 달력 (db "releases": date, version) ----------
+let releases = [], relMonth = (()=>{ const d=new Date(); return new Date(d.getFullYear(), d.getMonth(), 1); })(), editingRel = null, confirmRelDel = false;
+function renderRel(){
+  $("relTitle").textContent = `${relMonth.getFullYear()}년 ${relMonth.getMonth()+1}월`;
+  $("relCal").innerHTML = calGrid(relMonth, k=>releases.filter(r=>r.date===k).sort((a,b)=>(a.version||"").localeCompare(b.version||""))
+    .map(r=>`<button type="button" class="ev rel" data-rel="${esc(r.id)}" title="${esc(r.version)} 배포">🚀 <b>${esc(r.version)}</b></button>`).join(""));
+}
+function openRel(id, date){
+  confirmRelDel = false; editingRel = id || null;
+  const r = id ? releases.find(x=>x.id===id) : null;
+  $("relForm").hidden = false; $("relFormTitle").textContent = id ? "배포 기록 편집" : "배포 기록";
+  $("relDate").value = r ? r.date : (date||todayStr()); $("relVer").value = r ? r.version||"" : "";
+  renderRelDel(); $("relVer").focus(); $("relForm").scrollIntoView({block:"nearest"});
+}
+function renderRelDel(){
+  $("relDelWrap").innerHTML = !editingRel ? "" : confirmRelDel
+    ? `<span style="color:var(--bad);font-size:12.5px">이 배포 기록을 삭제합니다.</span> <button type="button" class="btn danger" id="relDelYes">삭제</button> <button type="button" class="btn ghost2" id="relDelNo">유지</button>`
+    : `<button type="button" class="linkbtn" style="color:var(--bad)" id="relDel">삭제</button>`;
+}
+
+// ---------- 5. 피드백: 기획별 관련 기사 검토 ----------
+const ISSUE_KW = { lab:["위·수탁","위수탁","검체","분석·관리료","분석관리료","위탁검사"], tele:["비대면"], chronic:["만성질환","고혈압","당뇨","COPD","천식","일차의료"], fee:["수가","진찰료","환산지수","상대가치","입원료"], spb:["특사경","특별사법경찰"] };
+const KW_STOP = new Set(["기능","개선","검토","관련","대응","기획","준비","작성","정리","확인","안내","서비스","웰체크","의원","항목","시행","제도","정책","사전","대상","방식","자료","교육","개발","배포","피드백"]);
+function planKeywords(p){
+  const own = String(p.keywords||"").split(/[,\s]+/).map(s=>s.trim()).filter(s=>s.length>=2);
+  const fromTitle = (String(p.title||"").match(/[가-힣A-Za-z·]{2,}/g)||[]).filter(w=>!KW_STOP.has(w));
+  return {strong:[...new Set(own.concat(ISSUE_KW[p.issue]||[]))], weak:[...new Set(fromTitle)]};
+}
+function relatedItems(p){
+  const {strong, weak} = planKeywords(p);
+  const have = new Set((p.refs||[]).map(r=>r.l));
+  const from = new Date(Date.now()-45*864e5).toISOString().slice(0,10);
+  return items.filter(it=>it.d>=from && !have.has(it.l)).map(it=>{
+    const s = strong.filter(k=>it.title.includes(k)).length*2 + weak.filter(k=>it.title.includes(k)).length;
+    return {it, s};
+  }).filter(x=>x.s>=2).sort((a,b)=>b.it.d.localeCompare(a.it.d) || b.s-a.s).slice(0,10).map(x=>x.it);
+}
+function renderFeedback(){
+  const list = plans.filter(p=>normStatus(p.status)==="feedback").sort(byPrio);
+  if (!list.length){ $("fbList").innerHTML = `<div class="empty-plan">피드백 단계 기획이 없습니다. 배포한 항목을 ‘다음 단계’로 넘기면 여기서 관련 기사를 함께 검토할 수 있습니다.</div>`; return; }
+  $("fbList").innerHTML = list.map(p=>{
+    const x = issueById(p.issue), rel = relatedItems(p), kw = planKeywords(p);
+    return `<article class="fbblock">
+      <div class="fbhead"><div><h3>${esc(p.title)}</h3>
+        <div class="meta">${x?`<span class="cat">${esc(x.title)}</span>`:""}<span>${esc(p.team||"-")}${p.owner?` · ${esc(p.owner)}`:""}</span>
+          <span>검색어: ${esc(kw.strong.concat(kw.weak).slice(0,8).join(", ")||"제목에서 추출")}</span></div></div>
+        <button type="button" class="linkbtn" data-edit="${p.id}">피드백 메모·검색어 편집</button></div>
+      ${p.note?`<div class="fbnote">${esc(p.note)}</div>`:`<div class="fbnote muted">아직 피드백 메모가 없습니다. ‘편집’에서 의료기관·사용자 반응을 기록하세요.</div>`}
+      <h4>관련 기사·자료 <span>${rel.length}건 · 최근 45일</span></h4>
+      ${rel.length?`<ul class="fbrel">${rel.map(it=>`<li><span class="d">${esc(it.d)}</span>
+          <a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)} ↗</a><span class="s">${esc(it.s)}${it.cat==="notice"?" · 실무 정보":""}</span>
+          <span class="acts"><button type="button" class="linkbtn" data-fbref="${p.id}" data-l="${esc(it.id)}">이 기획에 담기</button>
+          <button type="button" class="linkbtn" data-fbtodo="${p.id}" data-l="${esc(it.id)}">검토 대기로 보내기</button></span></li>`).join("")}</ul>`
+        :`<div class="muted" style="font-size:13px">새로 나온 관련 기사가 없습니다. 검색어를 넓히려면 ‘편집’에서 검색어를 추가하세요.</div>`}
+      ${(p.refs||[]).length?`<details><summary>이미 담은 자료 ${(p.refs||[]).length}건</summary><ul class="fbrel">${p.refs.map(r=>`<li><span class="d">${esc(r.d||"")}</span><a href="${esc(safeUrl(r.l))}" target="_blank" rel="noopener">${esc(r.t)} ↗</a><span class="s">${esc(r.s||"")}</span></li>`).join("")}</ul></details>`:""}
+    </article>`;
+  }).join("");
+}
+
+// ---------- 3. 기획 중: 달력 ----------
+let calMonth = (()=>{ const d=new Date(); return new Date(d.getFullYear(), d.getMonth(), 1); })();
+let editingEv = null, confirmEvDel = false;
+function renderCal(){
+  const y = calMonth.getFullYear(), m = calMonth.getMonth();
+  $("calTitle").textContent = `${y}년 ${m+1}월`;
+  fillSelect("evPlan", planOptions("", "선택 안 함"));
+  $("evTitles").innerHTML = plans.map(p=>`<option value="${esc(p.title)}">`).join("");
+  const first = new Date(y, m, 1), start = new Date(y, m, 1 - first.getDay());
+  const p2 = n=>String(n).padStart(2,"0"), key = d=>`${d.getFullYear()}-${p2(d.getMonth()+1)}-${p2(d.getDate())}`;
+  const today = todayStr();
+  const policy = TIMELINE.filter(e=>!e.approx);
+  let html = ["일","월","화","수","목","금","토"].map((d,i)=>`<div class="dow ${i===0?"sun":i===6?"sat":""}">${d}</div>`).join("");
+  for (let i=0;i<42;i++){
+    const d = new Date(start); d.setDate(start.getDate()+i);
+    const k = key(d), inMonth = d.getMonth()===m;
+    if (i>=35 && !inMonth && d.getDate()>7) break;
+    const evs = events.filter(e=>e.start && k>=e.start && k<=(e.end||e.start)).sort((a,b)=>(a.start||"").localeCompare(b.start||""));
+    const pol = policy.filter(e=>e.d===k);
+    html += `<div class="day ${inMonth?"":"out"} ${k===today?"today":""} ${d.getDay()===0?"sun":d.getDay()===6?"sat":""}" data-day="${k}">
+      <span class="dn">${d.getDate()}</span>
+      ${pol.map(e=>`<span class="pol" title="${esc(e.t)}">${esc(e.t)}</span>`).join("")}
+      ${evs.map(e=>`<button type="button" class="ev" data-ev="${esc(e.id)}" title="${esc(e.title)} · ${esc(e.owner||"")}"><b>${esc(e.title)}</b>${e.owner?` <span>${esc(e.owner)}</span>`:""}</button>`).join("")}
+    </div>`;
+  }
+  $("cal").innerHTML = html;
+}
+function openEv(id, date){
+  confirmEvDel = false;
+  const e = id ? events.find(x=>x.id===id) : null;
+  editingEv = id || null;
+  $("evForm").hidden = false;
+  $("evFormTitle").textContent = id ? "일정 편집" : "새 일정";
+  $("evTitle").value = e ? e.title||"" : ""; $("evOwner").value = e ? e.owner||"" : "";
+  $("evStart").value = e ? e.start||"" : (date||todayStr()); $("evEnd").value = e ? e.end||"" : "";
+  fillSelect("evPlan", planOptions("", "선택 안 함")); $("evPlan").value = e ? e.planId||"" : "";
+  $("evNote").value = e ? e.note||"" : "";
+  renderEvDel();
+  $("evTitle").focus(); $("evForm").scrollIntoView({block:"nearest"});
+}
+function renderEvDel(){
+  $("evDelWrap").innerHTML = !editingEv ? "" : confirmEvDel
+    ? `<span style="color:var(--bad);font-size:12.5px">이 일정을 삭제합니다.</span> <button type="button" class="btn danger" id="evDelYes">삭제</button> <button type="button" class="btn ghost2" id="evDelNo">유지</button>`
+    : `<button type="button" class="linkbtn" style="color:var(--bad)" id="evDel">삭제</button>`;
+}
+
+// ---------- 편집기 (기획 항목) ----------
+function renderEditor(){
+  const w = $("planEditorWrap"); if (!w) return;
+  if (!editing){ w.innerHTML=""; return; }
+  const p = editing.data, x = issueById(p.issue);
+  const ckText = (p.checklist||[]).map(c=>(c.done?"[x] ":"")+c.t).join("\n");
+  w.innerHTML = `<form class="editor" id="planForm" novalidate>
+    <h3>${editing.id?"기획 항목 편집":"새 기획 항목"}</h3>
+    <div class="fgrid">
+      <div class="field wide"><label for="f-title">제목 *</label><input id="f-title" name="title" value="${esc(p.title||"")}" placeholder="예: 의원용 임상결과 분석·관리료 산정 지원 기능"></div>
+      <div class="field"><label for="f-issue">관련 정책</label><select id="f-issue" name="issue"><option value="">기타·직접 입력</option>${ISSUES.map(i=>`<option value="${i.id}" ${p.issue===i.id?"selected":""}>${esc(i.title)}</option>`).join("")}</select>
+        <span class="hint" id="f-issue-hint">${x&&x.d?`정책 시행일 ${esc(x.d)} (${ddayLabel(ddayOf(x.d))})`:""}</span></div>
+      <div class="field"><label for="f-status">단계</label><select id="f-status" name="status">${PLAN_STATUS.map(([k,n])=>`<option value="${k}" ${normStatus(p.status)===k?"selected":""}>${n}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-type">유형</label><select id="f-type" name="type">${PLAN_TYPES.map(t=>`<option ${p.type===t?"selected":""}>${t}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-prio">우선순위</label><select id="f-prio" name="priority">${PLAN_PRIO.map(([k,n])=>`<option value="${k}" ${p.priority===k?"selected":""}>${n}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-team">담당 팀</label><select id="f-team" name="team">${PLAN_TEAMS.map(t=>`<option ${p.team===t?"selected":""}>${t}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-owner">담당자</label><input id="f-owner" name="owner" value="${esc(p.owner||"")}" placeholder="이름"></div>
+      <div class="field"><label for="f-due">목표일 (개발·배포 단계는 배포 예정일)</label><input id="f-due" name="due" type="date" value="${esc(p.due||"")}"></div>
+      <div class="field wide"><label for="f-note">내용·메모 (피드백 단계는 피드백 내용)</label><textarea id="f-note" name="note" placeholder="배경, 요구사항, 결정사항, 피드백">${esc(p.note||"")}</textarea></div>
+      <div class="field wide"><label for="f-kw">관련 기사 검색어 (피드백 검토용)</label><input id="f-kw" name="keywords" value="${esc(p.keywords||"")}" placeholder="쉼표로 구분. 예: 분석·관리료, 검체, 만성질환"><span class="hint">비워 두면 제목과 관련 정책에서 자동으로 고릅니다.</span></div>
+      <div class="field wide"><label for="f-ck">체크리스트</label><textarea id="f-ck" name="checklist" placeholder="한 줄에 하나씩. 완료한 항목은 앞에 [x]">${esc(ckText)}</textarea><span class="hint">카드에서 체크하면 완료로 바뀝니다.</span></div>
+    </div>
+    <div class="erow">
+      <button type="submit" class="btn">저장</button>
+      <button type="button" class="btn ghost2" id="f-cancel">취소</button>
+      ${editing.id ? (confirmDel ? `<span style="color:var(--bad);font-size:13px">이 항목을 삭제합니다. 되돌릴 수 없습니다.</span><button type="button" class="btn danger" id="f-del-yes">삭제</button><button type="button" class="btn ghost2" id="f-del-no">유지</button>`
+        : `<button type="button" class="linkbtn" id="f-del" style="margin-left:auto;color:var(--bad)">삭제</button>`) : ""}
+    </div>
+  </form>`;
+}
+function openEditor(id, preset){
+  confirmDel = false;
+  const base = blankPlan("todo");
+  editing = id ? {id, data:{...base, ...plans.find(p=>p.id===id)}} : {id:null, data:{...base, ...(preset||{})}};
+  renderEditor();
+  const f=$("f-title"); if (f){ f.focus(); $("planEditorWrap").scrollIntoView({block:"nearest"}); }
+}
+
+// ---------- 이벤트 ----------
+document.addEventListener("click", async e=>{
+  const t = e.target; if (!t || !t.closest) return;
+  const np = t.closest("[data-newplan]"); if (np) return openEditor(null, {status:np.dataset.newplan, issue: planFilter.issue&&planFilter.issue!=="etc"?planFilter.issue:""});
+  const ed = t.closest("[data-edit]"); if (ed) return openEditor(ed.dataset.edit);
+  const nx = t.closest("[data-next]"); if (nx){ const p=plans.find(x=>x.id===nx.dataset.next); const n=p&&nextStatus(p.status); if (n){ await patchPlan(p.id,{status:n}); status(`‘${esc(p.title)}’ → ${statusName(n)}`); } return; }
+  const imp = t.closest("[data-imp]"); if (imp){ const [id,i]=imp.dataset.imp.split("#"); imp.disabled=true; return addFromIssue(id, +i); }
+  const ap = t.closest("[data-addplan]"); if (ap){ const [id,i]=ap.dataset.addplan.split("#"); ap.disabled=true; return addFromIssue(id, +i); }
+  const ur = t.closest("[data-unref]"); if (ur){ const p=plans.find(x=>x.id===ur.dataset.unref); if (p) await patchPlan(p.id,{refs:(p.refs||[]).filter((_,i)=>i!==+ur.dataset.i)}); return; }
+  const um = t.closest("[data-unman]"); if (um){ refManual.splice(+um.dataset.unman,1); return renderRefList(); }
+  if (t.closest("#refManAdd")){
+    const tt=($("refManT").value||"").trim(), u=($("refManU").value||"").trim();
+    if (!/^https?:\/\//i.test(u)){ notice("자료 URL은 http:// 또는 https:// 로 시작해야 합니다."); return; }
+    refManual.push({t: tt || u, l: u}); $("refManT").value=""; $("refManU").value=""; notice(""); return renderRefList();
+  }
+  if (t.closest("#refSave")) return saveRefs();
+  if (t.closest("#f-cancel")){ editing=null; return renderEditor(); }
+  if (t.closest("#f-del")){ confirmDel=true; return renderEditor(); }
+  if (t.closest("#f-del-no")){ confirmDel=false; return renderEditor(); }
+  if (t.closest("#f-del-yes") && editing && editing.id){
+    try{ await planDb.collection("plans").doc(editing.id).delete(); editing=null; renderEditor(); status("기획 항목을 삭제했습니다"); }catch(err){ planErr(err); }
+    return;
+  }
+  // 교육 게시물
+  const pe = t.closest("[data-postedit]"); if (pe){
+    const o = posts.find(x=>x.id===pe.dataset.postedit); if (!o) return;
+    editingPost = o.id; $("postTitle").value=o.title||""; fillSelect("postPlan", planOptions("", "선택 안 함")); $("postPlan").value=o.planId||"";
+    $("postEduDate").value=o.eduDate||""; $("postDate").value=o.postedAt||""; $("postSummary").value=o.summary||""; $("postLinks").value=(o.links||[]).join("\n");
+    $("postFormTitle").textContent="교육 게시물 편집 (새 파일을 고르면 추가로 첨부됩니다)"; $("postSubmit").textContent="수정 저장";
+    showPostForm(); return;
+  }
+  if (t.closest("#postNewBtn")){ resetPostForm(); fillSelect("postPlan", planOptions("", "선택 안 함")); return showPostForm(); }
+  // 배포 달력
+  if (t.closest("#relPrev")){ relMonth = new Date(relMonth.getFullYear(), relMonth.getMonth()-1, 1); return renderRel(); }
+  if (t.closest("#relNext")){ relMonth = new Date(relMonth.getFullYear(), relMonth.getMonth()+1, 1); return renderRel(); }
+  if (t.closest("#relToday")){ const d=new Date(); relMonth = new Date(d.getFullYear(), d.getMonth(), 1); return renderRel(); }
+  if (t.closest("#relNew")) return openRel(null, todayStr());
+  const rl = t.closest("[data-rel]"); if (rl) return openRel(rl.dataset.rel);
+  const rday = t.closest("[data-day]"); if (rday && t.closest("#relCal")) return openRel(null, rday.dataset.day);
+  if (t.closest("#relCancel")){ editingRel=null; $("relForm").hidden=true; return; }
+  if (t.closest("#relDel")){ confirmRelDel=true; return renderRelDel(); }
+  if (t.closest("#relDelNo")){ confirmRelDel=false; return renderRelDel(); }
+  if (t.closest("#relDelYes") && editingRel){
+    try{ await planDb.collection("releases").doc(editingRel).delete(); editingRel=null; $("relForm").hidden=true; status("배포 기록을 삭제했습니다"); }catch(err){ planErr(err); }
+    return;
+  }
+  // 피드백: 관련 기사 담기 / 검토 대기로 보내기
+  const fr = t.closest("[data-fbref]"); if (fr){
+    const p = plans.find(x=>x.id===fr.dataset.fbref), it = items.find(x=>x.id===fr.dataset.l); if (!p||!it) return;
+    fr.disabled = true;
+    if (await patchPlan(p.id, {refs:(p.refs||[]).concat([{t:it.title, l:it.l, s:it.s, d:it.d}])})) status("기획에 자료를 담았습니다");
+    return;
+  }
+  const ft = t.closest("[data-fbtodo]"); if (ft){
+    const p = plans.find(x=>x.id===ft.dataset.fbtodo), it = items.find(x=>x.id===ft.dataset.l); if (!p||!it) return;
+    ft.disabled = true;
+    const ok = await savePlan(null, {...blankPlan("todo"), title:`[피드백] ${p.title} — ${it.title}`.slice(0,120), issue:p.issue, team:p.team, owner:p.owner,
+      note:`피드백 검토 중 발견한 자료. 원래 기획: ${p.title}`, refs:[{t:it.title, l:it.l, s:it.s, d:it.d}]});
+    if (ok){ status(`검토 대기에 추가했습니다 · <a href="#planning-todo">검토 대기로 이동 →</a>`); }
+    return;
+  }
+  if (t.closest("#postCancel")) return resetPostForm();
+  const pd = t.closest("[data-postdel]"); if (pd){ confirmPostDel = pd.dataset.postdel; return renderEdu(); }
+  if (t.closest("[data-postdel-no]")){ confirmPostDel=null; return renderEdu(); }
+  const pdy = t.closest("[data-postdel-yes]"); if (pdy){
+    const o = posts.find(x=>x.id===pdy.dataset.postdelYes); confirmPostDel=null; if (!o) return;
+    try{
+      for (const f of (o.files||[])){ if (assetsApi) await assetsApi.delete(f.id).catch(()=>{}); }
+      await planDb.collection("posts").doc(o.id).delete(); status("교육 게시물을 삭제했습니다");
+    }catch(err){ planErr(err); }
+    return;
+  }
+  const uf = t.closest("[data-unfile]"); if (uf){
+    const o = posts.find(x=>x.id===uf.dataset.unfile); if (!o) return;
+    const f = (o.files||[])[+uf.dataset.i]; if (!f) return;
+    if (uf.dataset.armed!=="1"){ uf.dataset.armed="1"; uf.textContent="삭제 확인"; uf.classList.add("armed"); return; }
+    try{ await assetsApi.delete(f.id); await patchDoc("posts", o.id, {files:(o.files||[]).filter((_,i)=>i!==+uf.dataset.i)}); }catch(err){ planErr(err); }
+    return;
+  }
+  // 달력
+  if (t.closest("#calPrev")){ calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()-1, 1); return renderCal(); }
+  if (t.closest("#calNext")){ calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()+1, 1); return renderCal(); }
+  if (t.closest("#calToday")){ const d=new Date(); calMonth = new Date(d.getFullYear(), d.getMonth(), 1); return renderCal(); }
+  if (t.closest("#evNew")) return openEv(null, todayStr());
+  const ev = t.closest("[data-ev]"); if (ev) return openEv(ev.dataset.ev);
+  const day = t.closest("[data-day]"); if (day && t.closest("#cal")) return openEv(null, day.dataset.day);
+  if (t.closest("#evCancel")){ editingEv=null; $("evForm").hidden=true; return; }
+  if (t.closest("#evDel")){ confirmEvDel=true; return renderEvDel(); }
+  if (t.closest("#evDelNo")){ confirmEvDel=false; return renderEvDel(); }
+  if (t.closest("#evDelYes") && editingEv){
+    try{ await planDb.collection("events").doc(editingEv).delete(); editingEv=null; $("evForm").hidden=true; status("일정을 삭제했습니다"); }catch(err){ planErr(err); }
+  }
+});
+document.addEventListener("change", e=>{
+  const t=e.target; if (!t.matches) return;
+  if (t.matches("[data-mv]")) return patchPlan(t.dataset.mv, {status:t.value});
+  if (t.matches("[data-ck]")){
+    const p = plans.find(x=>x.id===t.dataset.ck); if (!p) return;
+    return patchPlan(p.id, {checklist:(p.checklist||[]).map((c,i)=> i===+t.dataset.i ? {...c, done:t.checked} : c)});
+  }
+  if (t.matches("[data-refpick]")){ if (t.checked) refSel.add(t.dataset.refpick); else refSel.delete(t.dataset.refpick); return updateRefCount(); }
+  if (t.id==="refTarget"){ $("refNewWrap").hidden = t.value!=="__new"; return; }
+  if (t.id==="planIssue"){ planFilter.issue=t.value; return renderOverview(); }
+  if (t.id==="planTeam"){ planFilter.team=t.value; return renderOverview(); }
+  if (t.id==="f-issue"){ const x=issueById(t.value); const h=$("f-issue-hint"); if(h) h.textContent = x&&x.d?`정책 시행일 ${x.d} (${ddayLabel(ddayOf(x.d))})`:""; }
+});
+document.addEventListener("input", e=>{
+  if (e.target.id==="planQ"){ planFilter.q=e.target.value; renderOverview(); }
+  if (e.target.id==="refQ") renderRefList();
+});
+document.addEventListener("submit", async e=>{
+  const f = e.target;
+  if (f.id==="planForm"){
+    e.preventDefault();
+    const fd = new FormData(f), title = String(fd.get("title")||"").trim();
+    if (!title){ const i=$("f-title"); i.setCustomValidity("제목을 입력해 주세요"); i.reportValidity(); i.addEventListener("input",()=>i.setCustomValidity(""),{once:true}); return; }
+    const checklist = String(fd.get("checklist")||"").split("\n").map(s=>s.trim()).filter(Boolean).map(s=>({done:/^\[x\]\s*/i.test(s), t:s.replace(/^\[x\]\s*/i,"")}));
+    const prev = editing.id ? plans.find(p=>p.id===editing.id) || {} : {};
+    const data = {...blankPlan(), ...prev, title, issue:String(fd.get("issue")||""), type:String(fd.get("type")), status:String(fd.get("status")), priority:String(fd.get("priority")),
+      team:String(fd.get("team")), owner:String(fd.get("owner")||"").trim(), due:String(fd.get("due")||""), note:String(fd.get("note")||""), checklist,
+      keywords:String(fd.get("keywords")||"").trim(), refs: prev.refs || editing.data.refs || []};
+    delete data.id;
+    if (await savePlan(editing.id, data)){ editing=null; renderEditor(); status("기획 항목을 저장했습니다"); }
+    return;
+  }
+  if (f.id==="postForm"){
+    e.preventDefault();
+    const title = ($("postTitle").value||"").trim();
+    if (!title){ const i=$("postTitle"); i.setCustomValidity("제목을 입력해 주세요"); i.reportValidity(); i.addEventListener("input",()=>i.setCustomValidity(""),{once:true}); return; }
+    const btn=$("postSubmit"); btn.disabled=true;
+    try{
+      const fl = $("postFiles").files;
+      const newFiles = fl && fl.length && assetsApi ? await uploadFiles([...fl]) : [];
+      const prev = editingPost ? posts.find(x=>x.id===editingPost) || {} : {};
+      const body = {title, planId:$("postPlan").value, eduDate:$("postEduDate").value, summary:$("postSummary").value,
+        links:($("postLinks").value||"").split("\n").map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)),
+        files:(prev.files||[]).concat(newFiles), postedAt: prev.postedAt || todayStr(), ...stamp()};
+      const {id:_pid, ...prevRest} = prev;
+      if (editingPost) await planDb.collection("posts").doc(editingPost).set({...prevRest, ...body});
+      else await planDb.collection("posts").add({...body, createdAt:new Date().toISOString(), createdBy:planUid||""});
+      $("postMsg").textContent = editingPost ? "수정했습니다" : "게시했습니다";
+      resetPostForm();
+    }catch(err){ $("postMsg").textContent=""; if (err && err.code==="upload") notice(`파일을 올리지 못했습니다: ${err.message}`); else planErr(err); }
+    finally{ btn.disabled=false; }
+    return;
+  }
+  if (f.id==="relForm"){
+    e.preventDefault();
+    const date=$("relDate").value, version=($("relVer").value||"").trim();
+    const bad = !date ? ["relDate","배포일을 고르세요"] : !version ? ["relVer","버전을 입력해 주세요"] : null;
+    if (bad){ const i=$(bad[0]); i.setCustomValidity(bad[1]); i.reportValidity(); i.addEventListener("input",()=>i.setCustomValidity(""),{once:true}); return; }
+    try{
+      const body = {date, version, ...stamp()};
+      if (editingRel){ const {id:_r, ...prev} = releases.find(x=>x.id===editingRel)||{}; await planDb.collection("releases").doc(editingRel).set({...prev, ...body}); }
+      else await planDb.collection("releases").add({...body, createdAt:new Date().toISOString(), createdBy:planUid||""});
+      editingRel=null; $("relForm").hidden=true; status(`${esc(version)} 배포를 기록했습니다`);
+      const d=new Date(date+"T00:00:00"); relMonth=new Date(d.getFullYear(), d.getMonth(), 1); renderRel();
+    }catch(err){ planErr(err); }
+    return;
+  }
+  if (f.id==="evForm"){
+    e.preventDefault();
+    const title=($("evTitle").value||"").trim(), owner=($("evOwner").value||"").trim(), start=$("evStart").value, end=$("evEnd").value;
+    const bad = !title ? ["evTitle","기획 제목을 입력해 주세요"] : !owner ? ["evOwner","담당자를 입력해 주세요"] : !start ? ["evStart","시작일을 고르세요"] : (end && end<start) ? ["evEnd","종료일이 시작일보다 빠릅니다"] : null;
+    if (bad){ const i=$(bad[0]); i.setCustomValidity(bad[1]); i.reportValidity(); i.addEventListener("input",()=>i.setCustomValidity(""),{once:true}); return; }
+    const body = {title, owner, start, end: end && end!==start ? end : "", planId:$("evPlan").value, note:$("evNote").value, ...stamp()};
+    try{
+      const {id:_eid, ...evPrev} = events.find(x=>x.id===editingEv) || {};
+      if (editingEv) await planDb.collection("events").doc(editingEv).set({...evPrev, ...body});
+      else await planDb.collection("events").add({...body, createdAt:new Date().toISOString(), createdBy:planUid||""});
+      editingEv=null; $("evForm").hidden=true; status("일정을 저장했습니다");
+      const d=new Date(start+"T00:00:00"); calMonth=new Date(d.getFullYear(), d.getMonth(), 1); renderCal();
+    }catch(err){ planErr(err); }
+  }
+});
+
 const KPIS = [
   {k:"2027 건강보험료율", v:"7.19%", n:"동결 · 제15차 건정심(9.8)"},
   {k:"평균 수가 인상률", v:"1.65%", n:"환산지수 1.45%+상대가치 0.20%"},
@@ -354,6 +1399,7 @@ const FACTS = [
   {c:"장기요양보험료율 인상", r:"2027년 인상 확정, 세대당 월평균 약 1,100원 증가(장기요양위원회 10.30). 칼럼이 제시한 0.9994%(건보료 합산 8.19%)는 고시 원문으로 재확인 필요.", s:"cross", sl:"교차확인", refs:[["연합뉴스","https://news.google.com/search?q=%EC%9E%A5%EA%B8%B0%EC%9A%94%EC%96%91%EB%B3%B4%ED%97%98%EB%A3%8C%EC%9C%A8%20%EC%9D%B8%EC%83%81%201%EC%B2%9C100%EC%9B%90&hl=ko&gl=KR&ceid=KR:ko"],["보험저널 칼럼","https://www.insjournal.co.kr/news/articleView.html?idxno=33858"]]},
   {c:"지역·필수의료 2.7조 선투입", r:"제19차 건정심(10.28) 의결. 연 3.6조 중 2.7조 시행시기 확정, 0.9조는 연내 추가 논의. 의원 초진 상대가치 6%·재진 4%, 병원급 2%, 일반병실 입원료 7%·중환자실 10%, 중증수술 1,670개 20%, 비수도권 분만·신생아 10% 가산(1월), 수술·처치 2,740개 10% 가산(3월). 재원은 검체 702개·CT/MRI 480개 수가 인하 등 약 2.6조 절감. 관련 고시는 11월 중 개정 예정.", s:"gov", sl:"공식확인", refs:[["경향신문","https://www.khan.co.kr/article/202610281648001/"],["라포르시안","https://www.rapportian.com/news/articleView.html?idxno=241753"],["서울경제","https://www.sedaily.com/article/20107257"]]},
   {c:"위탁기관(의원) 조건부 보상 ‘임상결과 분석·관리료’", r:"10.28 건정심 의결. 의원급 위탁기관이 검사결과 공유체계를 갖추고 만성질환자 등에 분석·관리를 제공하면 회당 1,400원, 환자당 연 4회(연 최대 5,600원). 2년 한시. 대상 상병·공유 요건·청구 방식은 공개 자료에 없음. 배분율 35:65(25/45+10/20)는 6.25 확정 구조이며 10.28 자료엔 수치 없음. 청구는 ‘위탁기관 일괄청구 후 분리지급’(의협 TF, 6월)과 ‘공단 직접 구분지급’(10월 보도) 표현이 엇갈림.", s:"cross", sl:"교차확인 · 고시 대기", refs:[["의학신문 10.28","https://www.bosa.co.kr/news/articleView.html?idxno=3015044"],["메디칼업저버 10.28","https://www.monews.co.kr/news/articleView.html?idxno=414909"],["청년의사 6.25","https://www.docdocdoc.co.kr/news/articleView.html?idxno=3040365"],["메디파나 11.5(내과의사회)","https://www.medipana.com/news/articleView.html?idxno=421018"]]},
+  {c:"검체 위·수탁 청구·지급 방식 (11.23 확인)", r:"위탁기관 일괄청구 유지 + 공단이 수탁검사료를 수탁기관에 직접 지급(구분지급). 위탁의뢰관리료(A)·수탁검사료(B) PAIR 코드, JS005에 수탁기관 기호·의뢰일·PAIR번호·재위탁 여부 기재. 기본 배분 진단검사 25/45, 병리 10/80. 계약현황 신고 11.23~12.18, 1월 청구는 12.31까지. 6월 의협 TF 설명(일괄청구·분리지급)과 일치. 임상결과 분석·관리료 세부는 아직 공개 자료 없음.", s:"cross", sl:"교차확인 · 일부 미확정", refs:[["의학신문 11.23","https://www.bosa.co.kr/news/articleView.html?idxno=3017018"],["심평원 계약현황 신고 안내","https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020002000100&brdScnBltNo=4&brdBltNo=12353"]]},
   {c:"비대면진료 제도화 후 수가·청구코드", r:"12.24 시행 확정(의료법·시행령). 수가는 시범사업 관리료 30% 가산(진찰료·조제료) 폐지 후 100% 환원 방침만 보도됨. ‘11월 건정심 의결 예정’ 단계이며 의결 보도는 아직 없음. 신설 수가·새 청구코드·본인부담 변화는 어떤 자료에도 없음. 비대면 건수 한도는 현행 지침 ‘월 30%’, 시행규칙안 ‘반기 30%’로 단위가 다름.", s:"single", sl:"예정 · 고시 대기", refs:[["데일리팜 11.12","https://dailypharm.com/user/news/344461"],["데일리팜 11.13","https://dailypharm.com/user/news/344512"],["정책브리핑 10.19","https://www.korea.kr/news/policyNewsView.do?newsId=148973762"],["의학신문 9.28","https://www.bosa.co.kr/news/articleView.html?idxno=3012809"]]},
   {c:"건보공단 특사경법 ‘국회 통과’", r:"11.11 법사위 법안심사1소위 통과까지 확인. 법사위 전체회의·본회의 통과는 확인되지 않음. ‘국회 통과’ 제목은 소위 단계를 가리키는 경우가 많음. 의협·병협 반대, 건보노조 찬성.", s:"single", sl:"진행중", refs:[["데일리메디","https://dailymedi.com/news/news_view.php?wr_id=942500"],["데일리팜","https://dailypharm.com/user/news/344471"]]},
   {c:"자동차보험 청구체계 건강보험 기준 정비", r:"국토부 ‘자동차보험진료수가 심사업무처리에 관한 규정’ 개정(행정예고 9.21~10.11). 건보와 같은 항목은 건보 청구기준 적용. 2027년 시행 여부는 고시 원문으로 확인 필요.", s:"single", sl:"확인 필요", refs:[["한의신문","https://akomnews.com/68888"],["국토부 입법예고","https://www.molit.go.kr/USR/I0204/m_45/dtl.jsp?idx=18600"]]},
@@ -437,6 +1483,7 @@ function renderBrief(){
     return `<article class="pt">
       <div class="top"><span class="badge ${cls}">${label}</span>${(p.cats||[]).map(c=>`<span class="cat">${esc(catName(c))}</span>`).join("")}</div>
       <h3>${esc(p.title)}</h3><p>${esc(p.body)}</p>
+      ${(p.clinic||p.service||p.action)?`<dl class="imp">${p.clinic?`<dt>의료기관</dt><dd>${esc(p.clinic)}</dd>`:""}${p.service?`<dt>웰체크</dt><dd>${esc(p.service)}</dd>`:""}${p.action?`<dt>대응</dt><dd>${esc(p.action)}</dd>`:""}</dl>`:""}
       ${refs.length?`<div class="refs">${refs.map(([n,u])=>`<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(n)} ↗</a>`).join("")}</div>`:""}
     </article>`;
   }).join("");
@@ -501,7 +1548,7 @@ function renderNotices(){
   const all = items.filter(it=>it.cat==="notice" && !/당첨자|이벤트|경품|공모전|당선작|대학수학능력|수능|채용|합격자/.test(it.title));
   const recent = new Date(Date.now()-3*864e5).toISOString().slice(0,10);
   box.innerHTML = NOTICE_ORGS.map(o=>{
-    const list = all.filter(it=>it.s===o.s).sort((a,b)=>b.d.localeCompare(a.d)).slice(0,7);
+    const list = all.filter(it=>it.s===o.s).sort((a,b)=>b.d.localeCompare(a.d)).slice(0,15);
     return `<div class="nbox"><h3>${esc(o.s)}<a href="${esc(o.board)}" target="_blank" rel="noopener">게시판 ↗</a></h3>
       ${list.length ? `<ul>${list.map(it=>`<li class="${it.d>=recent?"new":""}"><span>${esc(it.d)}</span><a href="${esc(safeUrl(it.l))}" target="_blank" rel="noopener">${esc(it.title)}</a></li>`).join("")}</ul>`
         : `<ul><li><span></span><span>아직 수집된 공지가 없습니다. 다음 수집 때 채워집니다.</span></li></ul>`}
@@ -509,9 +1556,37 @@ function renderNotices(){
   }).join("");
 }
 document.addEventListener("click", e=>{
-  if (e.target.closest && e.target.closest("#noticeAll")){ catSel="notice"; termSel=""; renderFeed(); $("h-feed").scrollIntoView({behavior:"smooth"}); }
+  if (e.target.closest && e.target.closest("#noticeAll")){ catSel="notice"; termSel=""; renderFeed(); location.hash="news"; setTimeout(()=>$("h-feed").scrollIntoView(),50); }
 });
-function renderAll(){ renderWatch(); renderNotices(); renderBrief(); renderFeed(); }
+function renderAll(){ renderIssues(); renderWatch(); renderNotices(); renderBrief(); renderFeed(); renderPlanning(); navCounts(); }
+function navCounts(){
+  const recent = new Date(Date.now()-7*864e5).toISOString().slice(0,10);
+  const nN=$("nNotices"), nW=$("nNews");
+  if (nN){ const c=items.filter(it=>it.cat==="notice" && it.d>=recent).length; nN.textContent = c?`+${c}`:""; nN.title="최근 7일 공지"; }
+  if (nW){ const c=items.filter(it=>it.cat!=="notice" && it.d>=recent).length; nW.textContent = c?`+${c}`:""; nW.title="최근 7일 기사"; }
+}
+
+// ---------- 페이지 전환 (#dashboard · #planning · #notices · #news · #factcheck) ----------
+const ROUTES = ["dashboard","planning","notices","news","factcheck","planning-todo","planning-edu","planning-plan","planning-dev","planning-feedback"];
+function route(scrollTop){
+  let r = (location.hash||"").slice(1);
+  if (!ROUTES.includes(r)) r = "dashboard";
+  if (STATIC_MODE && r.startsWith("planning")) r = "dashboard";
+  const page = r.startsWith("planning") ? "planning" : r;
+  planSub = r.startsWith("planning-") ? r.slice(9) : "overview";
+  document.querySelectorAll(".page").forEach(p=>{ p.hidden = p.dataset.page!==page; });
+  document.querySelectorAll(".side a[data-route]").forEach(a=>{ if (a.dataset.route===r) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  const sn = $("planSubnav"); if (sn) sn.classList.toggle("open", page==="planning");
+  if (page==="planning"){ editing=null; renderEditor(); renderPlanning(); }
+  if (scrollTop) window.scrollTo(0,0);
+}
+window.addEventListener("hashchange", ()=>route(true));
+document.addEventListener("click", e=>{
+  const g = e.target.closest && e.target.closest("[data-goissue]");
+  if (g){ planFilter.issue = g.dataset.goissue; planFilter.status=""; renderPlanning(); }
+});
+function setHdr(){ const h=document.querySelector("header.bar"); if (h) document.documentElement.style.setProperty("--hdr", h.offsetHeight+"px"); }
+window.addEventListener("resize", setHdr);
 
 // ---------- events ----------
 $("cats").addEventListener("click",e=>{ const b=e.target.closest("[data-c]"); if(!b) return; catSel=b.dataset.c; termSel=""; renderFeed(); });
@@ -521,7 +1596,8 @@ function setView(v){ view=v; $("vDate").setAttribute("aria-pressed",v==="date");
 $("vDate").onclick=()=>setView("date"); $("vCat").onclick=()=>setView("cat");
 try{ const v=localStorage.getItem("hpm-view"); if(v==="cat"){ view="cat"; $("vDate").setAttribute("aria-pressed","false"); $("vCat").setAttribute("aria-pressed","true"); } }catch(e){}
 
-renderKpis(); renderFacts(); renderAll();
+renderTimeline(); renderMatrix(); renderKpis(); renderFacts(); renderAll(); route(false); setHdr();
+if (STATIC_MODE){ const n=$("navPlanning"); if (n) n.hidden = true; const s=$("planSubnav"); if (s) s.hidden = true; }
 
 // ---------- data: db ----------
 // 각 기능을 따로 연결한다. 하나가 늦거나 실패해도 나머지(특히 저장된 기사 표시)는 막히지 않게.
@@ -593,6 +1669,17 @@ if (STATIC){
   withTimeout(C.use("db"), 15000).then(v=>{
     if (v==="__timeout__" || !v){ setCap("db","bad", v==="__timeout__"?"응답 없음":"연결 안 됨(로그인 필요)"); status("저장소에 연결할 수 없음"); notice("저장된 기사를 불러오지 못했습니다. Claude에 로그인한 상태로 페이지를 다시 열어 주세요."); return; }
     db=v; setCap("db","wait","불러오는 중");
+    // 기획·준비 관리: plans 컬렉션 구독 (팀 공유)
+    planDb = v; canPlan = true; renderPlanning(); renderIssues();
+    C.use("user").then(u=>{ if (u && u.id) u.id().then(id=>{ planUid=id||null; }).catch(()=>{}); }).catch(()=>{});
+    planDb.collection("plans").onSnapshot(qs=>{
+      plans = qs.docs.map(d=>({id:d.id, ...(d.data()||{})}));
+      renderPlanning(); renderIssues(); navCounts();
+    }, e=>{ notice("기획 항목을 불러오지 못했습니다 ("+(e.code||"")+")."); });
+    planDb.collection("posts").onSnapshot(qs=>{ posts = qs.docs.map(d=>({id:d.id, ...(d.data()||{})})); renderPlanning(); }, ()=>{});
+    planDb.collection("events").onSnapshot(qs=>{ events = qs.docs.map(d=>({id:d.id, ...(d.data()||{})})); renderPlanning(); }, ()=>{});
+    planDb.collection("releases").onSnapshot(qs=>{ releases = qs.docs.map(d=>({id:d.id, ...(d.data()||{})})); renderPlanning(); }, ()=>{});
+    C.use("assets").then(a=>{ assetsApi = a || null; renderPlanning(); }).catch(()=>{ assetsApi=null; });
     const timer = setTimeout(()=>{ if(!dbLoaded){ setCap("db","wait","응답 지연"); status("저장소 응답이 늦습니다 · 잠시 후 자동으로 표시됩니다"); } },10000);
     db.doc("feed/latest").onSnapshot(snap=>{
       if (!snap.fromCache){ dbLoaded=true; clearTimeout(timer); }
@@ -674,14 +1761,16 @@ async function summarize(list){
   const top = list.slice(0,90).map(it=>({id:it.id,d:it.d,cat:it.cat,src:it.s,tier:it.tier,check:it.check,nsrc:it.nsrc,title:it.title}));
   const facts = FACTS.map(f=>`- ${f.c}: ${f.r}`).join("\n");
   const prompt = `당신은 한국 보건의료 정책 모니터링 담당자입니다. 아래는 오늘 수집한 뉴스 제목 목록(JSON)과, 이미 공식자료로 확인된 팩트 노트입니다.
-병원 경영·보험청구 실무자가 알아야 할 핵심 사안 6~8개를 골라 한국어로 요약하세요.
+목적: 국가사업·의료 법령·건강보험 제도 변경이 (1) 현장 의료기관과 (2) 우리 서비스에 미치는 영향을 파악해 선제적으로 대응하는 것입니다.
+우리 서비스: ${SERVICE_PROFILE}
+의료기관 운영·보험청구와 우리 서비스에 영향이 큰 사안 6~8개를 골라 한국어로 요약하세요. 각 사안마다 clinic(현장 의료기관 영향 1문장), service(우리 서비스 영향 1문장, 관련 없으면 "직접 영향 낮음"), action(지금 준비할 대응 1문장)을 쓰세요.
 규칙:
 - 제목 목록에 근거가 있는 내용만 쓰고, 추측하지 마세요. 수치는 제목에 있는 그대로만 쓰세요.
 - 팩트 노트와 충돌하거나 기사 간 수치가 다르면 status를 "conflict"로 하고 body에 어느 부분이 다른지 적으세요.
 - status: 공식기관(tier=gov) 보도가 근거에 있으면 "gov", 서로 다른 출처 2곳 이상이면 "cross", 하나뿐이면 "single".
 - 2027년 수가·보험료·청구 변경, 건강보험정책심의위원회 의결, 제도 개편, 비대면진료, 만성질환관리료, 복지부 제도 변경, 협회(병협·의협·간협·약사회·의료기사)의 의견·성명을 우선하세요.
 - refs에는 근거 기사 id를 1~4개 넣으세요.
-출력은 JSON 객체 하나만: {"points":[{"title":"한 줄 제목","body":"2~3문장","status":"gov|cross|single|conflict","cats":["fee|council|reform|tele|chronic|notice|watch|mohw|premium|kha|kma|kna|kpa|tech|auto|hira"],"refs":["id"]}]}
+출력은 JSON 객체 하나만: {"points":[{"title":"한 줄 제목","body":"2~3문장","clinic":"1문장","service":"1문장","action":"1문장","status":"gov|cross|single|conflict","cats":["fee|council|reform|tele|chronic|notice|watch|mohw|premium|kha|kma|kna|kpa|tech|auto|hira"],"refs":["id"]}]}
 
 [팩트 노트]
 ${facts}
@@ -690,7 +1779,7 @@ ${facts}
 ${JSON.stringify(top)}`;
   const out = await sample.json(prompt,{cache:false});
   if (!out || !Array.isArray(out.points)) return null;
-  return {points: out.points.slice(0,8).map(p=>({title:String(p.title||""),body:String(p.body||""),status:["gov","cross","single","conflict"].includes(p.status)?p.status:"single",cats:(p.cats||[]).map(String).slice(0,3),refs:(p.refs||[]).map(String).slice(0,4)})), updatedAt:new Date().toISOString(), by:"refresh"};
+  return {points: out.points.slice(0,8).map(p=>({title:String(p.title||""),body:String(p.body||""),clinic:String(p.clinic||""),service:String(p.service||""),action:String(p.action||""),status:["gov","cross","single","conflict"].includes(p.status)?p.status:"single",cats:(p.cats||[]).map(String).slice(0,3),refs:(p.refs||[]).map(String).slice(0,4)})), updatedAt:new Date().toISOString(), by:"refresh"};
 }
 const FATAL = new Set(["not_granted","consent_required","server_not_connected","not_in_manifest","capability_disabled","not_declared","cancelled"]);
 $("refreshBtn").addEventListener("click", async ()=>{
